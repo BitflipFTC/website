@@ -28,6 +28,7 @@ header ul li a{
     text-decoration: underline;
     font-weight: bold;
     font-size: 18px;
+    cursor:pointer;
 }
 
 header ul li button {
