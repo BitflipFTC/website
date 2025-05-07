@@ -12,7 +12,7 @@ header {
     padding-bottom: 1px;
 }
 
-.header-ul {
+header ul {
     list-style: none;
     padding: 0;
 }
@@ -21,11 +21,12 @@ header ul li {
     display: inline;
     margin: 0 5px 0 5px;
 }
+
 header ul li a {
     color: white;
     text-decoration: underline;
     font-weight: bold;
-    font-size: 15px;
+    font-size: 18px;
 }
 
 header ul li button {
@@ -34,7 +35,8 @@ header ul li button {
     font-weight: bold;
     background: none;
     border: none;
-    font-size: 15px;
+    font-size: 18px;
+    cursor: pointer;
 }
 
 nav p {
