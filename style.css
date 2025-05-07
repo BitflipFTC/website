@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: Helvetica, sans-serif;
     background-color: #1c1c1c;
     color: white;
     text-align: center;
@@ -7,24 +7,29 @@ body {
 }
 
 header {
-    background-color: #ff8800;
-    padding: 1px;
+    background-color: hsl(32, 100%, 50%);
+    padding-top: 1px;
+    padding-bottom: 1px;
 }
 
-nav ul {
+header ul {
     list-style: none;
     padding: 0;
 }
 
-nav ul li {
+header ul li {
     display: inline;
-    margin: 10px;
+    margin: 0 5px 0 5px;
 }
 
-nav ul li a {
+header ul li a {
     color: white;
-    text-decoration: none;
+    text-decoration: underline;
     font-weight: bold;
+}
+
+nav p {
+    padding: 0 50px 0 50px;
 }
 
 section {
