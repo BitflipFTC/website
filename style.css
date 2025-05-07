@@ -25,6 +25,16 @@ header ul li a {
     color: white;
     text-decoration: underline;
     font-weight: bold;
+    font-size: 15px;
+}
+
+header ul li button {
+    color: white;
+    text-decoration: underline;
+    font-weight: bold;
+    background: none;
+    border: none;
+    font-size: 15px;
 }
 
 nav p {
