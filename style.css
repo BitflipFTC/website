@@ -23,6 +23,7 @@ header ul li {
 }
 
 header ul li a{
+    all:unset;
     color: white;
     text-decoration: underline;
     font-weight: bold;
@@ -30,6 +31,7 @@ header ul li a{
 }
 
 header ul li button {
+    all:unset;
     color: white;
     text-decoration: underline;
     font-weight: bold;
