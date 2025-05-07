@@ -40,5 +40,8 @@ section {
 
 footer {
     background-color: #ff8800;
-    padding: 10px;
+    padding: 5px;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
 }
