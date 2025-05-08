@@ -1,28 +1,70 @@
+:root {
+    --toolbar-height: 75px;
+    --footer-height:30px;
+}
+
 body {
-    font-family: Helvetica, sans-serif;
+    font-family: Jetbrains Mono Light, serif;
     background-color: #1c1c1c;
     color: white;
     text-align: center;
-    margin: 0;
+    margin: 0 0 0 0;
+    
+    padding-top: var(--toolbar-height);
+
+    display:flex;
+    flex-direction: column;
+    min-height: calc(100vh - var(--toolbar-height));
+
+    /* overflow:hidden; */
 }
 
-header {
-    background-color: hsl(32, 100%, 50%);
-    padding-top: 1px;
-    padding-bottom: 1px;
+#big-logo {
+    width:50%;
+    max-width: 500px;
+    max-height:25%;
+    padding: 20px 0 0 0;
 }
 
-header ul {
+#toolbar {
+    background-color: hsla(32, 100%, 50%, 0.1);
+
+    backdrop-filter:blur(4rem);
+    /* padding-top: 1px; */
+    /* padding-bottom: 1px; */
+    position:fixed;
+    width: 100%;
+    top:0;
+
+    height: var(--toolbar-height);
+
+
+    display: flex;
+    justify-content: left;
+    align-items: center;
+
+}
+
+#toolbar ul {
     list-style: none;
-    padding: 0;
+    padding: 0 0 0 5px;
+    position:sticky;
+    top:0;
 }
 
-header ul li {
+#toolbar ul li {
     display: inline;
     margin: 0 5px 0 5px;
 }
 
-header ul li a{
+#logo {
+    height: calc(var(--toolbar-height) * 0.8);
+    color: white;
+
+    vertical-align: middle
+}
+
+#toolbar ul li a{
     all:unset;
     color: white;
     text-decoration: underline;
@@ -31,7 +73,7 @@ header ul li a{
     cursor:pointer;
 }
 
-header ul li button {
+#toolbar ul li button {
     all:unset;
     color: white;
     text-decoration: underline;
@@ -42,20 +84,31 @@ header ul li button {
     cursor: pointer;
 }
 
-nav p {
-    padding: 0 50px 0 50px;
+section p {
+    padding: 0 2% 0 2%;
     font-size: 20px;
-    text-align:center;
+    text-align:justify;
+    line-height: 1.25;
+}
+
+section p strong {
+    font-size: 24px;
+    color:hsl(32, 100%, 50%);
 }
 
 section {
-    padding: 40px;
+    padding: 20px;
+    flex:1
 }
 
 footer {
     background-color: #ff8800;
     padding: 5px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+
+    /* width: 100%; */
+    height: var(--footer-height);
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
 }
