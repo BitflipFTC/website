@@ -70,7 +70,7 @@ body {
 }
 
 section {
-    padding: 5% 5cqh;
+    padding: 5% 5%;
     display: flex;
     color:white;
     align-items:center;
@@ -176,7 +176,7 @@ section {
 
 section p {
     font-size: 20px;
-    text-align:justify;
+    text-align:left;
     line-height: 1.5;
     margin: 0 20px 0 20px;
 }
@@ -210,11 +210,11 @@ section h5 {
     justify-content: center;
     align-items: center;
 
-    min-width: 1%;
-    max-width:50%;
+    /* min-width: 1%; */
+    max-width:90%;
 
     flex:0 1 200px;
-    background-color: #b66100;
+    background-color: rgb(185, 99, 1);
 
     border-radius: 20px;
     border: 2px solid white;
@@ -230,6 +230,7 @@ section h5 {
 
     width: 100%;
     /* border: 1px solid red; */
+    margin-bottom: 5px;
 
     font-size: 16px;
     flex-wrap: nowrap;
@@ -239,7 +240,9 @@ section h5 {
     text-align: center;
     color:lightgray;
     font-size: 14px;
-    height:90px
+    height:90px;
+
+    /* white-space: nowrap; */
 }
 
 footer {
