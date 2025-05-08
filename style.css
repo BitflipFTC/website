@@ -34,17 +34,31 @@ body {
     padding: 20px 0 0 0;
 }
 
+.photo, .circle, .circle-alt {
+    border-radius: 50%; /* Makes it a perfect circle */
+    flex-shrink: 0;
+    aspect-ratio: 1/1;
+}
+
 .circle, .circle-alt {
     width: 200px;  /*Set the width*/
     max-width: 30%;
-    aspect-ratio: 1/1;
+}
+
+.circle {
     background-color: #1c1c1c; /* Set the color */
-    border-radius: 50%; /* Makes it a perfect circle */
-    flex-shrink: 0;
 }
 
 .circle-alt {
     background-color: var(--alt-color);
+}
+
+.photo {
+    width: 100%;
+    min-width: none;
+    background-color: #1c1c1c;
+    margin: 0 auto;
+    flex:1;
 }
 
 .info {
@@ -56,7 +70,7 @@ body {
 }
 
 section {
-    padding: 1% 1%;
+    padding: 5% 5cqh;
     display: flex;
     color:white;
     align-items:center;
@@ -172,7 +186,45 @@ section h5 {
     margin: 10px;
 }
 
+#members {
+    display:flex;
 
+    /* grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); */
+    /* grid-auto-flow: row; */
+    justify-content:center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    gap: 20px;
+
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.member {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
+    min-width: 1%;
+    max-width:50%;
+
+    flex:0 1 150px;
+
+}
+
+.name {
+    text-align: center;
+    flex:1;
+}
+
+.roles {
+    text-align: center;
+    color:lightgray;
+    flex:1;
+}
 
 footer {
     background-color: var(--alt-color);
