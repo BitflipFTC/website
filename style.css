@@ -27,9 +27,9 @@ body {
 }
 
 #toolbar {
-    background-color: hsla(32, 100%, 50%, 0.1);
+    background-color: hsla(32, 100%, 50%, 0.2);
 
-    backdrop-filter:blur(4rem);
+    backdrop-filter:blur(2rem);
     /* padding-top: 1px; */
     /* padding-bottom: 1px; */
     position:fixed;
@@ -53,8 +53,19 @@ body {
 }
 
 #toolbar ul li {
+    all:unset;
+
     display: inline;
     margin: 0 5px 0 5px;
+    color:lightgray;
+    text-decoration: underline;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+#toolbar ul li:hover {
+    color:white;
 }
 
 #logo {
@@ -64,24 +75,13 @@ body {
     vertical-align: middle
 }
 
-#toolbar ul li a{
+#toolbar ul li a {
     all:unset;
-    color: white;
-    text-decoration: underline;
-    font-weight: bold;
-    font-size: 18px;
-    cursor:pointer;
+    /* color: white; */
 }
 
 #toolbar ul li button {
-    all:unset;
-    color: white;
-    text-decoration: underline;
-    font-weight: bold;
-    background: none;
-    border: none;
-    font-size: 18px;
-    cursor: pointer;
+    /* color: white; */
 }
 
 section p {
