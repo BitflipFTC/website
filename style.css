@@ -101,6 +101,8 @@ section {
 
     height: var(--toolbar-height);
 
+    border-bottom: 3px solid white;
+
     display: flex;
     justify-content: left;
     align-items: center;
