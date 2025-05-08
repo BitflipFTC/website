@@ -176,7 +176,7 @@ section p {
     font-size: 20px;
     text-align:justify;
     line-height: 1.5;
-    margin: 0 10px 0 10px;
+    margin: 0 20px 0 20px;
 }
 
 section h5 {
@@ -211,7 +211,7 @@ section h5 {
     min-width: 1%;
     max-width:50%;
 
-    flex:0 1 150px;
+    flex:0 1 200px;
 
 }
 
