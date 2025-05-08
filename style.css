@@ -1,10 +1,12 @@
+@font-face { font-family: JetbrainsMono; src: url('fonts/JetBrainsMono-Medium.ttf'); }
+
 :root {
     --toolbar-height: 75px;
     --footer-height:30px;
 }
 
 body {
-    font-family: Jetbrains Mono Light, serif;
+    font-family: JetbrainsMono;
     background-color: #1c1c1c;
     color: white;
     text-align: center;
@@ -27,8 +29,9 @@ body {
 }
 
 #toolbar {
-    background-color: hsla(32, 100%, 50%, 0.2);
+    background-color: hsla(32, 100%, 50%, 0.3);
 
+    -webkit-backdrop-filter: blur(2rem);
     backdrop-filter:blur(2rem);
     /* padding-top: 1px; */
     /* padding-bottom: 1px; */
@@ -53,12 +56,11 @@ body {
 }
 
 #toolbar ul li {
-    all:unset;
 
     display: inline;
     margin: 0 5px 0 5px;
     color:lightgray;
-    text-decoration: underline;
+    /* text-decoration: underline; */
     font-weight: bold;
     cursor: pointer;
     font-size: 18px;
@@ -77,11 +79,12 @@ body {
 
 #toolbar ul li a {
     all:unset;
-    /* color: white; */
 }
 
 #toolbar ul li button {
-    /* color: white; */
+    all:unset;
+    background: none;
+    border: none;
 }
 
 section p {
