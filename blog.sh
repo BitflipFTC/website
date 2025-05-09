@@ -40,7 +40,7 @@ do
     # Escape slashes for use in sed
     currBlogText=$(< "blog.html")
     recursiveText="<div>And more coming soon...</div>"
-    recursiveAddition="<div class='blog-card'> <a href='bitflip.club/blog/${fileName}.html'> $fileName </a> <img src='${imageUrl}'> </div> $recursiveText"
+    recursiveAddition="<div class='blog-card'>  <img src='${imageUrl}'> <a href='https://bitflip.club/blog/${fileName}.html'> $fileName </a> </div> $recursiveText"
 
     # Escape variables for use in sed
     escapedText=$(printf '%s\n' "$recursiveText" | sed 's/[&/\]/\\&/g')
