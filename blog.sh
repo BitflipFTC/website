@@ -24,6 +24,9 @@ do
     textToUse=$(< "temp.txt")
     baseString="${baseString//replace-this-text/$textToUse}"
     baseString="${baseString//replace-this-url/$imageUrl}"
+    baseString="${baseString//
+    /"<br><br>"}"
+
     echo "$baseString" > "blog/${fileName}.html"
 
     printf "\n\n\n=============\n"
