@@ -33,7 +33,6 @@ do
 
 
     #deal with putting the new data into blog.html
-
     currBlogText=$(< "blog.html")
     recursiveText="<div>And more coming soon...</div>"
     recursiveAddition="$recursiveText <a href='bitflip.club/blog/${fileName}.html'> $fileName </a>"
@@ -41,7 +40,7 @@ do
     # Escape slashes for use in sed
     currBlogText=$(< "blog.html")
     recursiveText="<div>And more coming soon...</div>"
-    recursiveAddition="<a href='bitflip.club/blog/${fileName}.html'> $fileName </a> $recursiveText"
+    recursiveAddition="<div class='blog-card'> <a href='bitflip.club/blog/${fileName}.html'> $fileName </a> <img src='${imageUrl}'> </div> $recursiveText"
 
     # Escape variables for use in sed
     escapedText=$(printf '%s\n' "$recursiveText" | sed 's/[&/\]/\\&/g')
@@ -55,6 +54,7 @@ do
     echo "$currBlogText" > "blog.html"
 
 
+    #update the git repo
     printf "\n\n\n=============\n"
     echo "Pushing this update"
     ./testing.sh
