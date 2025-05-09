@@ -22,10 +22,12 @@ do
     baseString=$(< "blogbase.html")
 
     textToUse=$(< "temp.txt")
+    textToUse="${textToUse//
+    /"<br><br>"}"
+
     baseString="${baseString//replace-this-text/$textToUse}"
     baseString="${baseString//replace-this-url/$imageUrl}"
-    baseString="${baseString//
-    /"<br><br>"}"
+
 
     echo "$baseString" > "blog/${fileName}.html"
 
