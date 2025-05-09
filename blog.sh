@@ -39,16 +39,16 @@ do
     # currBlogText="${currBlogText//recursiveText/recursiveAddition}"
     # echo "$currBlogText"
     currBlogText=$(< "blog.html")
-recursiveText="<div>And more coming soon...</div>"
-recursiveAddition="$recursiveText <a href='bitflip.club/blog/${fileName}.html'> $fileName </a>"
+    recursiveText="<div>And more coming soon...</div>"
+    recursiveAddition="$recursiveText <a href='bitflip.club/blog/${fileName}.html'> $fileName </a>"
 
-# Escape slashes for use in sed
-escapedText=$(printf '%s\n' "$recursiveText" | sed 's/[&/\]/\\&/g')
-escapedAddition=$(printf '%s\n' "$recursiveAddition" | sed 's/[&/\]/\\&/g')
+    # Escape slashes for use in sed
+    escapedText=$(printf '%s\n' "$recursiveText" | sed 's/[&/\]/\\&/g')
+    escapedAddition=$(printf '%s\n' "$recursiveAddition" | sed 's/[&/\]/\\&/g')
 
-currBlogText=$(echo "$currBlogText" | sed "s/$escapedText/$escapedAddition/")
+    currBlogText=$(echo "$currBlogText" | sed "s/$escapedText/$escapedAddition/")
 
-echo "$currBlogText"
+    echo "$currBlogText"
 
 
     printf "\n\n\n=============\n"
