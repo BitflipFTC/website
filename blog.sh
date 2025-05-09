@@ -17,10 +17,13 @@ do
     #this is the main thing that this script does. it needs to auctually make the new file
     currentDate=$(date "+%B %-d, %Y")
     nameForHtml="$fileName On $currentDate"
-    echo "Name of file being created is $nameForHtml"
+    echo "Name of file being created is '$nameForHtml'"
     #touch "blog/$fileName
+
+    printf "\n\n\n============="
     echo "Pushing this update"
     ./testing.sh
+    printf "=============\n\n\n"
 
     echo "Would you like to continue yes/Yes/YES/y/Y ?"
     read -r continue
