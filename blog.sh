@@ -27,6 +27,7 @@ do
 
     baseString="${baseString//replace-this-text/$textToUse}"
     baseString="${baseString//replace-this-url/$imageUrl}"
+    baseString="${baseString//replace-this-title/$fileName}"
 
 
     echo "$baseString" > "blog/${fileName}.html"
