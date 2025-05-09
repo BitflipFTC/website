@@ -22,8 +22,8 @@ do
     baseString=$(< "blogbase.html")
 
     textToUse=$(< "temp.txt")
-    baseString={baseString//"replace-this-text"/"$textToUse"}
-    baseString={baseString//"replace-this-url"/"$imageUrl"}
+    baseString={$baseString//"replace-this-text"/"$textToUse"}
+    baseString={$baseString//"replace-this-url"/"$imageUrl"}
     echo "$baseString" > "blog/${fileName}.html"
 
     printf "\n\n\n=============\n"
