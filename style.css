@@ -7,7 +7,8 @@
 :root {
     --toolbar-height: 75px;
     --footer-height:30px;
-    --alt-color:rgb(231, 124, 1);
+    --standard-color:#1c1c1c;
+    --alt-color:rgb(231, 123, 0);
     --toolbar-color:var(--alt-color);
 }
 
@@ -16,8 +17,8 @@ header {
 }
 
 body {
-    font-family: JetbrainsMono;
-    background-color: #1c1c1c;
+    font-family: "JetBrainsMono", "Courier New", monospace, sans-serif;
+    background-color: var(--standard-color);
     color: white;
     text-align: center;
     margin: 0 0 0 0;
@@ -50,7 +51,7 @@ body {
 }
 
 .circle {
-    background-color: #1c1c1c; /* Set the color */
+    background-color: var(--standard-color); /* Set the color */
 }
 
 .circle-alt {
@@ -60,7 +61,7 @@ body {
 .photo {
     width: 100%;
     min-width: none;
-    background-color: #1c1c1c;
+    background-color: var(--standard-color);
     margin: 0 auto 15px auto;
     flex:1;
 }
@@ -81,17 +82,18 @@ section {
     gap: 10px;
 
     flex-direction:row;
-    align-items: flex-sta;
     justify-content: flex-start;
 
 }
 
 .section {
     background-color: inherit;
+    font-weight: light;
 }
 
 .section-alt {
     background-color: var(--alt-color);
+    color:black
 }
 
 #toolbar {
@@ -135,7 +137,7 @@ section {
     
     flex:0;
     display: flex;
-    color:white;
+    color:blwhwhiteiteack;
     font-weight: bold;
     cursor: pointer;
     font-size: 18px;
@@ -186,7 +188,7 @@ section p {
 }
 
 section h5 {
-    font-size: 24px;
+    font-size: 28px;
     /* color:hsl(32, 100%, 50%); */
     text-align: center;
     margin: 10px;
@@ -217,12 +219,12 @@ section h5 {
     /* min-width: 1%; */
     max-width:90%;
 
-    flex:0 1 200px;
-    background-color: rgb(185, 99, 1);
+    flex:0 1 230px;
+    background-color: rgb(153, 82, 0);
 
     border-radius: 20px;
     border: 2px solid white;
-    padding: 10px;
+    padding: 15px;
 
     box-shadow: 0px 0px 10px -1px #7e4300;
 
@@ -236,28 +238,50 @@ section h5 {
     /* border: 1px solid red; */
     margin-bottom: 5px;
 
-    font-size: 16px;
+    color: white;
+
+    font-size: 20px;
     flex-wrap: nowrap;
 }
 
 .roles {
     text-align: center;
     color:lightgray;
-    font-size: 14px;
+    font-size: 16px;
     height:90px;
 
     /* white-space: nowrap; */
 }
 
 footer {
-    background-color: var(--alt-color);
-    padding: 5px;
+    background-color: var(--standard-color);
+    padding: 50px 50px;
 
     /* width: 100%; */
     height: var(--footer-height);
 
     display:flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+
+    flex-direction:row;
 }
 
+footer .links a {
+    all:unset;
+    /* flex:1; */
+    height: 100%;
+
+    justify-items: center;
+    align-items: center;
+
+    cursor: pointer;
+
+    padding:5px;
+}
+
+footer p {
+    height: 100%;
+
+    text-align: left;
+}
