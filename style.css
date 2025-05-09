@@ -1,5 +1,9 @@
 @font-face { font-family: JetbrainsMono; src: url('fonts/JetBrainsMono-Medium.ttf'); }
-
+@media only screen and (max-width: 800px) {
+    .circle, .circle-alt {
+        display: none !important;
+    }
+}
 :root {
     --toolbar-height: 75px;
     --footer-height:30px;
