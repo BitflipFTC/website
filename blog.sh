@@ -7,14 +7,7 @@ do
 
     echo "" > "temp.txt"
     vim "temp.txt"
-
-    git add .
-    git commit -m "update for today's news"
-    PAT=$(< gitkey.txt)
-    echo $PAT
-    git push https://Krabbenhoft:$PAT@github.com/BitflipFTC/website.git main
-
-
-
-
+    
+    echo "Pushing this update"
+    ./testing.sh
 done
