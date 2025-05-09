@@ -22,8 +22,8 @@ do
     baseString=$(< "blogbase.html")
 
     textToUse=$(< "temp.txt")
-    textToUse="${textToUse//
-    /"<br><br>"}"
+    textToUse=$(echo "$textToUse" | tr '\n' '<br>')
+
 
     baseString="${baseString//replace-this-text/$textToUse}"
     baseString="${baseString//replace-this-url/$imageUrl}"
