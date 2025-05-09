@@ -18,12 +18,23 @@ header {
     padding: 0 10% 0 10%;
 }
 
+#main-header {
+    min-height: calc(100vw * (9/16) - var(--toolbar-height));
+    align-items: flex-end;
+    justify-content: center;
+    display: flex;
+    flex:1;
+}
+
+/* .header-text { */
+/* } */
+
 body {
     font-family: "JetBrainsMono", "Courier New", monospace, sans-serif;
     background-color: var(--standard-color);
     color: white;
     text-align: center;
-    margin: 0 0 0 0;
+    margin: 0;
     
     padding-top: var(--toolbar-height);
 
@@ -35,10 +46,11 @@ body {
 }
 
 #big-logo {
-    width:50%;
-    max-width: 400px;
-    max-height:25%;
+    width:60%;
+    max-width: 800px;
+    /* max-height:25%; */
     padding: 20px 0 0 0;
+
 }
 
 .photo, .circle, .circle-alt {
