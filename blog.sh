@@ -18,9 +18,15 @@ do
     currentDate=$(date "+%B %-d, %Y")
     nameForHtml="$fileName On $currentDate"
     echo "Name of file being created is '$nameForHtml'"
-    #touch "blog/$fileName
+    touch "blog/$fileName"
+    baseString=$(< "blogbase.html")
 
-    printf "\n\n\n============="
+    textToUse=$(< "temp.txt")
+    baseString={baseString//"replace-this-text"/"$textToUse"}
+    baseString={baseString//"replace-this-url"/"$imageUrl"}
+    "blog/$fileName" < "$baseString"
+    
+    printf "\n\n\n=============\n"
     echo "Pushing this update"
     ./testing.sh
     printf "=============\n\n\n"
