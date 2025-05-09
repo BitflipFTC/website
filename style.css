@@ -9,6 +9,8 @@
     --footer-height:30px;
     --standard-color:#1c1c1c;
     --alt-color:rgb(231, 123, 0);
+    --alt-color:#d08407;
+
     --toolbar-color:var(--alt-color);
 }
 
@@ -220,13 +222,13 @@ section h5 {
     max-width:90%;
 
     flex:0 1 230px;
-    background-color: rgb(153, 82, 0);
+    background-color: #a36808;
 
     border-radius: 20px;
     border: 2px solid white;
     padding: 15px;
 
-    box-shadow: 0px 0px 10px -1px #7e4300;
+    box-shadow: 0px 0px 10px 0px #7e4300;
 
 }
 
