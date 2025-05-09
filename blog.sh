@@ -5,9 +5,23 @@ do
     read -r fileName
     echo "Set name to $fileName"
 
+    echo "Enter the name of the image to use as a header. If the image is the wrong resultion, or aspect ratio, or"
+    echo "if you get the URL wrong, it will be hard to fix, so be carefull."
+    read -r imageUrl
+    echo "Set URL to $imageUrl"
+
     echo "" > "temp.txt"
     vim "temp.txt"
-    
+
     echo "Pushing this update"
     ./testing.sh
+
+    echo "Would you like to continue yes/Yes/YES/y/Y ?"
+    read -r continue
+    if [ $continue -eq "yes" -o $continue -eq "Yes" -o $continue -eq "YES" -o $continue -eq "y" -o $continue -eq "Y" -o ]; then
+        exit 
+    else
+        echo "Continueing"
+    fi
+
 done
