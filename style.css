@@ -14,27 +14,40 @@
     --toolbar-color:var(--alt-color);
 }
 
-header {
-    padding: 0 10% 0 10%;
-}
+/* header { */
+    /* padding-top: 10%; */
+/* } */
 
 .header-text {
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    /* width: 100%; */
+
+    font-size: 100%1;
+
+
 }
 
 #main-header {
-    /* min-height: calc(100vw * (9/16) - var(--toolbar-height)); */
+    /* min-height: calc(100vh - var(--toolbar-height)); */
+    /* height: calc(100vh - (var(--toolbar-height))); */
+    
+    /* background-color: rgb(255, 255, 255, 0.0001); */
+    display: flex;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+
+    position: relative;
+}
+
+.full-height-header {
     height: calc(100vh - (var(--toolbar-height)));
     align-items: flex-end;
     justify-content: center;
     display: flex;
-    flex-grow:1;
-    flex-shrink:1;
-    background-color: rgb(255, 255, 255, 0.0001);
-
-
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
+    flex: 0 1 calc(100vh - (var(--toolbar-height)));
 }
 
 /* .header-text { */
@@ -57,11 +70,14 @@ body {
 }
 
 #big-logo {
-    width:60%;
-    max-width: 600px;
-    /* max-height:25%; */
-    padding: 20px 0 0 0;
+    height: calc( 0.8 * (100vh - (var(--toolbar-height))));
+    min-width: none;
+    /* max-height:20%; */
+    /* padding: 20px 0 0 0; */
+    flex-shrink: 1;
+    flex-grow: 0;
 
+    /* position:; */
 }
 
 .photo, .circle, .circle-alt {
@@ -113,13 +129,17 @@ section {
 .section {
     background-color: inherit;
     font-weight: light;
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
+    
 }
 
 .section-alt {
     background-color: var(--alt-color);
     color:var(--standard-color)
+}
+
+.blur-section {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
 }
 
 #toolbar {
@@ -314,6 +334,21 @@ footer p {
     height: 100%;
 
     text-align: left;
+}
+
+.header-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.header-image {
+    height: calc(100vh - var(--toolbar-height));
+    aspect-ratio: 16/9;
+    width: calc(calc(100vh - var(--toolbar-height)) * 16 / 9);
+    position:fixed;
+
+    z-index: -5;
 }
 
 video {
