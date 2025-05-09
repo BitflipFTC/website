@@ -22,7 +22,7 @@ do
     baseString=$(< "blogbase.html")
 
     textToUse=$(< "temp.txt")
-    textToUse=$(echo "$textToUse" | tr '\n' '<br>')
+textToUse=$(sed ':a;N;$!ba;s/\n/<br>/g' temp.txt)
 
 
     baseString="${baseString//replace-this-text/$textToUse}"
