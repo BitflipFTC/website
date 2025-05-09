@@ -19,9 +19,9 @@ do
     echo "Would you like to continue yes/Yes/YES/y/Y ?"
     read -r continue
     if [ $continue -eq "yes" -o $continue -eq "Yes" -o $continue -eq "YES" -o $continue -eq "y" -o $continue -eq "Y" -o ]; then
-        exit 
+        echo "Continueing" 
     else
-        echo "Continueing"
+        exit
     fi
 
 done
