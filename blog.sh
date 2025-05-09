@@ -13,6 +13,9 @@ do
     echo "" > "temp.txt"
     vim "temp.txt"
 
+
+    #this is the main thing that this script does. it needs to auctually make the new file
+    
     echo "Pushing this update"
     ./testing.sh
 
