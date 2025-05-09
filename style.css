@@ -85,12 +85,13 @@ section {
 
     flex-direction:row;
     justify-content: flex-start;
-
 }
 
 .section {
     background-color: inherit;
     font-weight: light;
+    backdrop-filter: blur(10px);
+
 }
 
 .section-alt {
@@ -114,6 +115,8 @@ section {
     display: flex;
     justify-content: left;
     align-items: center;
+
+    z-index: 5;
 }
 
 #toolbar ul {
@@ -180,6 +183,8 @@ section {
 
 .content {
     flex:1;
+    display: flex;
+    flex-direction: column;
 }
 
 section p {
@@ -218,7 +223,7 @@ section h5 {
     justify-content: center;
     align-items: center;
 
-    /* min-width: 1%; */
+    min-width: 1%;
     max-width:90%;
 
     flex:0 1 230px;
@@ -288,4 +293,21 @@ footer p {
     height: 100%;
 
     text-align: left;
+}
+
+video {
+    margin: 0;
+    margin-top: 20px;
+    padding:0;
+
+    top:0;
+    left:0;
+
+    display:flex;
+    position:fixed;
+    z-index: -1;
+
+    width: 100%;
+
+    aspect-ratio: 16/9;
 }
