@@ -8,7 +8,7 @@
     --toolbar-height: 75px;
     --footer-height:30px;
     --standard-color:#1c1c1c;
-    --alt-color:rgb(231, 123, 0);
+    --alt-color:rgb(244,138,34);
     /* --alt-color:#d08407; */
 
     --toolbar-color:var(--alt-color);
@@ -95,7 +95,7 @@ section {
 
 .section-alt {
     background-color: var(--alt-color);
-    color:black
+    color:var(--standard-color)
 }
 
 #toolbar {
@@ -109,7 +109,7 @@ section {
 
     height: var(--toolbar-height);
 
-    border-bottom: 3px solid white;
+    border-bottom: 3px solid var(--standard-color);
 
     display: flex;
     justify-content: left;
@@ -139,7 +139,7 @@ section {
     
     flex:0;
     display: flex;
-    color:blwhwhiteiteack;
+    color:var(--standard-color);
     font-weight: bold;
     cursor: pointer;
     font-size: 18px;
@@ -196,7 +196,7 @@ section h5 {
     margin: 10px;
 }
 
-#members {
+#members, #sponsors {
     display:flex;
 
     /* grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); */
@@ -229,6 +229,8 @@ section h5 {
     padding: 15px;
 
     box-shadow: 0px 0px 10px 0px #7e4300;
+
+    white-space: nowrap;
 
 }
 
