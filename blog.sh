@@ -22,7 +22,7 @@ do
     baseString=$(< "blogbase.html")
 
     textToUse=$(< "temp.txt")
-textToUse=$(sed ':a;N;$!ba;s/\n/<br>/g' temp.txt)
+    textToUse=$(sed ':a;N;$!ba;s/\n/<br>/g' temp.txt)
 
 
     baseString="${baseString//replace-this-text/$textToUse}"
@@ -30,6 +30,14 @@ textToUse=$(sed ':a;N;$!ba;s/\n/<br>/g' temp.txt)
 
 
     echo "$baseString" > "blog/${fileName}.html"
+
+
+    #deal with putting the new data into blog.html
+    currBlogText=$(< "blog.html")
+    recursiveText="<div>And more coming soon...</div>"
+    recursiveAddition="$recursiveText <a href='bitflip.club/blog/${fileName}.html'> $fileName </a>"
+    currBlogText="${currBlogText//recursiveText/recursiveAddition}"
+    echo "$currBlogText"
 
     printf "\n\n\n=============\n"
     echo "Pushing this update"
