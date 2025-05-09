@@ -9,7 +9,7 @@
     --footer-height:30px;
     --standard-color:#1c1c1c;
     --alt-color:rgb(231, 123, 0);
-    --alt-color:#d08407;
+    /* --alt-color:#d08407; */
 
     --toolbar-color:var(--alt-color);
 }
@@ -222,7 +222,7 @@ section h5 {
     max-width:90%;
 
     flex:0 1 230px;
-    background-color: #a36808;
+    background-color: #a85a00;
 
     border-radius: 20px;
     border: 2px solid white;
