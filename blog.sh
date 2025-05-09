@@ -62,6 +62,7 @@ currBlogText=$(echo "$currBlogText" | sed "s/$escapedText/$escapedAddition/")
 
 echo "$currBlogText"
 
+    echo "$currBlogText" > "blog.html"
 
 
     printf "\n\n\n=============\n"
