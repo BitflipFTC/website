@@ -15,8 +15,8 @@ do
 
 
     #this is the main thing that this script does. it needs to auctually make the new file
-    currentDate=$(date +%B %-d, %Y)
-    nameForHtml="$fileName $currentDate"
+    currentDate=$(date "+%B %-d, %Y")
+    nameForHtml="$fileName On $currentDate"
     echo "Name of file being created is $nameForHtml"
     #touch "blog/$fileName
     echo "Pushing this update"
