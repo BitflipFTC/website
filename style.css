@@ -70,14 +70,14 @@ body {
 }
 
 #big-logo {
-    height: calc( 0.8 * (100vh - (var(--toolbar-height))));
+    max-height: calc( 0.7 * (100vh - (var(--toolbar-height))));
     max-width: 70%;
     /* max-height:20%; */
     /* padding: 20px 0 0 0; */
     flex-shrink: 1;
     flex-grow: 0;
 
-    aspect-ratio: 1438/1250;
+    aspect-ratio: 1250/1438;
     /* position:; */
 }
 
