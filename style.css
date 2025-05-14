@@ -36,8 +36,8 @@
     
     /* background-color: rgb(255, 255, 255, 0.0001); */
     display: flex;
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
+    /* -webkit-backdrop-filter: blur(10px); */
+    /* backdrop-filter: blur(10px); */
 
     position: relative;
 }
@@ -369,6 +369,7 @@ video {
 
     /* background-size: cover; */
     object-fit: cover;
+    filter:blur(10px); 
 }
 
 .video-wrapper {

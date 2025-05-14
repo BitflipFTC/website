@@ -6,7 +6,7 @@ do
     echo "Set name to $fileName"
 
     echo "Enter the name of the image to use as a header. If the image is the wrong resultion, or aspect ratio, or"
-    echo "if you get the URL wrong, it will be hard to fix, so be carefull."
+    echo "if you get the URL wrong, it will be hard to fix, so be careful."
     read -r imageUrl
     echo "Set URL to $imageUrl"
 
@@ -61,7 +61,7 @@ do
     ./testing.sh
     printf "=============\n\n\n"
 
-    echo "Would you like to continue yes/Yes/YES/y/Y ?"
+    echo "Would you like to continue (make more posts)? yes/Yes/YES/y/Y"
     read -r continue
     if [ $continue = "yes" ] ||  [ $continue = "Yes" ] || [ $continue = "YES" ] || [ $continue = "y" ] || [ $continue = "Y" ]; then
         echo "Continueing" 
