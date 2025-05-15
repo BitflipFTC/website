@@ -1,0 +1,95 @@
+#toolbar {
+    /* self-sizing */
+    height: var(--toolbar-height);
+    width: 100%;
+    top:0;
+    position:fixed;
+    z-index: 5;
+
+    /* child-sizing */
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    
+    /* color */
+    background-color: var(--toolbar-color);
+    
+    /* styling */
+    border-bottom: 3px solid var(--standard-color);
+}
+
+#toolbar nav {
+    /* self-sizing */
+    flex:1;
+    width: 100%;
+
+    /* child-sizing */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#toolbar ul {
+    /* self-sizing */
+    flex:1;
+    height: var(--toolbar-height);
+    width: 100%;
+    top:0;
+    padding:0;
+    margin:0;
+
+    /* child-sizing */
+    display: flex;
+    align-items: center;
+    justify-content:flex-start;
+}
+ 
+#toolbar ul li {
+    /* self-sizing */
+    flex:0;
+    height: var(--toolbar-height);
+
+    /* child-sizing */
+    display: flex;
+    align-items: center;
+
+    /* font */
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+    
+    /* color */
+    color:var(--standard-color);
+
+    /* styling */
+    white-space: nowrap;
+}
+ 
+#toolbar ul li #logo {
+    /* self-sizing */
+    height: calc(var(--toolbar-height) * 0.9);
+    padding: 0% 10px;
+    vertical-align: middle; /* this is its own inline item thing */  
+}
+                
+#toolbar ul li a {
+    all:unset;
+}
+
+#toolbar ul li button {
+    all:unset;
+
+    /* styling */
+    background: none;
+    border: none;
+
+    /* self-sizing */
+    height:var(--toolbar-height);
+    padding:0% 1em;
+    margin: 0;
+}
+
+#toolbar ul li:hover {
+    /* color */
+    background-color: rgb(207, 111, 0);
+}   

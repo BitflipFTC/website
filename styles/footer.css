@@ -1,0 +1,37 @@
+footer {
+    /* color */
+    background-color: var(--standard-color);
+    
+    /* self-sizing */
+    height: var(--footer-height);
+    padding: 50px 50px;
+
+    /* child-sizing */
+    display:flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+footer .links a {
+    all:unset;
+
+    /* self-sizing */
+    height: 100%;
+    padding:5px;
+
+    /* child-sizing */
+    align-items: center;
+    justify-items: center;
+
+    /* styling */
+    cursor: pointer;
+}
+
+footer p {
+    /* self-sizing */
+    height: 100%;
+
+    /* font */
+    text-align: left;
+}
