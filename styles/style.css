@@ -1,4 +1,4 @@
-@font-face { font-family: JetbrainsMono; src: url('fonts/JetBrainsMono-Medium.ttf'); }
+@font-face { font-family: JetbrainsMono; src: url('/fonts/JetBrainsMono-Medium.ttf'); }
 
 @media only screen and (orientation: landscape){
     .circle, .circle-alt {
@@ -32,7 +32,7 @@
     width: 100%;
     font-size: 100%;
 
-    margin:25px;
+    margin:25px 0;
 }
 
 #main-header {
