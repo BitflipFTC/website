@@ -6,7 +6,7 @@ REPO_OWNER="BitflipFTC"
 # The name of the repository
 REPO_NAME="website"
 # The filename containing the PAT
-TOKEN_FILE="gitkey.txt"
+TOKEN_FILE="gitkey.key"
 # The username to associate with the commits made by this script
 # This can be your actual GitHub username or a bot-like name
 COMMIT_USER_NAME="BitflipFTC-Bot" # Or your GitHub username
@@ -21,7 +21,7 @@ error_exit() {
   exit 1
 }
 
-# 1. Check if gitkey.txt exists and read the token
+# 1. Check if gitkey.key exists and read the token
 if [ ! -f "$TOKEN_FILE" ]; then
   error_exit "Token file '$TOKEN_FILE' not found. Please create it and place your GitHub PAT inside."
 fi
@@ -41,7 +41,7 @@ git config user.email "$COMMIT_USER_EMAIL"
 
 # 3. Add all changes in the current directory
 echo "Adding all changes to staging area..."
-git add . ':(exclude)*.txt'
+git add . ':(exclude)*.key'
 
 # 4. Commit the changes
 # Check if there are any changes to commit
