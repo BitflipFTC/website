@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /fonts/
+Disallow: /images/
+Disallow: /templates/
+Disallow: /test/
+Disallow: /videos/
