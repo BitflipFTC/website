@@ -21,13 +21,16 @@
 .header-text {
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
+    justify-content: flex-end;
     align-items: center;
     /* width: 100%; */
+    position:relative;
 
+    height:100%;
+    width: 100%;
     font-size: 100%;
 
-
+    margin:25px;
 }
 
 #main-header {
@@ -70,13 +73,17 @@ body {
 }
 
 #big-logo {
-    max-height: calc( 0.9 * (100vh - (var(--toolbar-height))));
-    max-width: 70%;
+    max-height: calc( 0.7 * (100vh - (var(--toolbar-height))));
+    max-width: 100%;
     /* max-height:20%; */
     /* padding: 20px 0 0 0; */
     flex-shrink: 1;
     flex-grow: 0;
 
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     aspect-ratio: 1250/1438;
     /* position:; */
 }
