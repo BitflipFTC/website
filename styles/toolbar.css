@@ -22,7 +22,7 @@
     /* self-sizing */
     flex:1;
     width: 100%;
-    padding:0 20px;
+    padding:0 10px;
 
     /* child-sizing */
     display: flex;
@@ -43,7 +43,6 @@
     display: flex;
     align-items: center;
     justify-content:flex-start;
-    gap:10px;
 }
  
 #toolbar ul li {
