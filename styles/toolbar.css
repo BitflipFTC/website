@@ -22,6 +22,7 @@
     /* self-sizing */
     flex:1;
     width: 100%;
+    padding:0 20px;
 
     /* child-sizing */
     display: flex;
@@ -42,6 +43,7 @@
     display: flex;
     align-items: center;
     justify-content:flex-start;
+    gap:10px;
 }
  
 #toolbar ul li {
@@ -55,7 +57,7 @@
 
     /* font */
     font-weight: bold;
-    font-size: 18px;
+    font-size: 1rem;
     cursor: pointer;
     
     /* color */
@@ -64,10 +66,10 @@
     /* styling */
     white-space: nowrap;
 }
- 
+
 #toolbar ul li #logo {
     /* self-sizing */
-    height: calc(var(--toolbar-height) * 0.6);
+    height: calc(var(--toolbar-height) * 0.7);
     padding: 0% 20px;
     vertical-align: middle; /* this is its own inline item thing */  
 }
