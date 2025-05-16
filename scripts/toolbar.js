@@ -30,7 +30,7 @@ fetch("/templates/footer.html")
   
 
 function toggleDropdown (element) {
-  let dropdown = element.parentElement.querySelector("dropdown-content");
+  let dropdown = element.parentElement.querySelector(".dropdown-content");
   dropdown.style.display = (dropdown.style.display == "block") ? "none" : "block";
   console.log("click");
 }
