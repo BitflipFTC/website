@@ -239,7 +239,7 @@ section h5 {
     width: 100%;
 }
 
-.member {
+.card {
     display: flex;
     flex-direction: column;
     text-align: center;

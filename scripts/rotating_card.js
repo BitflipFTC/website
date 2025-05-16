@@ -1,4 +1,4 @@
-document.querySelectorAll('.member').forEach(card => {
+document.querySelectorAll('.card').forEach(card => {
     card.addEventListener('mousemove', (event) => {
         const rect = card.getBoundingClientRect();
         const mouseX = event.clientX - rect.left; // Mouse X within card
