@@ -252,9 +252,9 @@ section p {
 
 .card {
     /* self-sizing */
-    flex:0 1 230px;
+    flex:0 0 230px;
     min-width: 1%;
-    max-width:90%;
+    max-width:50%;
     padding: 15px;
 
     /* child-sizing */
@@ -292,10 +292,9 @@ section p {
 .card .photo {
     /* self-sizing */
     flex:1;
-    min-width: none;
     width: 100%;
-    margin: 0 auto 15px auto;
     aspect-ratio: 1/1;
+    margin: 0 auto 15px auto;
 
     /* color */
     background-color: var(--standard-color);
@@ -304,18 +303,42 @@ section p {
     border-radius: 50%; /* Makes it a perfect circle */
 }
 
+.card .card-text {
+    height:7em;
+    margin: 0;
+    padding: 0;
+
+    /* child-sizing */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    /* font */
+    text-align: center;
+    font-size:20px;
+
+    border:1px solid red;
+}
+
 .card .name {
     /* font */
-    text-align:inherit;
+    text-align:center;
     font-size: 1em;
     color: white;
     
     /* self-sizing */
-    width: 100%;
-    margin-bottom: 5px;
+    /* flex:1; */
+    width:100%;
+    height:auto;
+    margin:0;
+    padding: 0;
+    
 
     /* styling */
-    flex-wrap: nowrap;
+    white-space: wrap;
+
+    /* border:1px solid blue; */
 }
 
 .card .roles {
@@ -325,7 +348,14 @@ section p {
     color:lightgray;
 
     /* self-sizing */
-    height:90px;
+    flex:1;
+    height:auto;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    /* border:1px solid blue; */
+
 }
 
 /* mobile devices */
@@ -335,6 +365,18 @@ section p {
     }
 
     html {
-        font-size: 14px;
+        font-size: 16px;
+    }
+
+    .card {
+        max-width: 30%;
+    }
+
+    #toolbar ul li button {
+        display:none !important;
+    }
+
+    #toolbar .dropdown {
+        display:flex !important;
     }
 }
