@@ -94,6 +94,7 @@ body {
     /* Dark tint effect */
     background-color: rgba(0, 0, 0, 0.05);
     backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
 }
 
 .header-content {
@@ -141,7 +142,7 @@ body {
 #main-header h1 {
     /* self-sizing */
     bottom:0;
-    margin-bottom:50px;
+    margin-bottom:3%;
     position: absolute;
 }
                                         /* --------------------- Section Styling --------------------- */
