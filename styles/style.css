@@ -265,6 +265,7 @@ section p {
     
     /* font */
     text-align: center;
+    font-size:20px;
     
     /* color */
     background-color: #a85a00;
@@ -306,7 +307,7 @@ section p {
 .card .name {
     /* font */
     text-align:inherit;
-    font-size: 1rem;
+    font-size: 1em;
     color: white;
     
     /* self-sizing */
@@ -320,7 +321,7 @@ section p {
 .card .roles {
     /* font */
     text-align:inherit;
-    font-size: 0.8rem;
+    font-size: 0.8em;
     color:lightgray;
 
     /* self-sizing */
