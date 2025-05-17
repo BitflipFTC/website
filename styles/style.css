@@ -331,4 +331,8 @@ section p {
     .circle, .circle-alt {
         display: none;
     }
+
+    html {
+        font-size: 14px;
+    }
 }
