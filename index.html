@@ -1,42 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bitflip Robotics | FTC 30380</title>
     <meta name="description" content="Bitflip Robotics - A new robotics team competing in FIRST Tech Challenge.">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="icon" type="image/png" href="/images/just_the_coins.png">
 </head>
+
 <body>
     <div id="toolbar"></div>
 
     <div class="content">
-        <div class="video-wrapper">
-            <video autoplay muted loop id="video">
-                <source src="videos/robot.mp4">
+        <div class="header-video-container">
+            <video autoplay muted loop class="header-video">
+                <source src="/videos/robot.mp4">
             </video>
         </div>
         <header id="main-header" class="full-height-header">
-            <div class="header-text">
-                <img id="big-logo" src="images/orange.png">
-                <h1>Bitflip Robotics FTC 30380</h1>
+            <div class="header-content">
+                <img id="big-logo" src="/images/orange.png">
+                <h1>Bitflip Robotics <span class="landscape-only">|</span><br class="portrait-only"> FTC 30380</h1>
             </div>
         </header>
 
         <section class="section-alt">
             <div class="circle"></div>
-            <div class="info">
+            <div class="section-content">
                 <h5>
                     FIRST Information
                 </h5>
-                <p>
-                    FIRST is a worldwide nonprofit organization that provides opportunities for students to compete in team robotics competitions. It empowers people ages 4-18 to design and build their own robots, plan outreach opportunities, request funding from sponsors, compete in tournaments, learn public speaking skills and problem solving, and participate in tournaments. FIRST also gives participants the ability to learn more about career opportunities in the field of STEM, which will aid them in seeking out a job in this field.</p>
+                <p>FIRST is a worldwide nonprofit organization that provides opportunities for students to compete in
+                    team robotics competitions. It empowers people ages 4-18 to design and build their own robots, plan
+                    outreach opportunities, request funding from sponsors, compete in tournaments, learn public speaking
+                    skills and problem solving, and participate in tournaments. FIRST also gives participants the
+                    ability to learn more about career opportunities in the field of STEM, which will aid them in
+                    seeking out a job in this field.
+
+                </p>
             </div>
         </section>
 
-        <section class="section blur-section">
-            <div class="info">
+        <section class="section-default">
+            <div class="section-content">
                 <h5>Sponsors</h5>
                 <p>Thank yall for sponsorin'</p>
             </div>
@@ -44,33 +52,43 @@
         </section>
 
         <section class="section-alt">
-            <div class="info">
+            <div class="section-content">
                 <h5>The Team</h5>
                 <div id="members">
-                    <div class="member">
+                    <div class="card" onclick="window.location.href='/about/#Bella'">
                         <div class="photo"></div>
-                        <p class="name">Bella All</p>
-                        <p class="roles">Logo Design<br>General Engineering<br>Programming<br>Outreach</p>
+                        <div class="card-text">
+                            <p class="name">Bella All</p>
+                            <p class="roles">Logo Design<br>General Engineering<br>Programming<br>Outreach</p>
+                        </div>
                     </div>
-                    <div class="member">
+                    <div class="card" onclick="window.location.href='/about/#Elijah'">
                         <div class="photo"></div>
-                        <p class="name">Elijah Krabbenhoft</p>
-                        <p class="roles">Mechanical Assembly<br>Design<br>Website Design</p>
+                        <div class="card-text">
+                            <p class="name">Elijah Krabbenhoft</p>
+                            <p class="roles">Design<br>Mechanical Assembly<br>General Engineering</p>
+                        </div>
                     </div>
-                    <div class="member">
+                    <div class="card" onclick="window.location.href='/about/#Micah'">
                         <div class="photo"></div>
-                        <p class="name">Micah Krabbenhoft</p>
-                        <p class="roles">CAD Design<br>Mechanical Assembly<br>Team Management</p>
+                        <div class="card-text">
+                            <p class="name">Micah Krabbenhoft</p>
+                            <p class="roles">Design<br>Mechanical Assembly<br>Team Management</p>
+                        </div>
                     </div>
-                    <div class="member">
+                    <div class="card" onclick="window.location.href='/about/#Griffin'">
                         <div class="photo"></div>
-                        <p class="name">Griffin Rzewnicki</p>
-                        <p class="roles">Programming<br>Robot Driving<br>Website Design</p>
+                        <div class="card-text">
+                            <p class="name">Griffin Rzewnicki</p>
+                            <p class="roles">Programming<br>Robot Driving<br>Website Design</p>
+                        </div>
                     </div>
-                    <div class="member">
+                    <div class="card" onclick="window.location.href='/about/#Zoe'">
                         <div class="photo"></div>
-                        <p class="name">Zoë Rzewnicki</p>
-                        <p class="roles">Documentation<br>General Engineering<br>CAD Design<br>Outreach</p>
+                        <div class="card-text">
+                            <p class="name">Zoë Rzewnicki</p>
+                            <p class="roles">Documentation<br>General Engineering<br>Design<br>Outreach</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -78,11 +96,10 @@
 
     </div>
 
-
-
     <footer id="footer">
-        
+
     </footer>
 </body>
-<script src="toolbar.js"></script>
+<script src="/scripts/toolbar.js"></script>
+
 </html>

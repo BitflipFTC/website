@@ -1,0 +1,485 @@
+                                        /* --------------------- General Styling --------------------- */
+html {
+    /* font */
+    font-size:20px;
+}
+
+body {
+    /* font */
+    font-family: "JetBrainsMono", "Courier New", monospace, sans-serif;
+    color: white;
+    text-align: center;
+
+    /* color */
+    background-color: var(--alt-color);
+
+    /* self-sizing */
+    min-height: 100vh;
+
+    padding: 0;
+    margin: 0;
+
+    /* child-sizing */
+    display:flex;
+    flex-direction: column;
+}
+
+/* this is everything that's not header / footer */
+.content {
+    /* self-sizing */
+    flex:1;
+    margin-top: calc(var(--toolbar-height) + 3px);
+
+    /* child-sizing */
+    display: flex;
+    flex-direction: column;
+}
+                                        /* ---------------------  Header --------------------- */
+.header-image-container {
+    /* child-sizing */
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.header-image {
+    /* self-sizing */
+    height: calc(100vh - var(--toolbar-height));
+    width: calc(calc(100vh - var(--toolbar-height)) * 16 / 9);
+    aspect-ratio: 16/9;
+    position:fixed;
+    z-index: -5;
+}
+
+.header-video-container {
+    /* self-sizing */
+    flex:1;
+    height:calc(100vh - var(--toolbar-height));
+    width:100%;
+    
+    /* child-sizing */
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.header-video {
+    /* self-sizing */
+    height:calc(100vh - var(--toolbar-height));
+    width: 100%;
+    aspect-ratio: 16/9;
+    padding:0;
+    margin: 0;
+    position:fixed;
+    z-index: -100;
+
+    /* styling */    
+    object-fit: cover;
+}
+
+.header-video-container::after {
+    content: "";
+
+    /* self-sizing */
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: -5;
+
+    /* color */
+    /* Dark tint effect */
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.header-content {
+    /* font */
+    font-size: 1.5rem;
+    color:var(--standard-color);
+
+    /* self-sizing */
+    height:100%;
+    width: 100%;
+    margin:20px 0 0 0;
+    position:relative;
+    
+    /* child-sizing */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+}
+
+.full-height-header {
+    /* self-sizing */
+    height: calc(100vh - (var(--toolbar-height)));
+    flex: 0 1 calc(100vh - (var(--toolbar-height)));
+    
+    /* child-sizing */
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+                                        /* --------------------- Homepage Header --------------------- */
+#main-header #big-logo {
+    /* self-sizing */
+    flex: 0 1;
+    max-height: calc( 0.7 * (100% - (var(--toolbar-height))));
+    max-width: 80%;
+    aspect-ratio: 1250/1438; /* keep it consistently the right size */
+    margin: 0;
+}
+
+#main-header h1 {
+    /* self-sizing */
+    bottom:0;
+    margin-bottom:3vh;
+    position: absolute;
+
+    /* font */
+    font-size:2rem;
+    color: var(--standard-color)
+}
+                                        /* --------------------- Section Styling --------------------- */
+.circle, .circle-alt {
+    /* self-sizing */
+    flex: 0 0 150px;
+    width: 150px;
+    max-width: 30%;
+    aspect-ratio: 1/1;
+
+    /* styling */
+    border-radius: 50%; /* Makes it a perfect circle */
+}
+
+.circle {
+    /* color */
+    background-color: var(--standard-color); /* Set the color */
+}
+
+.circle-alt {
+    /* color */
+    background-color: var(--alt-color);
+}
+
+section {
+    /* self-sizing */
+    padding: 5%;
+    
+    /* child-sizing */
+    display: flex;
+    flex-direction:row;
+    align-items:center; 
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.section-default {
+    /* color */
+    background-color: inherit;
+
+    /* styling */
+    backdrop-filter: blur(2rem);
+    -webkit-backdrop-filter: blur(2rem);
+}
+
+.section-alt {
+    /* color */
+    background-color: var(--alt-color);
+    
+    /* font */
+    color:var(--standard-color)
+}
+
+.section-content {
+    /* self-sizing */
+    flex: 1 0;
+    padding: 0 3%;
+    
+    /* child-sizing */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+section h5 {
+    /* font */
+    font-size: 1.6rem;
+    text-align: center;
+    color: var(--standard-color);
+    
+    /* self-sizing */
+    margin: 10px;
+    padding: 0 5%;
+}
+
+section p {
+    /* font */
+    font-size: 1.2rem;
+    font-weight: light;
+    text-align:left;
+    line-height: 1.5;
+    color:lightgray;
+
+    /* self-sizing */
+    margin: 0;
+    padding: 0 7%;
+}
+
+#bios {
+    /* child-sizing */
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.bio {
+    /* self-sizing */
+    min-height:75vh;
+    height:75vh;
+    max-height:75vh;
+    padding:0 5%;
+    margin:0 10%;
+
+    /* child-sizing */
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    /* styling */
+    scroll-margin-top: 60px;
+}
+
+.bio{
+    /* styling */
+    border-top: 1px solid lightgrey;
+}
+
+.bio .photo {
+    /* self-sizing */
+    flex:0 1 30%;
+    aspect-ratio: 1/1;
+
+    /* color */
+    background: var(--standard-color);
+
+    /* styling */
+    border-radius: 50%;
+}
+
+.bio-content {
+    /* self-sizing */
+    flex:1 1 30%;
+    max-width: 60%;
+    margin:12.5vh 0;
+    
+    /* child-sizing */
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content:center; 
+    gap:20px;
+}
+
+.bio h5 {
+    /* self-sizing */
+    margin:0;
+    padding:0;
+    align-self: baseline;
+
+    /* font */    
+    font-size:2rem;
+    text-align: left;
+    color:var(--standard-color);
+}
+
+.bio p {
+    /* self-sizing */
+    width: 100%;
+    padding:0;
+    margin:0;
+    margin-right: 50%;
+    align-self: baseline;
+
+    /* font */
+    text-align: left;
+    font-size: 1.2rem;
+    color:lightgray;
+}
+                                        /* --------------------- Card Styling --------------------- */
+#members, #sponsors {
+    /* self-sizing */
+    width: 100%;
+    margin: 20px 0;
+    padding: 0;
+    
+    /* child-sizing */
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    gap: 20px;
+
+    /* font */
+    font-size: 1rem;
+    
+    /* styling */
+    flex-wrap: wrap;
+    perspective: 5000px;
+    user-select: none;
+}
+
+.card {
+    /* self-sizing */
+    flex:0 1 12em;
+    min-width: 10em;
+    max-width:100%;
+    padding: 10px;
+    margin: 0;
+
+    /* child-sizing */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    /* font */
+    text-align: center;
+    font-size:inherit;
+    
+    /* color */
+    background-color: var(--card-color);
+
+    /* styling */
+    border: 2px solid white;
+    border-radius: 20px;
+    white-space: nowrap;
+    cursor:pointer;
+
+    /* animations */
+    will-change:contents;
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    /* self-sizing */
+    transform: scale(1.08);
+}
+
+.card .photo {
+    /* self-sizing */
+    flex:1;
+    width: 100%;
+    aspect-ratio: 1/1;
+    margin: 0 auto 15px auto;
+
+    /* color */
+    background-color: var(--dark-color);
+
+    /* styling */
+    border-radius: 50%; /* Makes it a perfect circle */
+}
+
+.card .card-text {
+    /* self-sizing */
+    width:100%;
+    height:7em;
+    margin: 0;
+    padding: 0;
+
+    /* child-sizing */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    /* font */
+    text-align: center;
+    font-size:inherit;
+}
+
+.card .name {
+    /* font */
+    text-align:center;
+    font-size: 0.95em;
+    color: white;
+    
+    /* self-sizing */
+    /* flex:1; */
+    width:100%;
+    height:auto;
+    margin:0;
+    padding: 0;
+    
+
+    /* styling */
+    white-space: wrap;
+}
+
+.card .roles {
+    /* font */
+    text-align:center;
+    font-size: 0.85em;
+    color:lightgray;
+
+    /* self-sizing */
+    flex:1;
+    height:auto;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.landscape-only {
+    all:inherit;
+
+    /* self-sizing */
+    position: static;
+
+    /* child-sizing */
+    display:inline;
+}
+
+.portrait-only {
+    /* child-sizing */
+    display:none;
+}
+
+/* mobile devices */
+@media only screen and (orientation: portrait){
+    .circle, .circle-alt {
+        display: none;
+    }
+
+    html {
+        font-size: 16px;
+    }
+
+    section {
+        padding-left: 3%;
+        padding: right 3%;
+    }
+
+    .card {
+        max-width: 30%;
+    }
+
+    #toolbar ul li button:not(#home-button) {
+        display:none !important;
+    }
+
+    #toolbar .dropdown {
+        display:flex !important;
+    }
+
+    .landscape-only {
+        display: none !important;
+    }
+
+    .portrait-only {
+        display: inline-block !important;
+    }
+}

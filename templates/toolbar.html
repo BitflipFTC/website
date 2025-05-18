@@ -1,11 +1,19 @@
 <div id="toolbar">
     <nav>
         <ul>
-            <li><a href="/"><img id="logo" src="/images/black.png"></a></li>
-            <li><a href="/about.html"><button>About Us</button></a></li>
-            <li><a href="contact.html"><button>Contact Us</button></a></li>
-            <!-- <li><a href="/robot.html"><button>Robot</button></a></li>   -->
-            <!-- <li><a href="/sponsor.html"><button>Sponsors</button></a></li>  -->
+            <li><a href="/"><button id="home-button"><img id="logo" src="/images/just_the_coins.png"></button></a></li>
+            <li><a href="/about/"><button>About Us</button></a></li>
+            <li><a href="/contact/"><button>Contact Us</button></a></li>
+            <!-- <li><a href="/robot/"><button>Robot</button></a></li>   -->
+            <!-- <li><a href="/sponsor/"><button>Sponsors</button></a></li>  -->
         </ul>
+
+        <div class="dropdown">
+            <button class="dropdown-btn" onclick="toggleDropdown(this)">|||</button>
+            <div class="dropdown-content">
+                <a href="/about/"><button>About Us</button></a>
+                <a href="/contact/"><button>Contact Us</button></a>
+            </div>
+        </div>
     </nav>
 </div>

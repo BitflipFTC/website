@@ -1,0 +1,205 @@
+#toolbar {
+    /* self-sizing */
+    height: var(--toolbar-height);
+    width: 100%;
+    top:0;
+    position:fixed;
+    z-index: 5;
+
+    /* child-sizing */
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    
+    /* color */
+    background-color: var(--toolbar-color);
+    
+    /* styling */
+    border-bottom: 3px solid var(--standard-color);
+}
+
+#toolbar nav {
+    /* self-sizing */
+    flex:1;
+    width: 100%;
+    padding:0;
+
+    /* child-sizing */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#toolbar ul {
+    /* self-sizing */
+    flex:0 1 auto;
+    height: var(--toolbar-height);
+    padding:0;
+    margin:0 0 0 0px;
+
+    /* child-sizing */
+    display: flex;
+    align-items: center;
+    justify-content:flex-start;
+}
+ 
+#toolbar ul li {
+
+
+    /* self-sizing */
+    flex:0;
+    height: var(--toolbar-height);
+
+    /* child-sizing */
+    display: flex;
+    align-items: center;
+
+    /* font */
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    
+    /* color */
+    color:var(--standard-color);
+
+    /* styling */
+    white-space: nowrap;
+    user-select: none;
+}
+
+#toolbar ul li #logo {
+    /* self-sizing */
+    height: calc(var(--toolbar-height) * 0.7);
+    padding: 0;
+    vertical-align: middle; /* this is its own inline item thing */  
+}
+                
+#toolbar ul li a {
+    all:unset;
+}
+
+#toolbar ul li button {
+    all:unset;
+
+    /* styling */
+    background: none;
+    border: none;
+    display:block;
+
+    /* self-sizing */
+    height:var(--toolbar-height);
+    padding:0% 1em;
+    margin: 0;
+}
+
+#toolbar button:hover {
+    /* color */
+    background-color: rgb(19, 19, 19);
+}   
+
+/* ------------------------------------------- dropdowns ------------------------------------------- */
+
+.dropdown {
+    /* border:1px solid blue; */
+    width: auto;
+    height: var(--toolbar-height);
+    aspect-ratio: 1/1;
+    position: relative;
+    padding:0;
+    margin: 0 0 0 auto;
+    
+    /* font */
+    font-size:1.2rem;
+    
+    /* child-sizing */
+    display:none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown-btn {
+    all:unset;
+    
+    /* font */
+    font-size: 1.2rem;
+    color:var(--standard-color);
+    
+    /* self-sizing */
+    flex:1;
+    min-width: 100%;
+    min-height: 100%;
+    padding:0;
+    margin:0 10px 0 0;
+
+    /* styling */
+    cursor:pointer;
+    user-select: none;
+}
+
+.dropdown-btn:hover {
+    /* color */
+    background-color: rgb(207, 111, 0);
+}
+
+.dropdown-content {
+    /* self-sizing */
+    flex:1;
+    flex-direction: column;
+    position: absolute;
+    top: calc(var(--toolbar-height));
+    right:0;
+    
+    /* child-sizing */
+    display: flex;
+    justify-content: center;
+    
+    /* font */
+    font-size: inherit;
+    
+    /* styling */
+    opacity: 0;
+    pointer-events: none;
+    border-left: 3px solid var(--standard-color);
+    border-bottom: 3px solid var(--standard-color);
+
+    /* color */
+    background-color: var(--toolbar-color);
+
+    /* animation */
+    transition: opacity 0.2s ease;
+}
+
+.dropdown-content a {
+    all:unset;
+
+    /* font */
+    text-align: right;
+
+    /* self-sizing */
+    height:fit-content;
+    padding:0;
+    margin:0;
+    
+    /* styling */
+    white-space: nowrap;
+    
+    /* child-sizing */
+    display:flex;
+}
+
+.dropdown-content a button {
+    all:unset;
+
+    /* font */
+    color:var(--standard-color);
+
+    /* self-sizing */
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+
+    /* styling */
+    cursor: pointer;
+    border-top: 3px solid var(--standard-color);
+}
