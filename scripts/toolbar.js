@@ -60,14 +60,15 @@ function toggleDropdown (element) {
   console.log("new pointer events: " + dropdown.style.pointerEvents);
 }
 
-window.onclick = function(element) {
+window.addEventListener("click", function(event) {
   if (!event.target.matches(".dropdown-btn")) {
     let dropdowns = document.getElementsByClassName("dropdown-content");
     for (let i = 0; i < dropdowns.length; i++) {
       let thisDropdown = dropdowns[i];
-      if (thisDropdown.style.display == "block") {
-        thisDropdown.style.display = "none";
+      console.log("test1");
+      if (thisDropdown.style.opacity == "1") {
+        toggleDropdown(thisDropdown);
       }
     }
   }
-}
+});

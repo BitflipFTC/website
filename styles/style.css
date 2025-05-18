@@ -3,7 +3,10 @@
 html {
     /* font */
     font-size:20px;
+
+    
 }
+
 
 body {
     /* font */
@@ -23,6 +26,7 @@ body {
     /* child-sizing */
     display:flex;
     flex-direction: column;
+
 }
 
 /* this is everything that's not header / footer */
@@ -170,7 +174,7 @@ body {
 
 section {
     /* self-sizing */
-    padding: 5% 5%;
+    padding: 5% 3%;
     
     /* child-sizing */
     display: flex;
@@ -235,7 +239,7 @@ section p {
 #members, #sponsors {
     /* self-sizing */
     width: 100%;
-    margin: 20px 0 0 0;
+    margin: 20px 0;
     padding: 0;
     
     /* child-sizing */
@@ -252,9 +256,9 @@ section p {
 
 .card {
     /* self-sizing */
-    flex:0 0 230px;
-    min-width: 1%;
-    max-width:50%;
+    flex:0 1 12.5em;
+    min-width: 10em;
+    max-width:100%;
     padding: 15px;
 
     /* child-sizing */
@@ -275,6 +279,7 @@ section p {
     border-radius: 20px;
     box-shadow: 0px 0px 10px 1px #7e4300;
     white-space: nowrap;
+    /* cursor:pointer; */
 
     /* animations */
     will-change:contents;
@@ -304,6 +309,7 @@ section p {
 }
 
 .card .card-text {
+    width:95%;
     height:7em;
     margin: 0;
     padding: 0;
@@ -317,8 +323,6 @@ section p {
     /* font */
     text-align: center;
     font-size:20px;
-
-    border:1px solid red;
 }
 
 .card .name {
@@ -358,6 +362,16 @@ section p {
 
 }
 
+.landscape-only {
+    all:inherit;
+    display:inline;
+    position: static;
+}
+
+.portrait-only {
+    display:none;
+}
+
 /* mobile devices */
 @media only screen and (orientation: portrait){
     .circle, .circle-alt {
@@ -378,5 +392,13 @@ section p {
 
     #toolbar .dropdown {
         display:flex !important;
+    }
+
+    .landscape-only {
+        display: none !important;
+    }
+
+    .portrait-only {
+        display: inline-block !important;
     }
 }
