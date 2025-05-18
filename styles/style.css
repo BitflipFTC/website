@@ -174,7 +174,7 @@ body {
 
 section {
     /* self-sizing */
-    padding: 5% 3%;
+    padding: 5% 8%;
     
     /* child-sizing */
     display: flex;
@@ -203,7 +203,7 @@ section {
 .section-content {
     /* self-sizing */
     flex: 1 0;
-    padding: 0;
+    padding: 0 3%;
     
     /* child-sizing */
     display: flex;
@@ -230,8 +230,8 @@ section p {
     line-height: 1.5;
 
     /* self-sizing */
-    margin: 0 20px;
-    padding: 0 5%;
+    margin: 0;
+    padding: 0;
 }
 
                                         /* --------------------- Card Styling --------------------- */
@@ -341,8 +341,6 @@ section p {
 
     /* styling */
     white-space: wrap;
-
-    /* border:1px solid blue; */
 }
 
 .card .roles {
@@ -357,9 +355,6 @@ section p {
     width: 100%;
     margin: 0;
     padding: 0;
-
-    /* border:1px solid blue; */
-
 }
 
 .landscape-only {
@@ -379,7 +374,12 @@ section p {
     }
 
     html {
-        font-size: 16px;
+        font-size: 14px;
+    }
+
+    section {
+        padding-left: 1%;
+        padding-right:1%;
     }
 
     .card {
