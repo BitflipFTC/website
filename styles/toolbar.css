@@ -28,9 +28,6 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    /* justify-content: flex-start; */
-
-    /* border:1px solid green; */
 }
 
 #toolbar ul {
@@ -44,8 +41,6 @@
     display: flex;
     align-items: center;
     justify-content:flex-start;
-
-    /* border:1px solid red; */
 }
  
 #toolbar ul li {
@@ -103,44 +98,39 @@
 }   
 
 .dropdown {
-    position: relative;
     /* border:1px solid blue; */
-    display:none;
-    flex-direction: column;
-
+    width: auto;
     height: var(--toolbar-height);
     aspect-ratio: 1/1;
-    width: auto;
-
+    position: relative;
+    padding:0;
+    margin: 0 0 0 auto;
+    
+    /* font */
     font-size:1.2rem;
-
-
+    
+    /* child-sizing */
+    display:none;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-
-    margin: 0 0 0 auto;
-    padding:0;
 }
 
 .dropdown-btn {
     all:unset;
-
     
+    /* font */
     font-size: 1.2rem;
     color:var(--standard-color);
+    
+    /* self-sizing */
     flex:1;
-
-    margin-right:10px;
     min-width: 100%;
     min-height: 100%;
     padding:0;
-    margin:0;
+    margin:0 10px 0 0;
 
-
-
-    /* border:1px solid red; */
-
-
+    /* styling */
     cursor:pointer;
     user-select: none;
 }
@@ -151,53 +141,63 @@
 }
 
 .dropdown-content {
+    /* self-sizing */
     flex:1;
-    display: flex;
     flex-direction: column;
-
-    justify-content: center;
-    /* align-items: center; */
-
-    font-size: inherit;
-
-    opacity: 0;
-    pointer-events: none;
-
     position: absolute;
     top: calc(var(--toolbar-height));
     right:0;
-    background-color: var(--toolbar-color);
-
-    transition: opacity 0.2s ease;
+    
+    /* child-sizing */
+    display: flex;
+    justify-content: center;
+    
+    /* font */
+    font-size: inherit;
+    
+    /* styling */
+    opacity: 0;
+    pointer-events: none;
     border-left: 3px solid var(--standard-color);
     border-bottom: 3px solid var(--standard-color);
+
+    /* color */
+    background-color: var(--toolbar-color);
+
+    /* animation */
+    transition: opacity 0.2s ease;
 }
 
 .dropdown-content a {
     all:unset;
+
+    /* font */
     text-align: right;
 
+    /* self-sizing */
     height:fit-content;
-    display:flex;
-    white-space: nowrap;
-
     padding:0;
     margin:0;
-
-    /* border:1px solid green; */
+    
+    /* styling */
+    white-space: nowrap;
+    
+    /* child-sizing */
+    display:flex;
 }
 
 .dropdown-content a button {
     all:unset;
 
+    /* font */
     color:var(--standard-color);
 
+    /* self-sizing */
     width: 100%;
     height: 100%;
     padding: 20px;
 
+    /* styling */
     cursor: pointer;
-
-
     border-top: 3px solid var(--standard-color);
 }
