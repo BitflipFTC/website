@@ -1,6 +1,6 @@
 :root {
-    --toolbar-height: 75px;
-    --footer-height:30px;
+    --toolbar-height: 3.75rem;
+    --footer-height:2rem;
     --standard-color:#1c1c1c;
     --alt-color:#b46907;
 

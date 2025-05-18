@@ -127,7 +127,7 @@
 
     
     font-size: 1.2rem;
-    color:#1c1c1c;
+    color:var(--standard-color);
     flex:1;
 
     margin-right:10px;
@@ -190,7 +190,7 @@
 .dropdown-content a button {
     all:unset;
 
-    color:#1c1c1c;
+    color:var(--standard-color);
 
     width: 100%;
     height: 100%;
