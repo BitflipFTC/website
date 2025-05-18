@@ -191,13 +191,15 @@ section {
     /* color */
     /* color:white; */
 
-    /* styling */
-    backdrop-filter: blur(2rem);
+    
 }
 
 .section-default {
     /* color */
     background-color: inherit;
+    /* styling */
+    backdrop-filter: blur(2rem);
+    -webkit-backdrop-filter: blur(2rem);
 }
 
 .section-alt {
