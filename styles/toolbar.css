@@ -75,7 +75,7 @@
 #toolbar ul li #logo {
     /* self-sizing */
     height: calc(var(--toolbar-height) * 0.7);
-    padding: 0% 20px;
+    padding: 0;
     vertical-align: middle; /* this is its own inline item thing */  
 }
                 
