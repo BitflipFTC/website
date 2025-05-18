@@ -1,6 +1,6 @@
 footer {
     /* color */
-    background-color: var(--standard-color);
+    background-color: var(--dark-color);
     
     /* self-sizing */
     height: var(--footer-height);

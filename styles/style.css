@@ -15,7 +15,7 @@ body {
     text-align: center;
 
     /* color */
-    background-color: var(--standard-color);
+    background-color: var(--alt-color);
 
     /* self-sizing */
     min-height: 100vh;
@@ -111,7 +111,7 @@ body {
     height:100%;
     width: 100%;
     
-    margin:0;
+    margin:20px 0 0 0;
 
     /* child-sizing */
     display: flex;
@@ -148,6 +148,9 @@ body {
     bottom:0;
     margin-bottom:3%;
     position: absolute;
+
+    /* font */
+    color: var(--standard-color)
 }
                                         /* --------------------- Section Styling --------------------- */
 
@@ -185,6 +188,9 @@ section {
     
     /* color */
     color:white;
+
+    /* styling */
+    backdrop-filter: blur(2rem);
 }
 
 .section-default {
@@ -275,12 +281,12 @@ section p {
     font-size:inherit;
     
     /* color */
-    background-color: #a85a00;
+    background-color: #8d4d04;
 
     /* styling */
     border: 2px solid white;
     border-radius: 20px;
-    box-shadow: 0px 0px 10px 1px #7e4300;
+    /* box-shadow: 0px 0px 10px 1px #7e4300; */
     white-space: nowrap;
     /* cursor:pointer; */
 
@@ -294,7 +300,7 @@ section p {
     transform: scale(1.08);
 
     /* styling */
-    box-shadow: 0px 0px 10px 3px #7e4300;
+    /* box-shadow: 0px 0px 10px 3px #7e4300; */
 }
 
 .card .photo {
@@ -305,7 +311,7 @@ section p {
     margin: 0 auto 15px auto;
 
     /* color */
-    background-color: var(--standard-color);
+    background-color: var(--dark-color);
 
     /* styling */
     border-radius: 50%; /* Makes it a perfect circle */
@@ -390,7 +396,7 @@ section p {
         max-width: 30%;
     }
 
-    #toolbar ul li button {
+    #toolbar ul li button:not(#home-button) {
         display:none !important;
     }
 
