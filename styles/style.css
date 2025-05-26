@@ -206,7 +206,7 @@ section {
 
 section h5 {
     /* font */
-    font-size: 1.6rem;
+    font-size: 1.9rem;
     text-align: center;
     color: var(--standard-color);
     
@@ -219,6 +219,16 @@ section p {
     /* self-sizing */
     margin: 0;
     padding: 0;
+}
+
+.section-image {
+    object-fit:contain;
+    background-color: transparent;
+    backdrop-filter: blur(2rem);
+    position: sticky;
+    top:calc(var(--toolbar-height) + 3px);
+    max-height: calc(100vh - (var(--toolbar-height) + 3px));
+    z-index: -5;
 }
 
 p {
