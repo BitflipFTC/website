@@ -6,7 +6,7 @@ html {
 
 body {
     /* font */
-    font-family: "JetBrainsMono", "Courier New", monospace, sans-serif;
+    font-family: "Roboto", "Courier New", monospace, sans-serif;
     color: white;
     text-align: center;
 
@@ -45,10 +45,13 @@ body {
 .header-image {
     /* self-sizing */
     height: calc(100vh - var(--toolbar-height));
-    width: calc(calc(100vh - var(--toolbar-height)) * 16 / 9);
+    /* width: calc(calc(100vh - var(--toolbar-height)) * 16 / 9); */
+    width: 100vw;
     aspect-ratio: 16/9;
     position:fixed;
     z-index: -5;
+    object-fit:contain;
+    background-color: white;
 }
 
 .header-video-container {
