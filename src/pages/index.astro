@@ -1,0 +1,152 @@
+---
+import Base from "../layouts/base.astro";
+import { Image } from 'astro:assets';
+import bigLogo from "../assets/images/orange.png";
+import ftcLogo from "../assets/images/FIRSTTech_iconHorz_CMYK.svg";
+---
+
+<Base 
+    index="true"
+    title=""
+>
+    <!-- styling for the main page -->
+    <Fragment slot="head">
+        <style>
+            .header-video-container {
+                /* self-sizing */
+                flex:1;
+                height:calc(100vh - var(--toolbar-height));
+                width:100%;
+
+                /* child-sizing */
+                display: flex;
+                align-items: flex-start;
+                justify-content: center;
+            }
+
+            .header-video {
+                /* self-sizing */
+                height:calc(100vh - var(--toolbar-height));
+                width: 100%;
+                aspect-ratio: 16/9;
+                padding:0;
+                margin: 0;
+                position:fixed;
+                z-index: -100;
+            
+                /* styling */    
+                object-fit: cover;
+            }
+
+            .header-video-container::after {
+                content: "";
+            
+                /* self-sizing */
+                width: 100%;
+                height: 100%;
+                position: fixed;
+                z-index: -5;
+            
+                /* color */
+                /* Dark tint effect */
+                background-color: rgba(0, 0, 0, 0.2);
+                backdrop-filter: blur(5px);
+                -webkit-backdrop-filter: blur(5px);
+            }
+
+            #main-header #big-logo {
+                /* self-sizing */
+                flex: 0 1 0;
+                height:auto;
+                width: auto;
+                max-height: calc( 0.7 * (100% - (var(--toolbar-height))));
+                max-width: 80vw;
+                aspect-ratio: 1250/1438; /* keep it consistently the right size */
+                margin-top: 5vh;
+                object-fit: contain;
+            }
+
+            #main-header h1 {
+                /* self-sizing */
+                bottom:0;
+                margin-top:5vh;
+                position: static;
+            
+                /* font */
+                font-size:2rem;
+                color: var(--standard-color)
+            }
+        </style>
+    </Fragment>
+
+    <div class="header-video-container">
+        <video autoplay muted loop class="header-video">
+            <source src="/videos/robot.mp4" type="video/mp4" />
+        </video>
+    </div>
+    <header id="main-header" class="full-height-header">
+        <div class="header-content">
+            <Image src={bigLogo} alt="" id="big-logo"/>
+            <h1>Bitflip Robotics<span class="landscape-only"> | </span><br class="portrait-only" />FTC 30380</h1>
+        </div>
+    </header>
+    <section class="section-alt">
+        <div class="circle"></div>
+        <div class="section-content">
+            <h5>
+                FIRST Information
+            </h5>
+            <p>FIRST is a worldwide nonprofit organization that provides opportunities for students to compete in
+                team robotics competitions. It empowers people ages 4-18 to design and build their own robots, plan
+                outreach opportunities, request funding from sponsors, compete in tournaments, learn public speaking
+                skills and problem solving, and participate in tournaments. FIRST also gives participants the
+                ability to learn more about career opportunities in the field of STEM, which will aid them in
+                seeking out a job in this field.
+            </p>
+        </div>
+    </section>
+    <Image src={ftcLogo} alt="a banner with the First logo" class="section-image" />
+    <section class="section-alt">
+        <div class="team-section-wrapper">
+            <h5>The Team</h5>
+            <div id="members">
+                <div class="card" onclick="window.location.href='/about/#Bella'">
+                    <div class="photo"></div>
+                    <div class="card-text">
+                        <p class="name">Bella All</p>
+                        <p class="roles">Logo Design<br>General Engineering<br>Programming<br>Outreach</p>
+                    </div>
+                </div>
+                <div class="card" onclick="window.location.href='/about/#Elijah'">
+                    <div class="photo"></div>
+                    <div class="card-text">
+                        <p class="name">Elijah Krabbenhoft</p>
+                        <p class="roles">Design<br>Mechanical Assembly<br>General Engineering</p>
+                    </div>
+                </div>
+                <div class="card" onclick="window.location.href='/about/#Micah'">
+                    <div class="photo"></div>
+                    <div class="card-text">
+                        <p class="name">Micah Krabbenhoft</p>
+                        <p class="roles">Design<br>Mechanical Assembly<br>Team Management</p>
+                    </div>
+                </div>
+                <div class="card" onclick="window.location.href='/about/#Griffin'">
+                    <div class="photo"></div>
+                    <div class="card-text">
+                        <p class="name">Griffin Rzewnicki</p>
+                        <p class="roles">Programming<br>Robot Driving<br>Website Design</p>
+                    </div>
+                </div>
+                <div class="card" onclick="window.location.href='/about/#Zoe'">
+                    <div class="photo"></div>
+                    <div class="card-text">
+                        <p class="name">Zoë Rzewnicki</p>
+                        <p class="roles">Documentation<br>General Engineering<br>Design<br>Outreach</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</Base>

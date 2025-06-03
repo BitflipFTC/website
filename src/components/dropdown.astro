@@ -1,0 +1,47 @@
+---
+const {pages} = Astro.props;
+---
+
+<div class=dropdown>
+    <button class=dropdown-btn>|||</button>
+    <div class=dropdown-content>
+        {pages.map(page => (
+            page.active ? <a href={page.link}><button>{page.name}</button></a> : ""
+        ))}
+    </div>
+</div>
+
+<script>
+    // @ts-nocheck
+    function toggleDropdown (element) {
+      let dropdown = element.parentElement.querySelector(".dropdown-content");
+      // dropdown.style.display = (dropdown.style.display == "block") ? "none" : "block";
+      console.log("Opacity:", window.getComputedStyle(dropdown).opacity);
+      dropdown.style.opacity = (dropdown.style.opacity == "0") ? "1" : "0";
+      dropdown.style.pointerEvents = (dropdown.style.opacity == "1") ? "all" : "none";
+      console.log("toggle dropdown");
+      console.log("new pointer events: " + dropdown.style.pointerEvents);
+    }
+
+    let content = document.getElementsByClassName("dropdown-content")[0];
+    content.style.opacity = window.getComputedStyle(content).opacity;
+
+    let button = document.getElementsByClassName("dropdown-btn")[0];
+    button.addEventListener("click", function() {
+        toggleDropdown(this);
+    })
+
+    window.addEventListener("click", function(event) {
+      if (!event.target.matches(".dropdown-btn")) {
+        let dropdowns = document.getElementsByClassName("dropdown-content");
+        for (let i = 0; i < dropdowns.length; i++) {
+          let thisDropdown = dropdowns[i];
+          console.log("test1");
+          if (thisDropdown.style.opacity == "1") {
+            toggleDropdown(thisDropdown);
+          }
+        }
+      }
+    });
+</script>
+

@@ -1,0 +1,32 @@
+---
+import {Image} from "astro:assets";
+import logo from "../assets/images/just_the_coins.png";
+import Dropdown from "./dropdown.astro";
+//import fs from "node:fs";
+//import path from 'node:path';
+
+/* idk why it's angry now. dont bother it */
+const pages = [
+    {link:'/about/',    name:'About Us',   active:true},
+    {link:'/contact/',  name:'Contact Us', active:true},
+    {link:'/outreach/', name:'Outreach',   active:true},
+    {link:'/sponsor/',  name:'Sponsors',   active:true},
+    {link:'/robot/',    name:'Robots',     active:true}
+]
+
+---
+<div id="toolbar">
+    <nav>
+        <ul>
+            <li><a href="/"><button id="home-button"><Image loading="eager" alt="" id="logo" src={logo}></button></a></li>
+
+            { /* it's angry because of the commented out code up top. don't worry about it */
+                pages.map(page => (
+                    page.active ? <li><a href={page.link}><button>{page.name}</button></a></li> : ""
+                ))
+            }
+        </ul>
+
+        <Dropdown class="dropdown" pages={pages}></Dropdown>
+    </nav>
+</div>

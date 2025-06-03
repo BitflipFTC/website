@@ -25,14 +25,17 @@ body {
 }
 
 /* this is everything that's not header / footer */
-.content {
+main {
     /* self-sizing */
     flex:1;
+    width: 100%;
     margin-top: calc(var(--toolbar-height) + 3px);
 
     /* child-sizing */
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
                                         /* ---------------------  Header --------------------- */
 .header-image-container {
@@ -118,6 +121,7 @@ body {
     /* self-sizing */
     height: calc(100vh - (var(--toolbar-height)));
     flex: 0 1 calc(100vh - (var(--toolbar-height)));
+    width: 100%;
     
     /* child-sizing */
     display: flex;
@@ -125,32 +129,15 @@ body {
     justify-content: center;
 }
                                         /* --------------------- Homepage Header --------------------- */
-#main-header #big-logo {
-    /* self-sizing */
-    flex: 0 1;
-    max-height: calc( 0.7 * (100% - (var(--toolbar-height))));
-    max-width: 80%;
-    aspect-ratio: 1250/1438; /* keep it consistently the right size */
-    margin: 0;
-}
 
-#main-header h1 {
-    /* self-sizing */
-    bottom:0;
-    margin-bottom:3vh;
-    position: absolute;
-
-    /* font */
-    font-size:2rem;
-    color: var(--standard-color)
-}
                                         /* --------------------- Section Styling --------------------- */
 .circle, .circle-alt {
     /* self-sizing */
-    flex: 0 0 150px;
-    width: 150px;
-    max-width: 30%;
+    flex: 1 1 0;
+    max-width: 15%;
+    min-width: 0;
     aspect-ratio: 1/1;
+    margin:0;
 
     /* styling */
     border-radius: 50%; /* Makes it a perfect circle */
@@ -168,13 +155,16 @@ body {
 
 section {
     /* self-sizing */
-    padding: 5%;
+    padding:5%;
+    flex:1;
+    width:100%;
+    box-sizing: border-box;
     
     /* child-sizing */
     display: flex;
     flex-direction:row;
     align-items:center; 
-    justify-content: flex-start;
+    justify-content:space-evenly;
     gap: 10px;
 }
 
@@ -198,7 +188,9 @@ section {
 .section-content {
     /* self-sizing */
     flex: 1 0;
-    padding: 0 5%;
+    margin: 0;
+    max-width: 80%;
+    padding:0;
     
     /* child-sizing */
     display: flex;
@@ -225,13 +217,16 @@ section p {
 }
 
 .section-image {
-    object-fit:contain;
-    background-color: transparent;
-    backdrop-filter: blur(2rem);
     position: sticky;
     top:calc(var(--toolbar-height) + 3px);
-    max-height: calc(100vh - (var(--toolbar-height) + 3px));
-    z-index: -5;
+    z-index: -4;
+    background-color: white;
+
+    width: 100%;
+    box-sizing: border-box;
+    padding:2.5% 5%;
+    height:auto;
+    flex:1;
 }
 
 p {
@@ -284,7 +279,9 @@ p {
 .bio .photo {
     /* self-sizing */
     flex:0 1 30%;
+    object-fit: scale-down;
     aspect-ratio: 1/1;
+    margin: 5% 0;
 
     /* color */
     background: var(--standard-color);
@@ -297,7 +294,7 @@ p {
     /* self-sizing */
     flex:1 1 30%;
     max-width: 60%;
-    margin:12.5vh 0;
+    margin:12.5vh 2.5vw;
     
     /* child-sizing */
     display: flex;
@@ -488,6 +485,10 @@ p {
     section {
         padding-left: 0%;
         padding-right:0%;
+    }
+
+    .section-content {
+        max-width: auto;
     }
 
     .card {

@@ -1,4 +1,4 @@
-footer {
+#footer {
     /* color */
     background-color: var(--dark-color);
     
@@ -13,7 +13,7 @@ footer {
     justify-content: space-between;
 }
 
-footer .links a {
+#footer .links a {
     all:unset;
 
     /* self-sizing */
@@ -28,7 +28,7 @@ footer .links a {
     cursor: pointer;
 }
 
-footer p {
+#footer p {
     /* self-sizing */
     height: 100%;
 

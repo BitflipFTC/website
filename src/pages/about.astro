@@ -1,0 +1,151 @@
+---
+import Base from "../layouts/base.astro";
+---
+
+<Base 
+    index="false" 
+    title="About"
+>
+    <Fragment slot="head">
+        <style>
+            #bios {
+                /* child-sizing */
+                display:flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            
+            .bio {
+                /* self-sizing */
+                min-height:75vh;
+                flex:1;
+                height:75vh;
+                padding:0 5%;
+                position: relative;
+                /* margin:0 10%; */
+            
+                /* child-sizing */
+                display:flex;
+                flex-direction: row-reverse;
+                align-items: center;
+                justify-content: space-between;
+            
+                /* styling */
+                scroll-margin-top: 60px;
+            }
+            
+            .bio::after {
+                content:"";
+                margin:0 10%;
+                border-top: 1px solid lightgrey;
+                position:absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 80%;
+            }
+            
+            .bio .photo {
+                /* self-sizing */
+                flex:0 1 30%;
+                object-fit: scale-down;
+                aspect-ratio: 1/1;
+                margin: 5% 0;
+            
+                /* color */
+                background: var(--standard-color);
+            
+                /* styling */
+                border-radius: 50%;
+            }
+            
+            .bio-content {
+                /* self-sizing */
+                flex:1 1 30%;
+                max-width: 60%;
+                margin:12.5vh 2.5vw;
+                
+                /* child-sizing */
+                display: flex;
+                flex-direction: column;
+                align-items: center; 
+                justify-content:center; 
+                gap:20px;
+            }
+            
+            .bio h5 {
+                /* self-sizing */
+                margin:0;
+                padding:0;
+                align-self: baseline;
+            
+                /* font */    
+                font-size:2rem;
+                text-align: left;
+                color:var(--standard-color);
+            }
+            
+            .bio p {
+                /* self-sizing */
+                width: 100%;
+                padding:0;
+                margin:0;
+                align-self: baseline;
+            }
+        </style>
+    </Fragment>
+
+    <header>
+        <div id="about-header" class="header-content">
+            <h1>About Us</h1>
+        </div>
+    </header>
+    
+    <section class="section-alt">
+        <div class="section-content">
+            <p>
+                We are Bitflip, a first-year high school robotics team based in Charleston, South Carolina. Our team is comprised of five people—four of us have experience in robotics, and one of us is a beginner. Our members are eager to begin competing in First Tech Challenge, and we aim to go all the way to the World Championship. Because we are starting from scratch, we have created a team name, colors, and logo. We have also developed a website so that anyone who is interested can find information about our team. Furthermore, we are working through the process of creating an FLL team, which we will coach and mentor as part of our outreach efforts.                
+            </p>
+        </div>
+    </section>
+    <section class="section-alt">
+        <div id="bios">
+            <div id="Bella" class="bio">
+                <div class="photo"></div>
+                <div class="bio-content">
+                    <h5>Bella All</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Consectetur adipiscing elit quisque faucibus ex sapien vitae. Ex sapien vitae pellentesque sem placerat in id. Placerat in id cursus mi pretium tellus duis. Pretium tellus duis convallis tempus leo eu aenean.</p>
+                </div>
+            </div>
+            <div id="Elijah" class="bio">
+                <div class="photo"></div>
+                <div class="bio-content">
+                    <h5>Elijah Krabbenhoft</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Consectetur adipiscing elit quisque faucibus ex sapien vitae. Ex sapien vitae pellentesque sem placerat in id. Placerat in id cursus mi pretium tellus duis. Pretium tellus duis convallis tempus leo eu aenean.</p>
+                </div>
+            </div>
+            <div id="Micah" class="bio">
+                <div class="photo"></div>
+                <div class="bio-content">
+                    <h5>Micah Krabbenhoft</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Consectetur adipiscing elit quisque faucibus ex sapien vitae. Ex sapien vitae pellentesque sem placerat in id. Placerat in id cursus mi pretium tellus duis. Pretium tellus duis convallis tempus leo eu aenean.</p>
+                </div>
+            </div>
+            <div id="Griffin" class="bio">
+                <div class="photo"></div>
+                <div class="bio-content">
+                    <h5>Griffin Rzewnicki</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Consectetur adipiscing elit quisque faucibus ex sapien vitae. Ex sapien vitae pellentesque sem placerat in id. Placerat in id cursus mi pretium tellus duis. Pretium tellus duis convallis tempus leo eu aenean.</p>
+                </div>
+            </div>
+            <div id="Zoe" class="bio">
+                <div class="photo"></div>
+                <div class="bio-content">
+                    <h5>Zoë Rzewnicki</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Consectetur adipiscing elit quisque faucibus ex sapien vitae. Ex sapien vitae pellentesque sem placerat in id. Placerat in id cursus mi pretium tellus duis. Pretium tellus duis convallis tempus leo eu aenean.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</Base>

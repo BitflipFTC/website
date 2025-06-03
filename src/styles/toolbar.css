@@ -28,6 +28,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
 }
 
 #toolbar ul {
@@ -35,7 +36,7 @@
     flex:0 1 auto;
     height: var(--toolbar-height);
     padding:0;
-    margin:0 0 0 0px;
+    margin:0;
 
     /* child-sizing */
     display: flex;
@@ -70,6 +71,8 @@
 #toolbar ul li #logo {
     /* self-sizing */
     height: calc(var(--toolbar-height) * 0.7);
+    width: auto;
+    object-fit: contain;
     padding: 0;
     vertical-align: middle; /* this is its own inline item thing */  
 }
@@ -90,6 +93,9 @@
     height:var(--toolbar-height);
     padding:0% 1em;
     margin: 0;
+    flex:1;
+
+    transition: background-color 0.3s ease-out;
 }
 
 #toolbar button:hover {
@@ -106,7 +112,7 @@
     aspect-ratio: 1/1;
     position: relative;
     padding:0;
-    margin: 0 0 0 auto;
+    margin: 0;
     
     /* font */
     font-size:1.2rem;
@@ -130,7 +136,7 @@
     min-width: 100%;
     min-height: 100%;
     padding:0;
-    margin:0 10px 0 0;
+    margin:0;
 
     /* styling */
     cursor:pointer;
