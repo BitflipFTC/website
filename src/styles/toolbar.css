@@ -123,6 +123,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 .dropdown-btn {
@@ -140,6 +143,7 @@
     margin:0;
 
     /* styling */
+    touch-action: manipulation;
     cursor:pointer;
     user-select: none;
 }
@@ -166,6 +170,8 @@
 
     
     /* styling */
+    user-select: none;
+    -webkit-user-select: none;
     z-index: 4;
     opacity: 0;
     pointer-events: none;
@@ -176,7 +182,7 @@
     background-color: var(--toolbar-color);
 
     /* animation */
-    transition: transform 0.5s ease, opacity 0.3s ease;
+    transition: transform 0.3s ease, opacity 0.2s ease;
 
     transform: translate(0, -100px);
 }

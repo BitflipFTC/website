@@ -1,5 +1,7 @@
 ---
 import Base from "../layouts/base.astro";
+import { Image } from 'astro:assets';
+import headerImg from "../assets/images/event-experience.jpg";
 ---
 
 <Base 
@@ -7,7 +9,7 @@ import Base from "../layouts/base.astro";
     title="Outreach"
 >
     <div class="header-image-container">
-        <img src="/images/event-experience.jpg" class="header-image">
+        <Image alt="" src={headerImg} class="header-image">
     </div>
     
     <header class="full-height-header">

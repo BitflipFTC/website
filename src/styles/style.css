@@ -6,7 +6,7 @@ html {
 
 body {
     /* font */
-    font-family: "Roboto", "Courier New", monospace, sans-serif;
+    font-family: "Open Sans", monospace, sans-serif;
     color: white;
     text-align: center;
 
@@ -54,7 +54,7 @@ main {
     position:fixed;
     z-index: -5;
     object-fit:contain;
-    background-color: white;
+    background-color: var(--alt-color);
 }
 
 .header-video-container {
@@ -395,9 +395,10 @@ p {
 
 .card .photo {
     /* self-sizing */
-    flex:1;
+    flex:1 1 0; /* makes the circles work on mobile for some reason */
     width: 100%;
     aspect-ratio: 1/1;
+    box-sizing: border-box;
     margin: 0 auto 15px auto;
 
     /* color */
