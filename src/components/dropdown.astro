@@ -3,59 +3,50 @@ const {pages} = Astro.props;
 ---
 
 <div class=dropdown>
-    <button class=dropdown-btn><span class="material-symbols-outlined size" id="menu">menu</span><span class="material-symbols-outlined size" id="close">close</span></button>
-    <div class=dropdown-content>
-        {pages.map(page => (
-            page.active ? <a href={page.link}><button>{page.name}</button></a> : ""
-        ))}
-    </div>
+    <button class=dropdown-btn>
+      <div class="bar1" />
+      <div class="bar2" />
+      <div class="bar3" />
+    </button>
 </div>
 
 <script>
     // @ts-nocheck
     function toggleDropdown () {
-      console.log("Opacity:", window.getComputedStyle(content).opacity);
-
-      if (content.style.opacity == "0") {
-        content.style.opacity = "1";
-        content.style.pointerEvents = "all";
-        menu.style.opacity = "0";
-        close.style.opacity = "1";
-        console.log("open dropdown!");
-      } else {
-        content.style.opacity = "0";
-        content.style.pointerEvents = "none";
-        menu.style.opacity = "1";
-        close.style.opacity = "0";
+      if (dropdown.classList.contains("open")) {
+        dropdown.classList.remove('open');
+        content.classList.remove('open');
         console.log("close dropdown!");
+      } else {
+        dropdown.classList.add('open');
+        content.classList.add('open');
+        console.log("open dropdown!");
       }
     }
 
-    const menu = document.getElementById("menu");
-    menu.style.opacity = window.getComputedStyle(menu).opacity;
-
-    const close = document.getElementById("close");
-    close.style.opacity = window.getComputedStyle(close).opacity;
-
-    const content = document.getElementsByClassName("dropdown-content")[0];
-    content.style.opacity = window.getComputedStyle(content).opacity;
+    const dropdown = document.getElementsByClassName("dropdown")[0];
 
     const button = document.getElementsByClassName("dropdown-btn")[0];
 
-    button.onclick = function() {toggleDropdown()};
+    const content = document.getElementsByClassName("dropdown-content")[0];
+    button.onclick = function(event) {
+        // Prevent click event from propagating to the window listener
+        event.stopPropagation();
+        toggleDropdown();
+    };
+
+    content.addEventListener("click", function(event) {
+        event.stopPropagation();
+    });
 
     window.addEventListener("click", function(event) {
-      if (!event.target.matches(".dropdown-btn")) {
-        console.log(`event target: ${event.target}`);
-        let dropdowns = document.getElementsByClassName("dropdown-content");
-        for (let i = 0; i < dropdowns.length; i++) {
-          let thisDropdown = dropdowns[i];
-          console.log("test1");
-          if (window.getComputedStyle(thisDropdown).opacity == "1") {
-            toggleDropdown(thisDropdown);
-          }
+        // If the click is not inside the dropdown itself (either button or content)
+        if (!dropdown.contains(event.target)) {
+            if (dropdown.classList.contains("open")) {
+                toggleDropdown(); // Close it
+            }
         }
-      }
     });
+
 </script>
 

@@ -23,6 +23,7 @@
     flex:1;
     width: 100%;
     padding:0;
+    z-index: auto;
 
     /* child-sizing */
     display: flex;
@@ -106,13 +107,13 @@
 /* ------------------------------------------- dropdowns ------------------------------------------- */
 
 .dropdown {
-    /* border:1px solid blue; */
     width: auto;
     height: var(--toolbar-height);
     aspect-ratio: 1/1;
     position: relative;
     padding:0;
     margin: 0;
+    z-index: auto;
     
     /* font */
     font-size:1.2rem;
@@ -152,7 +153,7 @@
     /* self-sizing */
     flex:1;
     flex-direction: column;
-    position: absolute;
+    position: fixed;
     top: calc(var(--toolbar-height));
     right:0;
     
@@ -161,9 +162,11 @@
     justify-content: center;
     
     /* font */
-    font-size: inherit;
+    font-size: 1.2rem;
+
     
     /* styling */
+    z-index: 4;
     opacity: 0;
     pointer-events: none;
     border-left: 3px solid var(--standard-color);
@@ -173,7 +176,15 @@
     background-color: var(--toolbar-color);
 
     /* animation */
-    transition: opacity 0.2s ease;
+    transition: transform 0.5s ease, opacity 0.3s ease;
+
+    transform: translate(0, -100px);
+}
+
+.dropdown-content.open {
+    opacity: 1;
+    pointer-events: all;
+    transform: translate(0,0);
 }
 
 .dropdown-content a {
@@ -204,8 +215,12 @@
     position: relative;
     width: 100%;
     height: 100%;
-    padding: 20px;
+    padding: 30px 40px;
 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     /* styling */
     cursor: pointer;
     border-top: 3px solid var(--standard-color);
@@ -217,21 +232,28 @@
     background-color: rgb(19, 19, 19);
 }   
 
-.material-symbols-outlined.size {
-    font-size: 40px;
+.bar1, .bar2, .bar3 {
+    width: 35px;
+
+    flex:1;
+    height: 3px;
+    background-color: var(--standard-color);
+    margin: 8px auto;
+    border-radius: 10px;
+    transition: 0.3s ease-in-out;
+
     pointer-events: none;
-    transition: 0.4s;
-    position: absolute;
-    top:50%;
-    left:50%;
-    transform: translate(-50%, -50%);
-
 }
 
-#menu {
-    opacity: 1;
+.open .bar1 {
+    transform: translate(0,11px) rotate(-45deg);
 }
 
-#close {
+.open .bar2 {
     opacity: 0;
+}
+
+.open .bar3 {
+    transform: translate(0,-11px) rotate(45deg);
+
 }

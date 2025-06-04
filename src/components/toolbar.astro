@@ -30,3 +30,8 @@ const pages = [
         <Dropdown class="dropdown" pages={pages}></Dropdown>
     </nav>
 </div>
+<div class=dropdown-content>
+    {pages.map(page => (
+        page.active ? <a href={page.link}><button>{page.name}</button></a> : ""
+    ))}
+</div>
