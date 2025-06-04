@@ -201,6 +201,7 @@
     color:var(--standard-color);
 
     /* self-sizing */
+    position: relative;
     width: 100%;
     height: 100%;
     padding: 20px;
@@ -208,4 +209,29 @@
     /* styling */
     cursor: pointer;
     border-top: 3px solid var(--standard-color);
+}
+
+
+.dropdown-content button:hover {
+    /* color */
+    background-color: rgb(19, 19, 19);
+}   
+
+.material-symbols-outlined.size {
+    font-size: 40px;
+    pointer-events: none;
+    transition: 0.4s;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+
+}
+
+#menu {
+    opacity: 1;
+}
+
+#close {
+    opacity: 0;
 }

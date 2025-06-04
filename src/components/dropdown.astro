@@ -3,7 +3,7 @@ const {pages} = Astro.props;
 ---
 
 <div class=dropdown>
-    <button class=dropdown-btn>|||</button>
+    <button class=dropdown-btn><span class="material-symbols-outlined size" id="menu">menu</span><span class="material-symbols-outlined size" id="close">close</span></button>
     <div class=dropdown-content>
         {pages.map(page => (
             page.active ? <a href={page.link}><button>{page.name}</button></a> : ""
@@ -13,31 +13,45 @@ const {pages} = Astro.props;
 
 <script>
     // @ts-nocheck
-    function toggleDropdown (element) {
-      let dropdown = element.parentElement.querySelector(".dropdown-content");
-      // dropdown.style.display = (dropdown.style.display == "block") ? "none" : "block";
-      console.log("Opacity:", window.getComputedStyle(dropdown).opacity);
-      dropdown.style.opacity = (dropdown.style.opacity == "0") ? "1" : "0";
-      dropdown.style.pointerEvents = (dropdown.style.opacity == "1") ? "all" : "none";
-      console.log("toggle dropdown");
-      console.log("new pointer events: " + dropdown.style.pointerEvents);
+    function toggleDropdown () {
+      console.log("Opacity:", window.getComputedStyle(content).opacity);
+
+      if (content.style.opacity == "0") {
+        content.style.opacity = "1";
+        content.style.pointerEvents = "all";
+        menu.style.opacity = "0";
+        close.style.opacity = "1";
+        console.log("open dropdown!");
+      } else {
+        content.style.opacity = "0";
+        content.style.pointerEvents = "none";
+        menu.style.opacity = "1";
+        close.style.opacity = "0";
+        console.log("close dropdown!");
+      }
     }
 
-    let content = document.getElementsByClassName("dropdown-content")[0];
+    const menu = document.getElementById("menu");
+    menu.style.opacity = window.getComputedStyle(menu).opacity;
+
+    const close = document.getElementById("close");
+    close.style.opacity = window.getComputedStyle(close).opacity;
+
+    const content = document.getElementsByClassName("dropdown-content")[0];
     content.style.opacity = window.getComputedStyle(content).opacity;
 
-    let button = document.getElementsByClassName("dropdown-btn")[0];
-    button.addEventListener("click", function() {
-        toggleDropdown(this);
-    })
+    const button = document.getElementsByClassName("dropdown-btn")[0];
+
+    button.onclick = function() {toggleDropdown()};
 
     window.addEventListener("click", function(event) {
       if (!event.target.matches(".dropdown-btn")) {
+        console.log(`event target: ${event.target}`);
         let dropdowns = document.getElementsByClassName("dropdown-content");
         for (let i = 0; i < dropdowns.length; i++) {
           let thisDropdown = dropdowns[i];
           console.log("test1");
-          if (thisDropdown.style.opacity == "1") {
+          if (window.getComputedStyle(thisDropdown).opacity == "1") {
             toggleDropdown(thisDropdown);
           }
         }
