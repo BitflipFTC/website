@@ -1,6 +1,6 @@
 #footer {
     /* color */
-    background-color: var(--dark-color);
+    background-color: var(--footer-color);
     
     /* self-sizing */
     height: var(--footer-height);
@@ -35,4 +35,8 @@
     /* font */
     text-align: left;
     font-size: 1rem;
+}
+
+#footer img {
+    filter:brightness(0) saturate(100%) invert(100%) sepia(7%) saturate(2%) hue-rotate(79deg) brightness(103%) contrast(101%);
 }

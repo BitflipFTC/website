@@ -2,9 +2,11 @@
     --toolbar-height: 75px;
     --footer-height:2rem;
     --standard-color:#ff881e;
-    --alt-color:#1c1c1c;
+    /* --alt-color:#1c1c1c; */
+    --alt-color:#17171d;
 
-    --dark-color:#161616;
+    --dark-color:#141414;
+    --footer-color:#111116;
 
     --card-color: #8d4d04;
 

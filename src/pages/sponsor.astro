@@ -11,10 +11,15 @@ import Base from "../layouts/base.astro";
 
     <Fragment slot="head">
         <style>
+            body{
+                background-color: #17171d;
+            }
             iframe {
-                /* height:auto;  */
-                background:var(--alt-color);
                 position: relative;
+            }
+
+            @media only screen and (orientation: portrait) {
+
             }
         </style>
     </Fragment>
@@ -31,13 +36,21 @@ import Base from "../layouts/base.astro";
     <iframe src="https://hcb.hackclub.com/donations/start/bitflip-ftc-fundraiser" style="border:none;" name="donateFrame" scrolling="no" frameborder="0" marginheight="0px" marginwidth="0px" width="1000" height="1000" allow="payment" allowfullscreen id="hcbframe"></iframe>
     
     <script>
-        const frame : HTMLIFrameElement = document.getElementById('hcbframe');
+        //@ts-nocheck
+        const frame = document.getElementById('hcbframe');
 
-        frame.width = `${window.innerWidth * 0.75}`;
         frame.height = `1200px`;
-
+        
+        let widthCoeff = () => {
+            if(window.innerWidth > window.innerHeight) {
+                return 0.75;
+            } else {
+                return 1;
+            }
+        }
+        frame.width = `${window.innerWidth * widthCoeff()}px`;
         window.onresize = function () {
-            frame.width = `${window.innerWidth * 0.75}`;
+            frame.width = `${window.innerWidth * widthCoeff()}px`;
         }
     </script>
 
