@@ -38,8 +38,6 @@ import Base from "../layouts/base.astro";
     <script>
         //@ts-nocheck
         const frame = document.getElementById('hcbframe');
-
-        frame.height = `1200px`;
         
         let widthCoeff = () => {
             if(window.innerWidth > window.innerHeight) {
@@ -48,9 +46,16 @@ import Base from "../layouts/base.astro";
                 return 1;
             }
         }
+
+        let height = () => {
+            return 1500;
+        };
+
         frame.width = `${window.innerWidth * widthCoeff()}px`;
+        frame.height = `${height()}px`;
         window.onresize = function () {
             frame.width = `${window.innerWidth * widthCoeff()}px`;
+            frame.height = `${height()}px`;
         }
     </script>
 
