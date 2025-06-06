@@ -1,6 +1,4 @@
 User-agent: *
-Disallow: /fonts/
-Disallow: /images/
-Disallow: /templates/
-Disallow: /test/
-Disallow: /videos/
+Allow /
+
+Sitemap: https://www.bitflip.club/sitemap.xml
