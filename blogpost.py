@@ -57,4 +57,11 @@ open("".join([blogPath,filename]), mode='w').write(blogPostText)
 
 os.remove('temp.md')
 
-os.execl("./push_blog.sh")
+print("push changes?")
+input1 = input()
+input2 = re.sub(r'^[Yy][Ee]?[Ss]?$', '', input1)
+
+if input1 == input2:
+    os.execl("./push_blog.sh")
+else:
+    print("ok. run    './push_blog.sh'     to push the changes!")

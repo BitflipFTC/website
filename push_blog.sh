@@ -60,6 +60,7 @@ git commit -m "$COMMIT_MESSAGE"
 # 5. Construct the authenticated remote URL
 # Using x-access-token is the recommended way for PATs
 REMOTE_URL="https://x-access-token:${GITHUB_TOKEN}@github.com/${REPO_OWNER}/${REPO_NAME}.git"
+echo $REMOTE_URL
 
 # 6. Get the current branch name
 CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
