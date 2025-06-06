@@ -1,0 +1,156 @@
+---
+import type { MarkdownInstance } from 'astro';
+import Base from '../layouts/base.astro';
+
+// const folderPath = path.join(process.cwd(), 'src', 'pages', 'blogs');
+
+//@ts-nocheck
+const posts = Object.values(import.meta.glob('./blogs/*.md', { eager: true }));
+const descLength = 97;
+
+// sort by date
+posts.sort((a, b) => {
+    const dateA = new Date(a.frontmatter.date);
+    const dateB = new Date(b.frontmatter.date);
+    return dateB.getTime() - dateA.getTime();
+})
+// posts.forEach((post) => {
+//     console.log(post);
+//     console.log(post.getHeadings());
+// })
+
+
+
+/* Object post {
+    file (returns the exact path)
+    url (returns local path (/blogs/example))
+    frontmatter {
+        the things that you set in the blog's frontmatter
+    }
+
+    // nice organized. slug is link-friendly
+    getHeadings() = {
+
+    [
+      { depth: 1, slug: 'hi', text: 'HI!' },
+      {
+        depth: 3,
+        slug: 'today-we-did-a-robot-it-was-cool',
+        text: 'Today we did a robot. It was cool.'
+      }
+    ]
+  
+    }
+
+
+    // literally the raw content
+    rawContent() = {
+
+    # HI!
+
+    ### Today we did a robot. It was *cool*.
+
+    }
+}
+
+*/
+---
+
+<Base
+    index="true"
+    title="Blog"
+    desc="Our blog page—what we're doing!"
+>
+    <Fragment slot="head">
+        <style>
+            #blogs {
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                width: 100%;
+                padding:5%;
+                gap:50px;
+            }
+            .blog {
+                background-color: var(--card-color);
+                border-radius: 10px;
+                min-width: 100%;
+                border:2px solid white;
+                padding:20px;
+                cursor: pointer;
+                pointer-events: none;
+                /* box-shadow: 10px black inset; */
+                box-sizing: border-box;
+            }
+            .blog-link {
+                all:unset;
+                cursor:pointer;
+                min-width: 60%;
+                max-width: 60%;
+        
+                flex:1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: transform 0.2s ease;
+
+            }
+            .blog-link:hover {
+                transform:scale(110%);
+            }
+            .blog-title {
+                all:unset;
+                color:white;
+                font-size: 1.5rem;
+            }
+            .blog-date {
+                color:lightgray;
+                text-align: center;
+                font-size: 1.1rem;
+                margin-bottom: 10px;
+            }
+            .blog-desc {
+                padding:0 25px;
+                font-size:1.1rem;
+                color:white;
+            }
+
+            @media only screen and (orientation:portrait) {
+                .blog-desc {
+                    padding:0;
+                }
+
+                .blog-link{
+                    min-width: 90%;
+                    max-width: 90%;
+                }
+            }
+        </style>
+    </Fragment>
+
+    <header>
+        <div class="header-content">
+            <h1>Blogs</h1>
+        </div>
+    </header>
+
+    <section class="section-default">
+        <div id="blogs">
+            {//@ts-nocheck
+            posts.map((post) => {
+                return (
+                <a href={post.url} class="blog-link">
+                    <div class="blog">
+                        <div class="blog-text">
+                            <h3 class="blog-title">{post.getHeadings()[0].text}</h3>
+                            <p class="blog-date">{post.frontmatter.author} • {post.frontmatter.date}</p>
+                            <p class="blog-desc">{post.frontmatter.desc/*(post.frontmatter.desc.length > descLength ? post.frontmatter.desc.substring(0, descLength) + "..." : post.frontmatter.desc)*/}</p>
+                        </div>
+                    </div>
+                </a>
+                )
+            })}
+        </div>
+    </section>
+</Base>

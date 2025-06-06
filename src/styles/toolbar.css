@@ -75,7 +75,7 @@
     width: auto;
     object-fit: contain;
     padding: 0;
-    vertical-align: middle; /* this is its own inline item thing */  
+    vertical-align: middle; /* this is its own inline item thing */ 
 }
                 
 #toolbar ul li a {
@@ -101,7 +101,7 @@
 
 #toolbar button:hover {
     /* color */
-    background-color: rgb(0,0,0);
+    background-color: var(--button-hover);
 }   
 
 /* ------------------------------------------- dropdowns ------------------------------------------- */

@@ -28,7 +28,7 @@
     cursor: pointer;
 }
 
-#footer p {
+#footer span {
     /* self-sizing */
     height: 100%;
 

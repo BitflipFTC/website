@@ -1,0 +1,151 @@
+---
+import Base from './base.astro';
+const { frontmatter } = Astro.props;
+---
+
+<Base 
+    index="true"
+    title={frontmatter.title}
+    desc="These are blogs from Bitflip Robotics!"
+>
+    <Fragment slot="head">
+        <style is:global>
+            #back {
+                cursor:pointer;
+            }
+            a {
+                all:unset;
+                display: flex;
+                margin:0 0 0 15%;
+                padding:30px;
+                border-radius: 50%;
+            }
+            .back-button {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: fit-content;
+                /* border:1px solid red; */
+                transform: translate(-4px);
+                
+            }
+            #back:hover {
+                background-color: var(--button-hover);
+            }
+
+            .line1, .line2 {
+                width: 40px;
+
+                height: 10px;
+                background-color: var(--standard-color);
+                /* margin: 20px; */
+                border-radius: 10px;
+
+                pointer-events: none;
+            }
+            
+
+            .line1 {
+                transform: rotate(-45deg);
+                margin-bottom: 12.5px;
+            }
+
+            .line2 {
+                transform: rotate(45deg);
+            }
+
+            header {
+                display:flex;
+                flex-direction: row;
+                justify-content: space-around;
+                align-items: center;
+                /* border:1px solid red; */
+            }
+            
+            .header-content {
+                margin: 0 auto;
+                /* border:1px solid red; */
+            }
+            .header-content h1 {
+                margin: 40.2px 0 15px 0;
+            }
+            .header-content aside {
+                color:lightgrey;
+                font-size: 1.5rem;
+            }
+            .section-content {
+                display: flex;
+                justify-content: flex-start;
+                flex-direction: column;
+                width: 100%;
+            }
+            .section-content h1 {
+                all:unset;
+                font-size:1.7rem;
+                margin:10px 0;
+            }
+            .section-content h2 {
+                all:unset;
+                font-size:1.5rem;
+                text-align: left;
+                align-content: flex-start;
+                font-weight: bold;
+                
+            }
+            .section-content h3 {
+                all:unset;
+                font-size:1.4rem;
+                text-align: left;
+                
+            }
+            .section-content p {
+                all:unset;
+                text-align: left;
+                font-size: 1rem;
+                
+            }
+            .section-content hr {
+                flex:1 1 10px;
+                width: 80%;
+                border:none;
+                border-top:1px solid lightgray;
+                height:1px;
+                margin:30px 0;
+            }
+            .section-content h1,
+            .section-content h2,
+            .section-content h3,
+            .section-content p {
+                width: 100%;
+            }
+            </style>
+    </Fragment>
+
+    
+
+    <header>
+        <a href="./" id="back">
+            <div class="back-button">
+                   <div class="line1" />
+                   <div class="line2" />
+            </div>
+        </a>
+
+        <div class="header-content">
+            <h1>{frontmatter.title}</h1>
+            <aside>by {frontmatter.author} • {frontmatter.date}</aside>
+        </div>
+        <a>
+        <div class="back-button" style="opacity:0">
+            <div class="line1" />
+            <div class="line2" />
+        </div>
+        </a>
+    </header>
+
+    <section class="section-default">
+        <div class="section-content">
+            <slot />
+        </div>
+    </section>
+</Base>

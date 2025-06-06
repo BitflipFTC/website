@@ -1,6 +1,6 @@
 ---
 import {Image} from "astro:assets";
-import logo from "../assets/images/just_the_coins.png";
+import logo from "../assets/images/just_the_coins_correct.png";
 import Dropdown from "./dropdown.astro";
 //import fs from "node:fs";
 //import path from 'node:path';
@@ -11,7 +11,8 @@ const pages = [
     {link:'/contact/',  name:'Contact Us', active:true},
     {link:'/outreach/', name:'Outreach',   active:false},
     {link:'/sponsor/',  name:'Sponsors',   active:true},
-    {link:'/robot/',    name:'Robots',     active:false}
+    {link:'/robot/',    name:'Robots',     active:false},
+    {link:'/blogs/',    name:'Blog',       active:true},
 ]
 
 ---
@@ -27,7 +28,7 @@ const pages = [
             }
         </ul>
 
-        <Dropdown class="dropdown" pages={pages}></Dropdown>
+        <Dropdown class="dropdown"></Dropdown>
     </nav>
 </div>
 <div class=dropdown-content>
