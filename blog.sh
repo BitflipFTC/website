@@ -58,7 +58,7 @@ do
     #update the git repo
     printf "\n\n\n=============\n"
     echo "Pushing this update"
-    ./testing.sh
+    ./push_blog.sh
     printf "=============\n\n\n"
 
     echo "Would you like to continue (make more posts)? yes/Yes/YES/y/Y"

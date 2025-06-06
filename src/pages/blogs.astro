@@ -114,6 +114,7 @@ posts.sort((a, b) => {
                 padding:0 25px;
                 font-size:1.1rem;
                 color:white;
+                text-align: center;
             }
 
             @media only screen and (orientation:portrait) {
@@ -143,7 +144,7 @@ posts.sort((a, b) => {
                 <a href={post.url} class="blog-link">
                     <div class="blog">
                         <div class="blog-text">
-                            <h3 class="blog-title">{post.getHeadings()[0].text}</h3>
+                            <h3 class="blog-title">{post.frontmatter.title}</h3>
                             <p class="blog-date">{post.frontmatter.author} • {post.frontmatter.date}</p>
                             <p class="blog-desc">{post.frontmatter.desc/*(post.frontmatter.desc.length > descLength ? post.frontmatter.desc.substring(0, descLength) + "..." : post.frontmatter.desc)*/}</p>
                         </div>

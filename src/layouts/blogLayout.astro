@@ -13,7 +13,7 @@ const { frontmatter } = Astro.props;
             #back {
                 cursor:pointer;
             }
-            a {
+            header a {
                 all:unset;
                 display: flex;
                 margin:0 0 0 15%;
@@ -44,6 +44,11 @@ const { frontmatter } = Astro.props;
                 pointer-events: none;
             }
             
+            .section-content a {
+                all:unset;
+                text-decoration: underline;
+                cursor: pointer;
+            }
 
             .line1 {
                 transform: rotate(-45deg);
@@ -78,11 +83,15 @@ const { frontmatter } = Astro.props;
                 justify-content: flex-start;
                 flex-direction: column;
                 width: 100%;
+                text-align: left;
+                line-height:40px;
+                padding: 0 10%;
             }
             .section-content h1 {
                 all:unset;
                 font-size:1.7rem;
                 margin:10px 0;
+                text-align: center;
             }
             .section-content h2 {
                 all:unset;
@@ -90,13 +99,17 @@ const { frontmatter } = Astro.props;
                 text-align: left;
                 align-content: flex-start;
                 font-weight: bold;
-                
+                margin: 10px 0;
             }
             .section-content h3 {
                 all:unset;
                 font-size:1.4rem;
                 text-align: left;
                 
+            }
+
+            .section-content ul {
+                align-self: start;
             }
             .section-content p {
                 all:unset;

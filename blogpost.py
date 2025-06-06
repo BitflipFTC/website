@@ -1,32 +1,60 @@
 #!/usr/bin/python3
 import subprocess
 from datetime import datetime
+import os
+import re
+
+
+blogPath = "./src/pages/blogs/"
 
 #Get the name of the blog post
-print("Enter the blog post name: ")
-nameString = input()
+titleIsValid = False
+
+while (not(titleIsValid)):
+    print("Enter the blog post title / filename (only alphanumeric characters and spaces): ")
+    nameString = input()
+    nameString = re.sub(r'[^a-zA-Z0-9 ]', '', nameString)
+    filename = nameString.replace(" ", "-").replace("	","").lower() + ".md"
+    print(f"Title: {nameString}")
+    print(f"File name: {filename}")
+
+    if (os.path.exists("".join([blogPath,filename]))):
+        print("Name already exists. try again\n")
+    else:
+        titleIsValid = True
+
+
+print("Who is the author? (Format: John Doe)")
+author = input()
+
+# Get the desc of the post
+print("Enter the blog post description (try to keep it to one or two sentences): ")
+desc = input()
 
 #Get the image of the blog post
-print("Enter the blog post image: ")
-urlString = input()
+#print("Enter the blog post image: ")
+#urlString = input()
+
+
+currentDate = datetime.now().strftime('%B %-d, %Y')
+
+#Create the new blog post
+blogContent = f"""---
+layout: '../../layouts/blogLayout.astro'
+title: '{nameString}'
+desc: '{desc}'
+date: '{currentDate}'
+author: '{author}'
+---
+"""
 
 #Get the text of the blog post
 print("Press enter to edit blog contents")
-dummyLine = input(); open('temp.txt', mode='w').write(''); subprocess.run('vim temp.txt', shell=True)
-blogPostText=open('temp.txt').read()
+dummyLine = input(); open('temp.md', mode='w').write(blogContent); subprocess.run('nano temp.md', shell=True)
+blogPostText=open('temp.md').read()
 
-#Create the new blog post
-baseText = open('blogbase.html').read()
-baseText = baseText.replace('replace-this-url', urlString)
-baseText = baseText.replace('replace-this-header', nameString)
-baseText = baseText.replace('replace-this-text', blogPostText.replace("\n", '<br>'))
-currentDate = datetime.now().strftime('%B %-d %Y')
-fileName = "blog/" + nameString + " On " + currentDate + ".html"
-open(fileName, mode='w').write(baseText)
+open("".join([blogPath,filename]), mode='w').write(blogPostText)
 
-#Update the blog.html file to have the new post
-currentBlogPage = open('blog.html').read()
-recrusiveText = '<div>And more coming soon...</div>'
-formatedOutputCard = "<div class='blog-card'>" + "<img src='" + urlString + "'>" + "<a href='" + fileName + "'>" + nameString + " On " + currentDate + "</a> </div>" + recrusiveText
-currentBlogPage = currentBlogPage.replace('<div>And more coming soon...</div>', formatedOutputCard)
-open('blog.html', mode='w').write(currentBlogPage)
+os.remove('temp.md')
+
+os.execl("./push_blog.sh")

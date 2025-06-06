@@ -13,6 +13,9 @@ COMMIT_USER_NAME="BitflipFTC-Bot" # Or your GitHub username
 # The email to associate with the commits
 COMMIT_USER_EMAIL="bot@users.noreply.github.com" # Or your GitHub email
 
+CURRENT_USER_NAME=$(git config user.name)
+CURRENT_USER_EMAIL=$(git config user.email)
+
 # --- Script Logic ---
 
 # Function to exit with an error message
@@ -41,7 +44,7 @@ git config user.email "$COMMIT_USER_EMAIL"
 
 # 3. Add all changes in the current directory
 echo "Adding all changes to staging area..."
-git add . ':(exclude)*.key'
+git add ./src/pages/blogs/ ':(exclude)*.key'
 
 # 4. Commit the changes
 # Check if there are any changes to commit
@@ -50,7 +53,7 @@ if git diff --staged --quiet; then
   exit 0
 fi
 
-COMMIT_MESSAGE="Automated update via script $(date)"
+COMMIT_MESSAGE="Blog update via script $(date)"
 echo "Committing changes with message: '$COMMIT_MESSAGE'..."
 git commit -m "$COMMIT_MESSAGE"
 
@@ -77,5 +80,9 @@ else
   # git reset --hard HEAD~1
   error_exit "Push failed. Check token permissions, remote URL, and network."
 fi
+
+# reset config
+git config user.name "$CURRENT_USER_NAME"
+git config user.email "$CURRENT_USER_EMAIL"
 
 echo "Script finished successfully."
