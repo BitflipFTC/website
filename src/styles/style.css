@@ -200,7 +200,7 @@ section {
     justify-content: flex-start;
 }
 
-section h5 {
+section h2 {
     /* font */
     font-size: 1.9rem;
     text-align: center;
@@ -221,7 +221,7 @@ section p {
     /* position: sticky; */
     /* top:calc(var(--toolbar-height) + 3px); */
     z-index: -4;
-    background-color: #17171dc5;
+    background-color: #d1d1d131;
 
     width: 100%;
     box-sizing: border-box;
@@ -426,27 +426,5 @@ p {
 
     .portrait-only {
         display: inline-block !important;
-    }
-
-    .bio-content {
-        max-width: 100%;
-        margin:0;
-    }
-
-    .bio-content h5 {
-        align-self: center;
-    }
-
-    .bio-content p {
-        align-self: center;
-    }
-
-    .bio {
-        flex-direction: column;
-    }
-
-    .bio .photo {
-        flex: 1 1 30vh;
-        margin-top:20px;
     }
 }

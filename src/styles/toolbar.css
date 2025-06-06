@@ -96,12 +96,12 @@
     margin: 0;
     flex:1;
 
-    transition: background-color 0.3s ease-out;
+    transition: background-color 0.2s ease-out;
 }
 
 #toolbar button:hover {
     /* color */
-    background-color: rgb(19, 19, 19);
+    background-color: rgb(0,0,0);
 }   
 
 /* ------------------------------------------- dropdowns ------------------------------------------- */
@@ -146,11 +146,6 @@
     touch-action: manipulation;
     cursor:pointer;
     user-select: none;
-}
-
-.dropdown-btn:hover {
-    /* color */
-    background-color: rgb(207, 111, 0);
 }
 
 .dropdown-content {
@@ -235,7 +230,7 @@
 
 .dropdown-content button:hover {
     /* color */
-    background-color: rgb(19, 19, 19);
+    background-color: rgb(0, 0, 0);
 }   
 
 .bar1, .bar2, .bar3 {

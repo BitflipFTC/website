@@ -75,7 +75,7 @@ import Base from "../layouts/base.astro";
                 gap:20px;
             }
             
-            .bio h5 {
+            .bio h3 {
                 /* self-sizing */
                 margin:0;
                 padding:0;
@@ -93,6 +93,31 @@ import Base from "../layouts/base.astro";
                 padding:0;
                 margin:0;
                 align-self: baseline;
+            }
+
+            @media only screen and (orientation: portrait){
+            .bio-content {
+                max-width: 100%;
+                margin:0;
+            }
+        
+            .bio-content h3 {
+                align-self: center;
+            }
+        
+            .bio-content p {
+                align-self: center;
+            }
+        
+            .bio {
+                flex-direction: column;
+            }
+        
+            .bio .photo {
+                flex: 1 1 30vh;
+                margin-top:20px;
+            }
+
             }
         </style>
     </Fragment>
@@ -115,35 +140,35 @@ import Base from "../layouts/base.astro";
             <div id="Bella" class="bio">
                 <div class="photo"></div>
                 <div class="bio-content">
-                    <h5>Bella All</h5>
+                    <h3>Bella All</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Consectetur adipiscing elit quisque faucibus ex sapien vitae. Ex sapien vitae pellentesque sem placerat in id. Placerat in id cursus mi pretium tellus duis. Pretium tellus duis convallis tempus leo eu aenean.</p>
                 </div>
             </div>
             <div id="Elijah" class="bio">
                 <div class="photo"></div>
                 <div class="bio-content">
-                    <h5>Elijah Krabbenhoft</h5>
+                    <h3>Elijah Krabbenhoft</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Consectetur adipiscing elit quisque faucibus ex sapien vitae. Ex sapien vitae pellentesque sem placerat in id. Placerat in id cursus mi pretium tellus duis. Pretium tellus duis convallis tempus leo eu aenean.</p>
                 </div>
             </div>
             <div id="Micah" class="bio">
                 <div class="photo"></div>
                 <div class="bio-content">
-                    <h5>Micah Krabbenhoft</h5>
+                    <h3>Micah Krabbenhoft</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Consectetur adipiscing elit quisque faucibus ex sapien vitae. Ex sapien vitae pellentesque sem placerat in id. Placerat in id cursus mi pretium tellus duis. Pretium tellus duis convallis tempus leo eu aenean.</p>
                 </div>
             </div>
             <div id="Griffin" class="bio">
                 <div class="photo"></div>
                 <div class="bio-content">
-                    <h5>Griffin Rzewnicki</h5>
+                    <h3>Griffin Rzewnicki</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Consectetur adipiscing elit quisque faucibus ex sapien vitae. Ex sapien vitae pellentesque sem placerat in id. Placerat in id cursus mi pretium tellus duis. Pretium tellus duis convallis tempus leo eu aenean.</p>
                 </div>
             </div>
             <div id="Zoe" class="bio">
                 <div class="photo"></div>
                 <div class="bio-content">
-                    <h5>Zoë Rzewnicki</h5>
+                    <h3>Zoë Rzewnicki</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Consectetur adipiscing elit quisque faucibus ex sapien vitae. Ex sapien vitae pellentesque sem placerat in id. Placerat in id cursus mi pretium tellus duis. Pretium tellus duis convallis tempus leo eu aenean.</p>
                 </div>
             </div>
