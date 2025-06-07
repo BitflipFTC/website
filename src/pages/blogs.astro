@@ -1,5 +1,4 @@
 ---
-import { imageConfig } from 'astro:assets';
 import Base from '../layouts/base.astro';
 import {Image} from 'astro:assets';
 
@@ -7,10 +6,6 @@ import {Image} from 'astro:assets';
 
 //@ts-nocheck
 const posts = Object.values(import.meta.glob('./blogs/*.md', { eager: true }));
-
-
-
-
 
 const images = Object.values(import.meta.glob('./blogs/images/*.png', {eager:true}))
     .map(module => module.default); 
@@ -24,8 +19,7 @@ for (let i = 0; i < posts.length; i++) {
     if (!imagePath) continue;
 
     console.log(imagePath);
-    let imagePathArr = imagePath.split("/");
-    const imageFilename = imagePathArr[imagePathArr.length - 1].replace(".png","");
+    let imageFilename = imagePath.split("/").pop().replace(".png","");
 
     console.log("going into the next embedded loop \n\n\n");
     for (let j = 0; j < images.length; j++) {
