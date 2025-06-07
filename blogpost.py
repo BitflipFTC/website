@@ -82,8 +82,8 @@ desc: '{desc}'
 date: '{currentDate}'
 specificDate: '{specificDate}'
 author: '{author}'
-image: '{imageFinalPath}'
-imageAlt: '{imageAltText}'
+image: '{imageFinalPath if imageFinalPath else ""}'
+imageAlt: '{imageAltText if imageAltText else ""}'
 ---
 """
 
