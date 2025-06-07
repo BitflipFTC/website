@@ -3,6 +3,7 @@ layout: '../../layouts/blogLayout.astro'
 title: 'A Second Automated Blog Post'
 desc: 'Testing the automated deployment of blogs!'
 date: 'June 6, 2025'
+specificDate: '2025-06-06T18:00'
 author: 'Griffin Rzewnicki'
 ---
 # Automated Deployment of Blogs

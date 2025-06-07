@@ -3,6 +3,7 @@ layout: '../../layouts/blogLayout.astro'
 title: 'First Automated Blog Post'
 desc: 'This is the first automated blog post.'
 date: 'June 6, 2025'
+specificDate: '2025-06-06T17:30'
 author: 'Griffin Rzewnicki'
 ---
 
