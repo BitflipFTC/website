@@ -16,6 +16,10 @@ const { frontmatter } = Astro.props;
             header a {
                 all:unset;
                 display: flex;
+                /* flex:1; */
+                height: fit-content;
+                align-items: center;
+                justify-content: center;
                 margin:0 0 0 15%;
                 padding:30px;
                 border-radius: 50%;
@@ -59,15 +63,14 @@ const { frontmatter } = Astro.props;
                 transform: rotate(45deg);
             }
 
-            header {
-                display:flex;
-                flex-direction: row;
-                justify-content: space-around;
-                align-items: center;
-                /* border:1px solid red; */
+            header{
+                overflow: hidden;
             }
-            
+
             .header-content {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
                 margin: 0 auto;
                 /* border:1px solid red; */
             }
@@ -81,6 +84,7 @@ const { frontmatter } = Astro.props;
             .section-content {
                 display: flex;
                 justify-content: flex-start;
+                align-items: start;
                 flex-direction: column;
                 width: 100%;
                 text-align: left;
@@ -118,8 +122,8 @@ const { frontmatter } = Astro.props;
                 
             }
             .section-content hr {
-                flex:1 1 10px;
-                width: 80%;
+                flex:1 1;
+                width: 100%;
                 border:none;
                 border-top:1px solid lightgray;
                 height:1px;
@@ -130,6 +134,12 @@ const { frontmatter } = Astro.props;
             .section-content h3,
             .section-content p {
                 width: 100%;
+            }
+
+            @media only screen and (orientation:portrait) {
+                .section-content {
+                    line-height: 30px;
+                }
             }
             </style>
     </Fragment>
@@ -146,7 +156,7 @@ const { frontmatter } = Astro.props;
 
         <div class="header-content">
             <h1>{frontmatter.title}</h1>
-            <aside>by {frontmatter.author} • {frontmatter.date}</aside>
+            <aside>by {frontmatter.author}<span class="landscape-only"> • </span><br class="portrait-only">{frontmatter.date}</aside>
         </div>
         <a>
         <div class="back-button" style="opacity:0">

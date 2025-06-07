@@ -21,6 +21,8 @@ CURRENT_USER_EMAIL=$(git config user.email)
 # Function to exit with an error message
 error_exit() {
   echo "ERROR: $1" >&2
+  git config user.name "$CURRENT_USER_NAME"
+  git config user.email "$CURRENT_USER_EMAIL"
   exit 1
 }
 

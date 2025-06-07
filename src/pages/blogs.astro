@@ -10,8 +10,8 @@ const descLength = 97;
 
 // sort by date
 posts.sort((a, b) => {
-    const dateA = new Date(a.frontmatter.date);
-    const dateB = new Date(b.frontmatter.date);
+    const dateA = new Date(a.frontmatter.specificDate);
+    const dateB = new Date(b.frontmatter.specificDate);
     return dateB.getTime() - dateA.getTime();
 })
 // posts.forEach((post) => {
@@ -69,7 +69,7 @@ posts.sort((a, b) => {
                 align-items: center;
                 flex-direction: column;
                 width: 100%;
-                padding:5%;
+                padding:0 5%;
                 gap:50px;
             }
             .blog {
@@ -145,7 +145,7 @@ posts.sort((a, b) => {
                     <div class="blog">
                         <div class="blog-text">
                             <h3 class="blog-title">{post.frontmatter.title}</h3>
-                            <p class="blog-date">{post.frontmatter.author} • {post.frontmatter.date}</p>
+                            <p class="blog-date">{post.frontmatter.author}<span class="landscape-only"> • </span><br class="portrait-only"/>{post.frontmatter.date}</p>
                             <p class="blog-desc">{post.frontmatter.desc/*(post.frontmatter.desc.length > descLength ? post.frontmatter.desc.substring(0, descLength) + "..." : post.frontmatter.desc)*/}</p>
                         </div>
                     </div>

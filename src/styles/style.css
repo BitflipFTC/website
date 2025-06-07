@@ -41,10 +41,11 @@ main {
                                         /* ---------------------  Header --------------------- */
 header {
     width:100%;
-    flex:1;
     flex-direction: row;
     display: flex;
     justify-content: center;
+    flex:0;
+    align-items: center;
 }
 
 .header-image-container {
