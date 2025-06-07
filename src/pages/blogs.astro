@@ -1,11 +1,50 @@
 ---
-import type { MarkdownInstance } from 'astro';
+import { imageConfig } from 'astro:assets';
 import Base from '../layouts/base.astro';
+import {Image} from 'astro:assets';
 
 // const folderPath = path.join(process.cwd(), 'src', 'pages', 'blogs');
 
 //@ts-nocheck
 const posts = Object.values(import.meta.glob('./blogs/*.md', { eager: true }));
+
+
+
+
+
+const images = Object.values(import.meta.glob('./blogs/images/*.png', {eager:true}))
+    .map(module => module.default); 
+console.log(images)
+
+const postimageKey = {}
+
+for (let i = 0; i < posts.length; i++) {
+    const post = posts[i];
+    let imagePath : string = post.frontmatter.image;
+    if (!imagePath) continue;
+
+    console.log(imagePath);
+    let imagePathArr = imagePath.split("/");
+    const imageFilename = imagePathArr[imagePathArr.length - 1].replace(".png","");
+
+    console.log("going into the next embedded loop \n\n\n");
+    for (let j = 0; j < images.length; j++) {
+        console.log(imageFilename);
+        console.log(images[j].src + " is the stuff");
+        if (images[j].src.includes(imageFilename)) {
+            console.log(" it works youre a winner ");
+            postimageKey[post.frontmatter.title] = images[j];
+            break;
+        }
+    }
+
+}
+
+posts.forEach((post) => {
+    console.log(postimageKey[post.frontmatter.title]);
+
+})
+
 const descLength = 97;
 
 // sort by date
@@ -14,6 +53,7 @@ posts.sort((a, b) => {
     const dateB = new Date(b.frontmatter.specificDate);
     return dateB.getTime() - dateA.getTime();
 })
+
 // posts.forEach((post) => {
 //     console.log(post);
 //     console.log(post.getHeadings());
@@ -63,6 +103,15 @@ posts.sort((a, b) => {
 >
     <Fragment slot="head">
         <style>
+            img {
+                object-fit: cover;
+                overflow: hidden;
+                box-sizing:content-box;
+                width: fit-content;
+                max-width: 100%;
+                border-radius: 10px;
+                border:2px solid white;
+            }
             #blogs {
                 display:flex;
                 justify-content: center;
@@ -138,12 +187,14 @@ posts.sort((a, b) => {
 
     <section class="section-default">
         <div id="blogs">
-            {//@ts-nocheck
+            {
             posts.map((post) => {
                 return (
                 <a href={post.url} class="blog-link">
                     <div class="blog">
+                        {(post.frontmatter.image && postimageKey[post.frontmatter.title]) ? (<Image src={postimageKey[post.frontmatter.title]} alt={(post.frontmatter.imageAlt) ? post.frontmatter.imageAlt : ""} />) : null}
                         <div class="blog-text">
+                            
                             <h3 class="blog-title">{post.frontmatter.title}</h3>
                             <p class="blog-date">{post.frontmatter.author}<span class="landscape-only"> • </span><br class="portrait-only"/>{post.frontmatter.date}</p>
                             <p class="blog-desc">{post.frontmatter.desc/*(post.frontmatter.desc.length > descLength ? post.frontmatter.desc.substring(0, descLength) + "..." : post.frontmatter.desc)*/}</p>
