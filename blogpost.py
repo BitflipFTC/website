@@ -54,11 +54,11 @@ if (imagePath): #checks if it is blank
             for chunk in response.iter_content(chunk_size=8192):
                 f.write(chunk)
 
-        subprocess.run(f'mv {filename}.png {blogPath}images/', shell=True)
+        subprocess.run(f'mv {filename}.png ./src/assets/blog-images/', shell=True)
     else:
-        subprocess.run(f"cp {imagePath} {blogPath}images/{filename}.png", shell=True)
+        subprocess.run(f"cp {imagePath} ./src/assets/blog-images/{filename}.png", shell=True)
 
-    imageFinalPath = f'{blogPath}images/{filename}.png'
+    imageFinalPath = f'./src/assets/blog-images/{filename}.png'
 
     print(f'{os.path.exists(imageFinalPath)} is the validity of the image')
 

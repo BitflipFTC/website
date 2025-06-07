@@ -7,7 +7,7 @@ import {Image} from 'astro:assets';
 //@ts-nocheck
 const posts = Object.values(import.meta.glob('./blogs/*.md', { eager: true }));
 
-const images = Object.values(import.meta.glob('./blogs/images/*.png', {eager:true}))
+const images = Object.values(import.meta.glob('../assets/blog-images/*.png', {eager:true}))
     .map(module => module.default); 
 console.log(images)
 
