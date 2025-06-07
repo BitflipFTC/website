@@ -72,7 +72,6 @@ const { frontmatter } = Astro.props;
                 flex-direction: column;
                 justify-content: flex-start;
                 margin: 0 auto;
-                white-space: nowrap;
                 /* border:1px solid red; */
             }
             .header-content h1 {
@@ -80,7 +79,8 @@ const { frontmatter } = Astro.props;
             }
             .header-content aside {
                 color:lightgrey;
-                font-size: 1.5rem;
+                white-space: nowrap;
+
             }
             .section-content {
                 display: flex;
@@ -141,7 +141,14 @@ const { frontmatter } = Astro.props;
                 .section-content {
                     line-height: 30px;
                 }
+            .header-content h1 {
+                font-size: 2rem;
             }
+            .header-content aside {
+                font-size: 1.2rem;
+            }
+            }
+
             </style>
     </Fragment>
 
