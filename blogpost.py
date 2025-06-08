@@ -105,6 +105,6 @@ input1 = input()
 input2 = re.sub(r'^[Yy][Ee]?[Ss]?$', '', input1)
 
 if not(input2):
-    os.execl("./push_blog.sh")
+    subprocess.run("./push_blog.sh", shell=True)
 else:
     print("ok. run    './push_blog.sh'     to push the changes!")

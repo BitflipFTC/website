@@ -47,6 +47,7 @@ git config user.email "$COMMIT_USER_EMAIL"
 # 3. Add all changes in the current directory
 echo "Adding all changes to staging area..."
 git add ./src/pages/blogs/ ':(exclude)*.key'
+git add ./src/assets/blog-images/
 
 # 4. Commit the changes
 # Check if there are any changes to commit
