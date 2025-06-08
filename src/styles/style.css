@@ -186,16 +186,20 @@ section p {
 }
 
 .section-image {
-    /* position: sticky; */
-    /* top:calc(var(--toolbar-height) + 3px); */
+    position: sticky;
+    top:calc(var(--toolbar-height) + 3px);
     z-index: -4;
-    background-color: #d1d1d131;
+    background-color: #555555;
 
     width: 100%;
     box-sizing: border-box;
     padding:2.5% 5%;
     height:auto;
     flex:1;
+}
+
+#decode-logo {
+    background-color: #fdc744;
 }
 
 p {

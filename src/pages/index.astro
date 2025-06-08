@@ -3,6 +3,7 @@ import Base from "../layouts/base.astro";
 import { Image } from 'astro:assets';
 import bigLogo from "../assets/images/orange.png";
 import ftcLogo from "../assets/images/FIRSTTech_iconHorz_CMYK.svg";
+import decodeLogo from "../assets/images/decode.svg";
 ---
 
 <Base 
@@ -96,7 +97,7 @@ import ftcLogo from "../assets/images/FIRSTTech_iconHorz_CMYK.svg";
         <div class="circle"></div>
         <div class="section-content">
             <h2>
-                FIRST Information
+                What is FIRST?
             </h2>
             <p>FIRST is a worldwide nonprofit organization that provides opportunities for students to compete in
                 team robotics competitions. It empowers people ages 4-18 to design and build their own robots, plan
@@ -108,6 +109,20 @@ import ftcLogo from "../assets/images/FIRSTTech_iconHorz_CMYK.svg";
         </div>
     </section>
     <Image src={ftcLogo} alt="a banner with the First logo" class="section-image" />
+    <section class="section-alt">
+        <div class="circle"></div>
+        <div class="section-content">
+            <h2>What is FTC?</h2>
+            <p>
+                FIRST&reg; Tech Challenge students work together with their mentors to design and build robots to compete in a dynamic and exciting challenge released every September.
+                Teams program classroom-scale robots to follow autonomous commands before student drivers take control in two-on-two matches. 
+                On and off the field, students develop STEM skills, engage in community outreach, practice engineering innovation, and build confidence to help them succeed.
+                <br><br>
+                <em>Decode</em>, the game for the upcoming season, will be released on September 6, 2025. 
+            </p>
+        </div>
+    </section>
+    <Image src={decodeLogo} alt="a banner with Decode, the name of the upcoming FTC game" class="section-image" id="decode-logo"/>
     <section class="section-alt">
         <div class="team-section-wrapper">
             <h2>The Team</h2>
