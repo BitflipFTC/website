@@ -9,7 +9,7 @@ const { frontmatter } = Astro.props;
     desc="These are blogs from Bitflip Robotics!"
 >
     <Fragment slot="head">
-        <style is:global>
+        <style>
             #back {
                 cursor:pointer;
             }
@@ -65,14 +65,13 @@ const { frontmatter } = Astro.props;
 
             header{
                 overflow: hidden;
+                justify-content: space-evenly;
             }
 
             .header-content {
                 display: flex;
                 flex-direction: column;
                 justify-content: flex-start;
-                margin: 0 auto;
-                /* border:1px solid red; */
             }
             .header-content h1 {
                 margin: 40.2px 0 15px 0;
@@ -89,8 +88,8 @@ const { frontmatter } = Astro.props;
                 flex-direction: column;
                 width: 100%;
                 text-align: left;
-                line-height:40px;
-                padding: 0 20%;
+                padding: 0 10%;
+                box-sizing: content-box;
             }
             .section-content h1 {
                 all:unset;
@@ -120,7 +119,7 @@ const { frontmatter } = Astro.props;
                 all:unset;
                 text-align: left;
                 font-size: 1rem;
-                
+                line-height: 2;
             }
             .section-content hr {
                 flex:1 1;
@@ -139,7 +138,6 @@ const { frontmatter } = Astro.props;
 
             @media only screen and (orientation:portrait) {
                 .section-content {
-                    line-height: 30px;
                 }
             .header-content h1 {
                 font-size: 2rem;
