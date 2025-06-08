@@ -78,14 +78,14 @@ specificDate = datetime.now().isoformat(sep="T", timespec="minutes")
 
 #Create the new blog post frontmatter
 blogContent = f"""---
-layout: '../../layouts/blogLayout.astro'
-title: '{nameString}'
-desc: '{desc}'
-date: '{currentDate}'
-specificDate: '{specificDate}'
-author: '{author}'
-image: '{imageFinalPath if imageFinalPath else ""}'
-imageAlt: '{imageAltText if imageAltText else ""}'
+layout: "../../layouts/blogLayout.astro"
+title: "{nameString}"
+desc: "{desc}"
+date: "{currentDate}"
+specificDate: "{specificDate}"
+author: "{author}"
+image: "{imageFinalPath if imageFinalPath else ''}"
+imageAlt: "{imageAltText if imageAltText else ''}"
 ---
 """
 

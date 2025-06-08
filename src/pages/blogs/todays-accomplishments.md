@@ -1,7 +1,7 @@
 ---
 layout: '../../layouts/blogLayout.astro'
-title: 'Today's Accomplishments'
-desc: 'This post describes what we accomplished at today's meeting'
+title: "Today's Accomplishments"
+desc: "This post describes what we accomplished at today's meeting"
 date: 'June 7, 2025'
 specificDate: '2025-06-07T20:09'
 author: 'Zoë Rzewnicki'
