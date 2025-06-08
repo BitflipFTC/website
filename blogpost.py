@@ -43,6 +43,8 @@ desc = input()
 #Get the image of the blog post
 print("Enter the blog post image: (leave it blank if you don't want an image)")
 imagePath = input().lstrip().rstrip() # either a url or a local file
+imageFinalPath = ""
+imageAltText = ""
 
 if (imagePath): #checks if it is blank
     isItAUrl = (re.match(r'^(http|https)://', imagePath))
