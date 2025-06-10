@@ -21,6 +21,9 @@ import sponsor2 from "../assets/images/sponsor_2.png";
             iframe {
                 position: relative;
             }
+            .section-content {
+                padding:0 20%;
+            }
 
             .packet-container {
                 display: flex;
@@ -35,15 +38,20 @@ import sponsor2 from "../assets/images/sponsor_2.png";
                 flex:1;
                 width: 40%;
                 max-width: 900px;
-                min-width: 600px;
+                min-width: 550px;
                 height:auto;
                 aspect-ratio: 1.545/2;
                 z-index: 1;
 
             }
             @media only screen and (orientation: portrait) {
-
-            }
+                .packet-image {
+                    min-width: 80%;
+                }
+                .section-content {
+                    padding:0;
+                }
+            }   
         </style>
 
         <link rel="canonical" href="https://www.bitflip.club/sponsor/">
@@ -55,10 +63,12 @@ import sponsor2 from "../assets/images/sponsor_2.png";
             </div>
     </header>
 
+    <section>
         <div class="section-content">
             <h2>Become a sponsor today!</h2>
             <p>Below is our team's sponsorship packet, which contains all of the information about us that we send out to potential sponsors.</p>
         </div>
+    </section>
         
     <div class="packet-container">
         <Image src={sponsor1} alt="Sponsorship packet" class="packet-image"/>
