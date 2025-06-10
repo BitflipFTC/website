@@ -1,7 +1,10 @@
 ---
 import Base from "../layouts/base.astro";
 
+import { Image } from "astro:assets";
 
+import sponsor1 from "../assets/images/sponsor_1.png";
+import sponsor2 from "../assets/images/sponsor_2.png";
 ---
 
 <Base 
@@ -19,6 +22,25 @@ import Base from "../layouts/base.astro";
                 position: relative;
             }
 
+            .packet-container {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                flex-wrap: wrap;
+                padding: 5%;
+                gap:5%;
+            }
+            .packet-image {
+                flex:1;
+                width: 40%;
+                max-width: 900px;
+                min-width: 600px;
+                height:auto;
+                aspect-ratio: 1.545/2;
+                z-index: 1;
+
+            }
             @media only screen and (orientation: portrait) {
 
             }
@@ -34,11 +56,22 @@ import Base from "../layouts/base.astro";
     </header>
 
         <div class="section-content">
-            <p>Become a sponsor today!</p>
+            <h2>Become a sponsor today!</h2>
+            <p>Below is our team's sponsorship packet, which contains all of the information about us that we send out to potential sponsors.</p>
         </div>
+        
+    <div class="packet-container">
+        <Image src={sponsor1} alt="Sponsorship packet" class="packet-image"/>
+        <Image src={sponsor2} alt="Sponsorship packet" class="packet-image"/>
+    </div>
+
+    <div class="section-content">
+        <p>This is the sponsorship form. In addition, there is a link to our hackclub account in the footer, which has this same donation form on it. We thank you for your support!
+        </p>
+    </div>
 
     <iframe src="https://hcb.hackclub.com/donations/start/bitflip-ftc-fundraiser" style="border:none;" name="donateFrame" scrolling="no" frameborder="0" marginheight="0px" marginwidth="0px" width="1000" height="1000" allow="payment" allowfullscreen id="hcbframe"></iframe>
-    
+
     <script>
         //@ts-nocheck
         const frame = document.getElementById('hcbframe');
