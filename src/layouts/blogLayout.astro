@@ -20,9 +20,18 @@ const { frontmatter } = Astro.props;
                 height: fit-content;
                 align-items: center;
                 justify-content: center;
-                margin:0 0 0 15%;
+                margin:0 0 0 0;
                 padding:30px;
                 border-radius: 50%;
+
+                border:1px solid red;
+            }
+
+            header a:first-child {
+                margin: 0 0 0 15%;
+            }
+            header a:last-child {
+                margin: 0 15% 0 0;
             }
             .back-button {
                 flex-direction: column;
@@ -65,7 +74,7 @@ const { frontmatter } = Astro.props;
 
             header{
                 overflow: hidden;
-                justify-content: space-evenly;
+                justify-content: space-around;
             }
 
             .header-content {
@@ -89,6 +98,7 @@ const { frontmatter } = Astro.props;
                 width: 100%;
                 text-align: left;
                 padding: 0 10%;
+                max-width: 1000px;
                 box-sizing: content-box;
             }
             .section-content h1 {
@@ -144,6 +154,13 @@ const { frontmatter } = Astro.props;
             }
             .header-content aside {
                 font-size: 1.2rem;
+            }
+
+            header a:first-child {
+                margin: 0 0 0 0;
+            }
+            header a:last-child {
+                margin: 0 0 0 0;
             }
             }
 

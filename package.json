@@ -9,7 +9,7 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.8.1",
+    "astro": "^5.9.3",
     "fs": "^0.0.1-security",
     "npm": "^11.4.1",
     "rehype-external-links": "^3.0.0"
