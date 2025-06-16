@@ -1,3 +1,3 @@
 # website
 
-## THIS IS A ~~crafting table~~ WEBSITE
+## this is a ~~crafting table~~ website!!!

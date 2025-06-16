@@ -101,8 +101,12 @@ posts.sort((a, b) => {
                 object-fit: cover;
                 overflow: hidden;
                 box-sizing:content-box;
-                width: fit-content;
+                width: auto;
+                min-width:content;
+
+                max-height:50vh;
                 max-width: 100%;
+                flex-basis: content;
                 border-radius: 10px;
                 border:2px solid white;
             }
