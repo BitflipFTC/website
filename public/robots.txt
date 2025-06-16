@@ -1,5 +1,4 @@
-User-agent: *
-Allow /
-Disallow /_astro
+User-agent: * 
+Disallow: /_astro
 
 Sitemap: https://www.bitflip.club/sitemap.xml
