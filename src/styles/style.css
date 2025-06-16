@@ -87,6 +87,15 @@ header {
     justify-content:center;
 }
 
+.header-content h1 {
+    margin: 10px 0;
+}
+
+.header-content aside {
+    font-size: 1.2rem;
+    color:lightgray;
+}
+
 .full-height-header {
     /* self-sizing */
     height: calc(100vh - (var(--toolbar-height)));
@@ -208,7 +217,11 @@ p {
     font-weight: light;
     text-align:left;
     line-height: 1.5;
-    color:white;
+    color:lightgray;
+}
+
+li {
+    color:lightgrey;
 }
 
                                         /* --------------------- Card Styling --------------------- */
@@ -363,7 +376,7 @@ p {
     display:none;
 }
 
-#bios {
+.bios {
     /* child-sizing */
     display:flex;
     flex-direction: column;
