@@ -6,7 +6,7 @@ import headerImg from "../assets/images/event-experience.jpg";
 
 <Base 
     index="false"
-    title="Outreach"
+    title="Robot"
     desc="Learn more about our robot!"
 >
     <Fragment slot="head">
@@ -14,14 +14,17 @@ import headerImg from "../assets/images/event-experience.jpg";
 
         <style>
             .model {
-                min-height:500px;
+                min-height:100px;
                 min-width: 70%;
+                border:1px solid red;
+                aspect-ratio: 2/1;
             }
 
             model-viewer {
                 height:100%;
                 min-height: 500px;
                 width: 100%;
+                border:1px solid green;
             }
         </style>
     </Fragment>
@@ -36,7 +39,7 @@ import headerImg from "../assets/images/event-experience.jpg";
 
     <section class="section-alt">
         <div class="model">
-            <model-viewer src="/models/robot_model-opt.glb" camera-controls="true" camera-orbit="320deg 80deg 25m" loading="auto" powerpreference="low-power" exposure="0.50" shadow-softness="0.1" disable-tap="true" disable-pan="false" tone-mapping="neutral" shadow-intensity="4" alt="Model Loading Failed" ar-status="not-presenting">
+            <model-viewer src="/models/robot_model-opt.glb" camera-controls="true" camera-orbit="320deg 80deg 25m" loading="auto" powerpreference="low-power" exposure="0.50" shadow-softness="0.1" disable-tap="true" disable-pan="false" tone-mapping="neutral" shadow-intensity="4" alt="Model Loading Failed" ar-status="not-presenting" interaction-prompt="none">
             </model-viewer>
         </div>
     </section>
