@@ -1,0 +1,8 @@
+name = "website" # Replace with your project name
+pages_build_output_dir = "dist"
+compatibility_flags = [ "nodejs_compat" ]
+compatibility_date = "2025-06-12"
+
+[[r2_buckets]]
+binding = "MODEL_BUCKET"    # This is the name your application code uses (e.g., env.MODEL_BUCKET)
+bucket_name = "robotmodel"  # This is the actual name of your bucket on Cloudflare R2 (and the local folder name)
