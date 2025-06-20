@@ -1,5 +1,7 @@
 ---
 import Base from '../layouts/base.astro';
+import {Image} from "astro:assets";
+import FLLlogo from "../assets/images/FIRSTLego_iconHorz_CMYK_reverse.svg"
 ---
 
 <Base 
@@ -10,6 +12,7 @@ import Base from '../layouts/base.astro';
     <header>
         <div class="header-content">
             <h1>Bitflip Jr.</h1>
+            <aside>This is the FLL team of Bitflip Robotics!</aside>
         </div>
     </header>
 
@@ -19,8 +22,113 @@ import Base from '../layouts/base.astro';
             <h2>What is FLL?</h2>
             <p>
                 FIRST LEGO League (FLL) is a global robotics program that introduces students aged 4-16 to STEM through hands-on, team-based challenges using LEGO robotics kits. 
-                Participants learn how to design, build, and program robots to complete themed missions, while also developing critical skills such as problem-solving, teamwork, creativity, and communication. 
+                Participant
+                s learn how to design, build, and program robots to complete themed missions, while also developing critical skills such as problem-solving, teamwork, creativity, and communication. 
             </p>
         </div>
     </section>
+
+    <Image src={FLLlogo} alt="a banner with the FLL logo" class="section-image" />
+
+    <section class="section-alt fll-section">
+        <h1>About Us</h1>
+
+        <div class="bios">
+            <div id="" class="bio"> <!-- FILL IN THE ID  -->
+                <div class="photo"></div>
+                <div class="bio-content">
+                    <h3>Selah</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                    </p>
+                </div>
+            </div>
+
+            <div id="" class="bio"> <!-- FILL IN THE ID  -->
+                <div class="photo"></div>
+                <div class="bio-content">
+                    <h3>Cael</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                    </p>
+                </div>
+            </div>
+            <div id="" class="bio"> <!-- FILL IN THE ID  -->
+                <div class="photo"></div>
+                <div class="bio-content">
+                    <h3>Alex</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                    </p>
+                </div>
+            </div>
+
+            <div id="" class="bio"> <!-- FILL IN THE ID  -->
+                <div class="photo"></div>
+                <div class="bio-content">
+                    <h3>Conner</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-default fll-section">
+        <h1>Core Values</h1>
+        <div class="card-holder">
+            <div class="card">
+                <div class="photo" />
+                <div class="card-text">
+                    <h2>Fun</h2>
+                </div>
+            </div>
+            <div class="card">
+                <div class="photo" />
+                <div class="card-text">
+                    <h2>Teamwork</h2>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="section-alt fll-section">
+        <h1>Our Robot</h1>
+        <h2>Coming soon!</h2>
+    </section>
+
+    <section class="section-default fll-section">
+        <h1>Our Project</h1>
+        <h2>Coming soon!</h2>
+    </section>
+
+    <section class="section-alt fll-section">
+        <h1>This year's theme</h1>
+        <iframe id="fll-teaser" width="560" height="315" src="https://www.youtube.com/embed/exWkcUBS0j8?si=NHCvmhrkGoZW7-Yy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </section>
+
+    <script>
+        const frame = document.getElementById("fll-teaser");
+        let coeff = 0.6;
+        if (window.innerHeight >= window.innerWidth) coeff = 0.9;
+
+        frame.width = window.innerWidth * coeff;
+        frame.height = (frame.width) * (9/16);
+
+        window.onresize = () => {
+            if (window.innerHeight >= window.innerWidth) coeff = 0.9; else coeff = 0.6;
+            frame.width = window.innerWidth * coeff;
+            frame.height = (frame.width) * (9/16);
+        }
+    </script>
 </Base>

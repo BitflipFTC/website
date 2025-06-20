@@ -246,7 +246,7 @@ li {
     justify-content:flex-start;
 }
 
-#members, #sponsors {
+#members, #sponsors, .card-holder {
     /* self-sizing */
     width: 100%;
     margin: 20px 0;
@@ -265,6 +265,38 @@ li {
     flex-wrap: wrap;
     perspective: 5000px;
     user-select: none;
+}
+
+.card-holder {
+    gap: 75px;
+}
+
+.card-holder h2 {
+    color:white;
+}
+
+.card-holder .card {
+    transition: none;
+    aspect-ratio: 1/1;
+    min-height: 25em;
+    min-width: 25em;
+    cursor: auto;
+}
+
+.fll-section h2 {
+    color:lightgray;
+}
+
+.card-holder .card .photo {
+    aspect-ratio:auto;
+    max-width: 95%;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.card-holder .card:hover {
+    transform: none;
+    border-color: lightgray;
 }
 
 .card {
@@ -384,6 +416,10 @@ li {
 .portrait-only {
     /* child-sizing */
     display:none;
+}
+
+.fll-section {
+    flex-direction: column;
 }
 
 .bios {
