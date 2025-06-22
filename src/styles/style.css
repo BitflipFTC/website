@@ -557,6 +557,10 @@ li {
         display:none !important;
     }
 
+    #toolbar ul li:not(#toolbar ul li:first-child) {
+        display:none !important;
+    }
+
     #toolbar .dropdown {
         display:flex !important;
     }
