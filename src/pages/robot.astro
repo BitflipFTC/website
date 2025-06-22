@@ -15,8 +15,8 @@ import headerImg from "../assets/images/event-experience.jpg";
         <style>
             .model {
                 min-height:100px;
-                min-width: 70%;
-                aspect-ratio: 16/9;
+                min-width: 80%;
+                aspect-ratio: 16/12;
             }
 
             model-viewer {
@@ -25,6 +25,13 @@ import headerImg from "../assets/images/event-experience.jpg";
                 width: 100%;
                 border-radius: 10px;
                 border:2px solid white;
+            }
+
+            @media only screen and (orientation: portrait){
+                model-viewer {
+                    padding: 0;
+                    margin: 0;
+                }
             }
         </style>
     </Fragment>

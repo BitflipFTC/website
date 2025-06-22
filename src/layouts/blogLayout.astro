@@ -13,6 +13,12 @@ const { frontmatter } = Astro.props;
             #back {
                 cursor:pointer;
             }
+
+            #dummyBack {
+                opacity:0;
+                pointer-events:none;
+            }
+
             header a {
                 all:unset;
                 display: flex;
@@ -23,7 +29,7 @@ const { frontmatter } = Astro.props;
                 margin:0 0 0 0;
                 padding:30px;
                 border-radius: 50%;
-
+                box-sizing: border-box;
             }
 
             header a:first-child {
@@ -78,9 +84,11 @@ const { frontmatter } = Astro.props;
 
             .header-content {
                 display: flex;
+                flex:1 1;
                 flex-direction: column;
                 justify-content: flex-start;
             }
+
             .header-content h1 {
                 margin: 40.2px 0 15px 0;
             }
@@ -164,10 +172,25 @@ const { frontmatter } = Astro.props;
             }
 
             header a:first-child {
-                margin: 0 0 0 0;
+                margin: 0 0 0 5%;
             }
             header a:last-child {
-                margin: 0 0 0 0;
+                margin: 0 5% 0 0;
+            }
+
+            header a {
+                padding:15px;
+            }
+
+            .line1, .line2 {
+                width: 20px;
+
+                height: 3px;
+            }
+
+            .line1 {
+                transform: rotate(-45deg);
+                margin-bottom: 9px;
             }
             }
 
@@ -187,7 +210,7 @@ const { frontmatter } = Astro.props;
             <aside>by {frontmatter.author}<span class="landscape-only"> • </span><br class="portrait-only">{frontmatter.date}</aside>
         </div>
         <a>
-        <div class="back-button" style="opacity:0">
+        <div class="back-button" id="dummyBack">
             <div class="line1" />
             <div class="line2" />
         </div>
