@@ -280,6 +280,7 @@ li {
     aspect-ratio: 1/1;
     min-height: 25em;
     min-width: 25em;
+    flex-wrap: wrap;
     cursor: auto;
 }
 
@@ -290,6 +291,7 @@ li {
 .card-holder .card .photo {
     aspect-ratio:auto;
     max-width: 95%;
+    flex: 1;
     box-sizing: border-box;
     border-radius: 10px;
 }
@@ -555,6 +557,13 @@ li {
 
     .card .roles {
         font-size: 0.7em;
+    }
+
+    .card-holder .card {
+        min-height: 25em;
+        min-width: 80vw;
+        flex-wrap: wrap;
+        cursor: auto;
     }
 
     #toolbar ul li button:not(#home-button) {

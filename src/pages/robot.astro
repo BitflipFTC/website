@@ -16,7 +16,8 @@ import headerImg from "../assets/images/event-experience.jpg";
             .model {
                 min-height:100px;
                 min-width: 80%;
-                aspect-ratio: 16/12;
+                max-height:80vh;
+                aspect-ratio: 16/9;
             }
 
             model-viewer {
@@ -46,7 +47,7 @@ import headerImg from "../assets/images/event-experience.jpg";
 
     <section class="section-alt">
         <div class="model">
-            <model-viewer src="/models/robot_model-opt.glb" camera-controls="true" camera-orbit="205deg 70deg 25m" loading="auto" powerpreference="low-power" exposure="0.50" shadow-softness="0.1" disable-tap="true" disable-pan="false" tone-mapping="neutral" shadow-intensity="4" alt="Model Loading Failed" ar-status="not-presenting" interaction-prompt="none">
+            <model-viewer src="/models/robot_model-opt.glb" camera-controls="true" camera-orbit="205deg 70deg 25m" loading="auto" powerpreference="low-power" exposure="0.50" shadow-softness="0.1" disable-tap="false" disable-pan="false" tone-mapping="neutral" shadow-intensity="4" alt="Model Loading Failed" ar-status="not-presenting" interaction-prompt="none">
             </model-viewer>
         </div>
     </section>
