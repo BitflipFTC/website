@@ -5,6 +5,17 @@ import { Image } from "astro:assets";
 
 import sponsor1 from "../assets/images/sponsor_1.png";
 import sponsor2 from "../assets/images/sponsor_2.png";
+
+const donors = [
+    {name: "Roland Rzewnicki"},
+    {name: "The Ancoras"},
+    {name: "Boeing"},
+    {name: "The Pages"},
+    {name: "The Booths"},
+    {name: "The Kings"},
+    {name: "Yvonne Howe"},
+    {name: "Leslie Hindenburg"}
+]
 ---
 
 <Base 
@@ -97,13 +108,12 @@ import sponsor2 from "../assets/images/sponsor_2.png";
         <div class="section-content">
             <h2>And finally, we would like to give a huge thank you to all of our sponsors!</h2>
             <ul>
-                <li>The Rzewnickis</li>
-                <li>The Ancoras</li>
-                <li>Boeing</li>
-                <li>The Pages</li>
-                <li>The Booths</li>
-                <li>The Kings</li>
-                <li>Yvonne Howe</li>
+                {
+                    donors.map(donor => (
+                        <li>{donor.name}</li>
+                        )
+                    )
+                }
             </ul>
         </div>
     </section>
