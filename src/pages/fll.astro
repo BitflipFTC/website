@@ -2,6 +2,12 @@
 import Base from '../layouts/base.astro';
 import {Image} from "astro:assets";
 import FLLlogo from "../assets/images/FIRSTLego_iconHorz_CMYK_reverse.svg"
+
+import fll_a from "../assets/images/FLL_A.png"
+import fll_ca from "../assets/images/FLL_CA.png"
+import fll_c from "../assets/images/FLL_C.png"
+import fll_s from "../assets/images/FLL_S.png"
+
 ---
 
 <Base 
@@ -34,8 +40,8 @@ import FLLlogo from "../assets/images/FIRSTLego_iconHorz_CMYK_reverse.svg"
         <h1>About Us</h1>
 
         <div class="bios">
-            <div id="" class="bio"> <!-- FILL IN THE ID  -->
-                <div class="photo"></div>
+            <div id="selah" class="bio"> <!-- FILL IN THE ID  -->
+                <div class="photo"><Image src={fll_s} alt="" /></div>
                 <div class="bio-content">
                     <h3>Selah</h3>
                     <p>
@@ -46,8 +52,8 @@ import FLLlogo from "../assets/images/FIRSTLego_iconHorz_CMYK_reverse.svg"
                 </div>
             </div>
 
-            <div id="" class="bio"> <!-- FILL IN THE ID  -->
-                <div class="photo"></div>
+            <div id="cael" class="bio"> <!-- FILL IN THE ID  -->
+                <div class="photo"><Image src={fll_ca} alt="" /></div>
                 <div class="bio-content">
                     <h3>Cael</h3>
                     <p>
@@ -57,8 +63,8 @@ import FLLlogo from "../assets/images/FIRSTLego_iconHorz_CMYK_reverse.svg"
                     </p>
                 </div>
             </div>
-            <div id="" class="bio"> <!-- FILL IN THE ID  -->
-                <div class="photo"></div>
+            <div id="alex" class="bio"> <!-- FILL IN THE ID  -->
+                <div class="photo"><Image src={fll_a} alt="" /></div>
                 <div class="bio-content">
                     <h3>Alex</h3>
                     <p>
@@ -69,8 +75,8 @@ import FLLlogo from "../assets/images/FIRSTLego_iconHorz_CMYK_reverse.svg"
                 </div>
             </div>
 
-            <div id="" class="bio"> <!-- FILL IN THE ID  -->
-                <div class="photo"></div>
+            <div id="conner" class="bio"> <!-- FILL IN THE ID  -->
+                <div class="photo"><Image src={fll_c} alt="" /></div>
                 <div class="bio-content">
                     <h3>Conner</h3>
                     <p>
