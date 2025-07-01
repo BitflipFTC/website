@@ -8,7 +8,8 @@ author: "Zoë Rzewnicki"
 image: "./src/assets/blog-images/sponsorship.png"
 imageAlt: ""
 ---
-Hello! We had a long day yesterday so I am getting the blog post out a little later than usual. At yesterday's meeting, we practiced our pitch and then visited local companies to request sponsorship. We received a lot of positive responses, and everyone we spoke to was very kind and accommodating, making time to listen to what we had to say. Thank you again to everyone we met for your time and attention! It means a lot to us.
+Hello! We had a long day yesterday so I am getting the blog post out a little later than usual. At yesterday's meeting, we practiced our pitch and then visited local companies to request sponsorship. We received a lot of positive responses, and everyone we spoke to was very kind and accommodating. Thank you again to everyone we met for your time and attention! It means a lot to us.
+
 
 
 We are planning to visit more businesses later this week to pitch again. We are slowly but steadily getting closer to our goal of $5,000 for our team!
