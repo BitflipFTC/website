@@ -8,6 +8,7 @@ import "../styles/toolbar.css";
 import "../styles/footer.css";
 
 const { index = 1, title, desc="FTC 30380 Bitflip Robotics website" } = Astro.props;
+const titleCanon = title.toLowerCase();
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -22,7 +23,6 @@ const { index = 1, title, desc="FTC 30380 Bitflip Robotics website" } = Astro.pr
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
-    
     <slot name="head"></slot>
 </head>
 <body>
