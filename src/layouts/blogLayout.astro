@@ -108,7 +108,7 @@ const { frontmatter } = Astro.props;
                 flex-direction: column;
                 width: 100%;
                 text-align: left;
-                padding: 0 10%;
+                padding: 0 5%;
                 max-width: 1000px;
                 box-sizing: content-box;
             }
@@ -136,14 +136,14 @@ const { frontmatter } = Astro.props;
             .section-content ul {
                 align-self: start;
                 color:lightgray;
-                line-height: 2rem;
+                line-height: 1.5;
             }
             .section-content p {
                 all:unset;
                 text-align: left;
                 color:lightgray;
                 font-size: 1rem;
-                line-height: 2;
+                line-height: 1.5;
             }
             .section-content hr {
                 width: 100%;
@@ -162,8 +162,9 @@ const { frontmatter } = Astro.props;
             }
 
             @media only screen and (orientation:portrait) {
-                .section-content {
-                }
+            .section-content ul, .section-content p {
+                line-height: 2;
+            }
             .header-content h1 {
                 font-size: 2rem;
             }
