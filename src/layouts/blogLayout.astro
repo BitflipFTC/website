@@ -1,6 +1,40 @@
 ---
+import { imageConfig } from 'astro:assets';
 import Base from './base.astro';
+import { Image } from 'astro:assets';
 const { frontmatter } = Astro.props;
+const targetImage1 = frontmatter.image;
+const targetImage = targetImage1.split("/").pop().split(".")[0];
+console.log("\n\n\n" + targetImage + "\n\n\n\n\n\n\n\n\n\n\n\n");
+const blogImage = [];
+if (targetImage != "") {
+    // get each image
+    const imagesGlob = await import.meta.glob('../assets/blog-images/*.png', {eager: true});
+    const images = Object.values(imagesGlob);
+
+    // console.log(images);
+    images.forEach((image) => {
+        // console.log(image);
+        const imageNameArr = image.default.src.split("/");
+        const imageNameArr2 = imageNameArr[imageNameArr.length - 1].split(".");
+        const imageName = imageNameArr2[0] + "." + imageNameArr2[2];
+
+        // console.log(imageName + "\n\n\n\n\n\n\n\n\n\n\n");
+        const re = RegExp(`${targetImage}\.png`);
+        console.log("\n\n\n" + re.test(imageName));
+        console.log(re);
+        console.log(imageName + "\n\n\n\n\\n\n\n");
+
+        if(re.test(imageName)) {
+            blogImage.push(image.default.src);
+            console.log("adding \n\n\n" + image.default.src);
+        }
+    });
+
+    console.log(blogImage);
+    // images.find(img => img.includes(targetImage))
+    // console.log("\n\n" + Object.values(images) + "\n\n\n\n\n\n\n\n\n");
+}
 ---
 
 <Base 
@@ -9,7 +43,15 @@ const { frontmatter } = Astro.props;
     desc="These are blogs from Bitflip Robotics!"
 >
     <Fragment slot="head">
-        <style is:global>
+        <style>
+            img {
+                object-fit: contain;
+                max-height: 60vh;
+                max-width: 900px;
+                padding-bottom: 50px;
+                border-radius: 10px;
+            }
+
             #back {
                 cursor:pointer;
             }
@@ -98,8 +140,9 @@ const { frontmatter } = Astro.props;
 
             }
             section {
-                align-items: flex-start;
+                align-items: center;
                 justify-content: center;
+                flex-direction: column !important;
             }
             .section-content {
                 display: flex;
@@ -210,15 +253,17 @@ const { frontmatter } = Astro.props;
             <h1>{frontmatter.title}</h1>
             <aside>by {frontmatter.author}<span class="landscape-only"> • </span><br class="portrait-only">{frontmatter.date}</aside>
         </div>
+        
         <a>
-        <div class="back-button" id="dummyBack">
-            <div class="line1" />
-            <div class="line2" />
-        </div>
+            <div class="back-button" id="dummyBack">
+                <div class="line1" />
+                <div class="line2" />
+            </div>
         </a>
     </header>
-
+    
     <section class="section-alt">
+        <img src={blogImage[0]} alt="" />
         <div class="section-content">
             <slot />
         </div>
