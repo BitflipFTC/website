@@ -5,6 +5,8 @@ desc: 'This is the first automated blog post.'
 date: 'June 6, 2025'
 specificDate: '2025-06-06T17:30'
 author: 'Griffin Rzewnicki'
+image: ""
+imageAlt: ""
 ---
 
 # This is the first automated blog!

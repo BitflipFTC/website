@@ -2,6 +2,7 @@ import re
 import requests
 import subprocess
 import os
+import frontmatter
 
 def addImage(filename):
     print("Enter the blog post image: (leave it blank if you don't want an image)")
@@ -39,3 +40,46 @@ def addImage(filename):
     
     return (imageFinalPath,imageAltText)
 
+def selBlog():
+    # List all files in blogs (list all blogs)
+    blogPath = "./src/pages/blogs/"
+    existingBlogs = os.listdir(blogPath)
+
+    # Remove the images dir
+    if "images" in existingBlogs: existingBlogs.remove("images")
+
+    postDic = {}
+
+    for post in (existingBlogs):
+        print("\n" + post)
+        postMatter = frontmatter.load(f'{blogPath}{post}')
+        print(postMatter['date'])
+        postDic[post] = postMatter['date']
+
+    print(postDic)
+
+    existingBlogs.sort(key=lambda filename: postDic[filename], reverse=True)
+
+    print(existingBlogs)
+
+
+    # Make a new array for the human readable names
+    fancyBlogNames = existingBlogs.copy()
+
+    # Make them human readable
+    for i, string in enumerate(fancyBlogNames):
+        fancyBlogNames[i] = " ".join([f"{i}",string.replace("-"," ").replace(".md",""), "       ",postDic[f'{existingBlogs[i]}']])
+
+    # Print the names and ask for input
+    print(f"Current blogs in {blogPath}:\n\n{"\n".join(fancyBlogNames)}\n")
+    print("which blog do you want to edit? (you can ignore the .md and dashes, or just input the number of the target blog)")
+    filename = input()
+
+    # If it's not the number of one, find the name. if it is, use the file that it corresponds to
+    if(not(filename.isdigit())):
+        filename = re.sub(r'[^a-zA-Z0-9 ]', '', filename).replace(" ", "-").replace("	","").lower().rstrip().lstrip() + ".md"
+    else:
+        filename = existingBlogs[int(filename)]
+
+    filePath = "".join([blogPath, filename])
+    return filePath

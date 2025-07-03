@@ -3,7 +3,7 @@ import subprocess
 from datetime import datetime
 import os
 import re
-from blogpost_func import addImage
+from blogpost_func import selBlog
 
 blogPath = "./src/pages/blogs/"
 
@@ -64,7 +64,7 @@ imageAlt: "{imageTuple[1] if imageTuple[1] else ''}"
 
 #Make the text of the blog post
 print("Press enter to edit blog contents")
-dummyLine = input(); open('temp.md', mode='w').write(blogContent); subprocess.run('nano temp.md', shell=True)
+dummyLine = input(); open('temp.md', mode='w').write(blogContent); subprocess.run(["code", "--wait", "temp.md"])
 blogPostText=open('temp.md').read()
 
 open("".join([blogPath,filename,".md"]), mode='w').write(blogPostText)
