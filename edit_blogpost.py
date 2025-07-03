@@ -90,7 +90,7 @@ input()
 
 # If it exists, edit. If no, don't
 if os.path.exists(filePath):
-    subprocess.run(f'nano {filePath}', shell=True)
+    subprocess.run(f'code {filePath}', shell=True)
 else:
     print("File does not exist!")
     exit()
