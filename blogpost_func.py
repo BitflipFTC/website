@@ -6,6 +6,13 @@ import os
 def addImage(filename):
     print("Enter the blog post image: (leave it blank if you don't want an image)")
     imagePath = input().lstrip().rstrip() # either a url or a local file
+
+
+    # for wsl 
+
+    imagePath.replace("C:\\", "/mnt/c/")
+    imagePath.replace("\\","/")
+    print(imagePath + " is the fixed WSL image path")
     imageFinalPath = ""
     imageAltText = ""
 
