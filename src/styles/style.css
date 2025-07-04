@@ -376,7 +376,7 @@ li {
 .card .name {
     /* font */
     text-align:center;
-    font-size: 0.95em;
+    font-size: clamp(0.7em, 3vw, 1em);
     color: white;
     
     /* self-sizing */
@@ -394,7 +394,7 @@ li {
 .card .roles {
     /* font */
     text-align:center;
-    font-size: 0.85em;
+    font-size: clamp(0.6em, 2.5vw, 0.85em);
     color:lightgray;
 
     /* self-sizing */
@@ -563,7 +563,7 @@ li {
     }
 
     .card .roles {
-        font-size: 0.7em;
+        /* font-size: 0.7em; */
     }
 
     .card-holder .card {
