@@ -1,5 +1,12 @@
 ---
 import Base from "../layouts/base.astro";
+import ftc_b from "../assets/images/FTC_B.jpg";
+import ftc_g from "../assets/images/FTC_G.jpg";
+import ftc_m from "../assets/images/FTC_M.jpg";
+import ftc_e from "../assets/images/FTC_E.jpg";
+import ftc_z from "../assets/images/FTC_Z.jpg";
+import { Image } from "astro:assets";
+
 ---
 
 <Base 
@@ -27,7 +34,7 @@ import Base from "../layouts/base.astro";
     <section class="section-alt">
         <div class="bios">
             <div id="Isabella" class="bio">
-                <div class="photo"></div>
+                <div class="photo"><Image src={ftc_b} alt='' /></div>
                 <div class="bio-content">
                     <h3>Isabella All</h3>
                     <p>
@@ -36,7 +43,7 @@ import Base from "../layouts/base.astro";
                 </div>
             </div>
             <div id="Elijah" class="bio">
-                <div class="photo"></div>
+                <div class="photo"><Image src={ftc_e} alt='' /></div>
                 <div class="bio-content">
                     <h3>Elijah Krabbenhoft</h3>
                     <p>
@@ -45,7 +52,7 @@ import Base from "../layouts/base.astro";
                 </div>
             </div>
             <div id="Micah" class="bio">
-                <div class="photo"></div>
+                <div class="photo"><Image src={ftc_m} alt='' /></div>
                 <div class="bio-content">
                     <h3>Micah Krabbenhoft</h3>
                     <p>
@@ -54,7 +61,7 @@ import Base from "../layouts/base.astro";
                 </div>
             </div>
             <div id="Griffin" class="bio">
-                <div class="photo"></div>
+                <div class="photo"><Image src={ftc_g} alt='' /></div>
                 <div class="bio-content">
                     <h3>Griffin Rzewnicki</h3>
                     <p>
@@ -63,7 +70,7 @@ import Base from "../layouts/base.astro";
                 </div>
             </div>
             <div id="Zoe" class="bio">
-                <div class="photo"></div>
+                <div class="photo"><Image src={ftc_z} alt='' /></div>
                 <div class="bio-content">
                     <h3>Zoë Rzewnicki</h3>
                     <p>

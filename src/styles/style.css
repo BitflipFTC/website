@@ -172,8 +172,8 @@ section {
     /* self-sizing */
     flex: 1 0;
     margin: 0;
-    max-width: 80%;
-    padding:0;
+    /* max-width: 80%; */
+    padding:5%;
     
     /* child-sizing */
     display: flex;
@@ -482,7 +482,8 @@ li {
 }
 
 .bio .photo img {
-    object-fit: cover;
+.photo img {
+    object-fit: contain;
     height:100%;
     width: 100%;
     border-radius: 50%;
@@ -492,7 +493,7 @@ li {
     /* self-sizing */
     flex:1 1 30%;
     max-width: 60%;
-    margin:12.5vh 2.5vw;
+    margin:12.5vh 0;
     
     /* child-sizing */
     display: flex;
