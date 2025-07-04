@@ -481,7 +481,6 @@ li {
     border-radius: 50%;
 }
 
-.bio .photo img {
 .photo img {
     object-fit: contain;
     height:100%;
