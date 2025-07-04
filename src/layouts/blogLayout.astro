@@ -156,7 +156,8 @@ if (targetImage != "") {
                 text-align: left;
                 padding: 0 5%;
                 max-width: 800px !important;
-                box-sizing: content-box;
+                flex-wrap: wrap;
+                box-sizing: border-box;
             }
             .section-content h1 {
                 all:unset;
@@ -266,8 +267,8 @@ if (targetImage != "") {
     </header>
     
     <section class="section-alt">
-        <img src={blogImage[0]} alt="" />
         <div class="section-content">
+            <img src={blogImage[0]} alt="" />
             <slot />
         </div>
     </section>
