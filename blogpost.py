@@ -20,7 +20,7 @@ while (not(titleIsValid)):
 
     # If it already exists, dont overwrite
     if (os.path.exists("".join([blogPath,filename]))):
-        print("Name already exists. try again\n")
+        print("Name already exists. You can delete it by using delete_blogpost.py, or choose a new name.")
     else:
         titleIsValid = True
 
@@ -71,6 +71,10 @@ open("".join([blogPath,filename,".md"]), mode='w').write(blogPostText)
 
 # Remove the input file
 os.remove('temp.md')
+
+
+# Process 
+
 
 # Request pushing the changes
 print("push changes?")
