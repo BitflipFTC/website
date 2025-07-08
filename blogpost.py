@@ -3,7 +3,7 @@ import subprocess
 from datetime import datetime
 import os
 import re
-from blogpost_func import selBlog
+from blogpost_func import addImage
 
 blogPath = "./src/pages/blogs/"
 
