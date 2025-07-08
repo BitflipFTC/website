@@ -279,7 +279,9 @@ li {
     transition: none;
     aspect-ratio: 1/1;
     min-height: 25em;
-    min-width: 25em;
+    flex:1;
+    min-width: 18em;
+    max-width: 20em;
     flex-wrap: wrap;
     cursor: auto;
 }
@@ -371,6 +373,15 @@ li {
     /* font */
     text-align: center;
     font-size:inherit;
+    /* flex-wrap: wrap; */
+    white-space: wrap;
+}
+
+.card-text p {
+    /* font */
+    text-align: center;
+    font-size:1.2rem;
+    white-space: wrap;
 }
 
 .card .name {
@@ -564,7 +575,7 @@ li {
 
     .card-holder .card {
         min-height: 25em;
-        min-width: 80vw;
+        min-width:40vw;
         flex-wrap: wrap;
         cursor: auto;
     }
