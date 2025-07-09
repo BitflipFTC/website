@@ -373,15 +373,14 @@ li {
     /* font */
     text-align: center;
     font-size:inherit;
-    /* flex-wrap: wrap; */
-    white-space: wrap;
 }
 
 .card-text p {
     /* font */
     text-align: center;
     font-size:1.2rem;
-    white-space: wrap;
+    width: 100%;
+    height: fit-content;
 }
 
 .card .name {
@@ -396,10 +395,6 @@ li {
     height:auto;
     margin:0;
     padding: 0;
-    
-
-    /* styling */
-    white-space: wrap;
 }
 
 .card .roles {
