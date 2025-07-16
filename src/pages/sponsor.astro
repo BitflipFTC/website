@@ -9,12 +9,14 @@ import sponsor2 from "../assets/images/sponsor_2.png";
 const donors = [
     {name: "Roland Rzewnicki"},
     {name: "The Ancoras"},
-    {name: "Boeing"},
+    {name: "Boeing", link: "https://www.boeing.com"},
     {name: "The Pages"},
     {name: "The Booths"},
     {name: "The Kings"},
     {name: "Yvonne Howe"},
-    {name: "Leslie Henneburg"}
+    {name: "Leslie Henneburg"},
+    {name: "Anderson Insurance Associates", link: "https://www.aiasc.com/"}
+
 ]
 ---
 
@@ -42,6 +44,11 @@ const donors = [
                 text-align: center;
                 font-size: 1.7rem;
                 line-height: 75px;
+            }
+
+            a {
+                text-decoration: none;
+                color:blue;
             }
             .section-content {
                 padding:0 20%;
@@ -110,7 +117,7 @@ const donors = [
             <ul>
                 {
                     donors.map(donor => (
-                        <li>{donor.name}</li>
+                        (donor.link && donor.link !== "") ? <li><a href={donor.link} target="_blank">{donor.name}</a></li> : <li>{donor.name}</li>
                         )
                     )
                 }
