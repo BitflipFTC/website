@@ -7,8 +7,7 @@ import re
 from io import BytesIO
 from datetime import datetime
 import time
-from blogpost_func import addImage
-from blogpost_func import selBlog
+from blogpost_func import addImage, selBlog, pushChanges
 
 filePath = selBlog()
 print(f"checking {filePath}")
@@ -56,12 +55,4 @@ else:
     print("File does not exist!")
     exit()
 
-# Ask for changes
-print("push changes?")
-input1 = input()
-input2 = re.sub(r'^[Yy][Ee]?[Ss]?$', '', input1)
-
-if not(input2):
-    subprocess.run("./push_blog.sh")
-else:
-    print("ok. run    './push_blog.sh'     to push the changes!")
+pushChanges()

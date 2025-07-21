@@ -2,13 +2,12 @@
 
 import frontmatter
 import os
-from blogpost_func import selBlog
+from blogpost_func import selBlog, pushChanges
+import re
 
 filePath = selBlog()
 blogFileName = filePath.split("/").pop()
 print("deleting: " + blogFileName )
-
-
 
 blogFrontmatter = frontmatter.load(filePath)
 imageExists = (blogFrontmatter["image"] != "")
@@ -31,3 +30,5 @@ if not(input2):
     print("All files were deleted.")
 else:
     print("No files were deleted")
+
+pushChanges()

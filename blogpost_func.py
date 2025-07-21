@@ -83,3 +83,14 @@ def selBlog():
 
     filePath = "".join([blogPath, filename])
     return filePath
+
+def pushChanges():
+    # Request pushing the changes
+    print("push changes?")
+    input1 = input()
+    input2 = re.sub(r'^[Yy][Ee]?[Ss]?$', '', input1)
+    
+    if not(input2):
+        subprocess.run("./push_blog.sh", shell=True)
+    else:
+        print("ok. run    './push_blog.sh'     to push the changes!")
