@@ -268,7 +268,9 @@ if (targetImage != "") {
     
     <section class="section-alt">
         <div class="section-content">
-            <img src={blogImage[0]} alt="" />
+            {
+                blogImage.length >= 1 ? <img src={blogImage[0]} alt="" /> : ""
+            }
             <slot />
         </div>
     </section>
