@@ -1,6 +1,6 @@
 ---
 layout: "../../layouts/blogLayout.astro"
-title: "Sponsors Purchases and FLL"
+title: "Sponsors, Purchases, and FLL"
 desc: "Shoutout to sponsors; purchasing materials for our team; planning for our first FLL meeting"
 date: "August 16, 2025"
 specificDate: "2025-08-16T15:40"
