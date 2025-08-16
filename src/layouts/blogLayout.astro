@@ -5,7 +5,6 @@ import { Image } from 'astro:assets';
 const { frontmatter } = Astro.props;
 const targetImage1 = frontmatter.image;
 const targetImage = targetImage1.split("/").pop().split(".")[0];
-console.log("\n\n\n" + targetImage + "\n\n\n\n\n\n\n\n\n\n\n\n");
 const blogImage = [];
 if (targetImage != "") {
     // get each image
@@ -19,21 +18,19 @@ if (targetImage != "") {
         const imageNameArr2 = imageNameArr[imageNameArr.length - 1].split(".");
         const imageName = imageNameArr2[0] + "." + imageNameArr2[2];
 
-        // console.log(imageName + "\n\n\n\n\n\n\n\n\n\n\n");
         const re = RegExp(`${targetImage}\.png`);
-        console.log("\n\n\n" + re.test(imageName));
+        console.log("\n" + re.test(imageName));
         console.log(re);
-        console.log(imageName + "\n\n\n\n\\n\n\n");
+        console.log(imageName);
 
         if(re.test(imageName)) {
             blogImage.push(image.default.src);
-            console.log("adding \n\n\n" + image.default.src);
+            console.log("adding \n" + image.default.src);
         }
     });
 
     console.log(blogImage);
     // images.find(img => img.includes(targetImage))
-    // console.log("\n\n" + Object.values(images) + "\n\n\n\n\n\n\n\n\n");
 }
 ---
 
