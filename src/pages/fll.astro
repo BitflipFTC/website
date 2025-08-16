@@ -25,12 +25,21 @@ import fll_s from "../assets/images/FLL_S.png"
                 box-sizing: border-box;
                 white-space: normal;
             }
+            .card {
+                transition: transform 0.2s ease, border-color 0.2s ease;
+            }
+            .card:hover {
+                /* self-sizing */
+                transform: scale(1.08);
+                border-color: white;
+
+            }
         </style>
     </Fragment>
     <header>
         <div class="header-content">
             <h1>Bitflip Jr.</h1>
-            <aside>This is the FLL team of Bitflip Robotics!</aside>
+            <aside>This is FLL Team 70971 of Bitflip Robotics!</aside>
         </div>
     </header>
 
