@@ -17,7 +17,7 @@ const donors = [
     {name: "Leslie Henneburg"},
     {name: "Anderson Insurance Associates", link: "https://www.aiasc.com/"},
     {name: "Cordell Krabbenhoft"},
-    {name: "FIRST South Carolina", link: "https://www.firstsouthcarolina.org/"}
+    {name: "FIRST South Carolina", link: "https://www.firstsouthcarolina.org/"},
 ]
 ---
 
@@ -66,18 +66,16 @@ const donors = [
             }
             .packet-image {
                 flex:1;
-                width: 40%;
+                width: auto;
                 max-width: 900px;
                 min-width: 450px;
                 height:auto;
-                aspect-ratio: 1.545/2;
                 z-index: 1;
-
+                
+                max-height:90vh;
+                aspect-ratio: 1.545/2 !important;
             }
             @media only screen and (orientation: portrait) {
-                .packet-image {
-                    min-width: 80%;
-                }
                 .section-content {
                     padding:0;
                 }
