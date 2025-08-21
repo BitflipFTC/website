@@ -271,7 +271,7 @@ li {
 }
 
 .card-holder {
-    gap: 75px;
+    gap: 50px;
 }
 
 .card-holder h2 {
@@ -573,7 +573,7 @@ li {
 
     .card-holder .card {
         min-height: 25em;
-        min-width:30vw;
+        min-width:200px;
         flex-wrap: wrap;
         cursor: auto;
     }
