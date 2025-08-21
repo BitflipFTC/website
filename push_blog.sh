@@ -57,7 +57,6 @@ git add ./src/assets/blog-images/
 # Check if there are any changes to commit
 if git diff --staged --quiet; then
   echo "No changes to commit."
-  exit 0
 fi
 
 COMMIT_MESSAGE="Blog update via script $(date)"
