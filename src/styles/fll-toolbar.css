@@ -1,0 +1,19 @@
+#toolbar,
+.dropdown-content,
+.dropdown-content a button {
+    border-color: var(--fll-color) !important;
+}
+
+#toolbar ul li,
+.dropdown-btn,
+.dropdown-content a button {
+    color:  var(--fll-color) !important;
+}
+
+.bar1, .bar2, .bar3 {
+    background-color: var(--fll-color) !important;
+}
+
+#toolbar ul li #logo {
+    filter: brightness(0) saturate(100%) invert(48%) sepia(64%) saturate(569%) hue-rotate(150deg) brightness(92%) contrast(86%) !important;
+}

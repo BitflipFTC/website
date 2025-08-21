@@ -8,6 +8,8 @@ import fll_ca from "../assets/images/FLL_CA.png"
 import fll_c from "../assets/images/FLL_C.png"
 import fll_s from "../assets/images/FLL_S.png"
 
+import "../styles/fll-toolbar.css";
+
 ---
 
 <Base 
@@ -34,6 +36,21 @@ import fll_s from "../assets/images/FLL_S.png"
                 border-color: white;
 
             }
+
+            h1, h2, h3 {
+                color: var(--fll-color);
+            }
+
+            .card h2 {
+                color: white;
+            }
+
+            .bio .photo,
+            .card-holder .card,
+            .circle {
+                background: var(--fll-color);
+            }
+
         </style>
     </Fragment>
     <header>
