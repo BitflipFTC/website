@@ -30,7 +30,7 @@ author = input().rstrip().lstrip()
 
 
 # filename same for image and md, dont add md until writing actual file 
-# if has tpps, use wget, then move. if no http get the local image, copy
+# if has htpp(s), use wget, then move. if no http(s) get the local image, copy
 
 # yay umlaut
 if author == "Zoe Rzewnicki":
