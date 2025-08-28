@@ -11,7 +11,7 @@ def addImage(filename):
 
     # for wsl 
 
-    imagePath = imagePath.replace("C:\\", "/mnt/c/").replace("\\","/")
+    imagePath = imagePath.replace("C:\\", "/mnt/c/").replace("\\","/").replace(" ","\ ")
     print(imagePath + " is the fixed WSL image path")
     imageFinalPath = ""
     imageAltText = ""
