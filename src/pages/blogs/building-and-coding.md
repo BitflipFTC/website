@@ -9,7 +9,6 @@ image: ""
 imageAlt: ""
 ---
 Tasks accomplished at today's meeting:
-<br><br>
 
 * Built one module of a parallel plate chassis
 <br><Br>
