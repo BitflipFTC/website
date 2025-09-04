@@ -1,6 +1,6 @@
 ---
 layout: "../../layouts/blogLayout.astro"
-title: "Third FLL Meeting Building the Robot"
+title: "Third FLL Meeting; Building the Robot"
 desc: "Programming and Attachments; Adding to the Robot"
 date: "September 4, 2025"
 specificDate: "2025-09-04T18:58"
