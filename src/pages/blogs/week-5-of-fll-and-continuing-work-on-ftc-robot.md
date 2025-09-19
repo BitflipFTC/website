@@ -10,4 +10,4 @@ imageAlt: ""
 ---
 During today's FLL meeting, we pseudo-coded a few missions and used that pseudo code to begin work on programming the practice robot. We also discussed ideas for the innovation project.
 <br><br>
-During our FTC meeting, we continued 3D printing the shooter mechanism for the robot and worked on the drivetrain. 
+During our FTC meeting, we continued designing the shooter mechanism for the robot and worked on the drivetrain. 
