@@ -1,6 +1,6 @@
 ---
 layout: "../../layouts/blogLayout.astro"
-title: "3D Modeling Parts and Field"
+title: "3D Modeling, Parts, and Field"
 desc: "Continuing to 3D model the robot; making a list of parts to order; furthering work on the field"
 date: "September 22, 2025"
 specificDate: "2025-09-22T08:22"
