@@ -1,6 +1,6 @@
 ---
 layout: "../../layouts/blogLayout.astro"
-title: "Programming 3D Modeling and Engineering Portfolio"
+title: "Programming, 3D Modeling, and Engineering Portfolio"
 desc: "Programming; 3D modeling intake and printing launcher; portfolio template"
 date: "October 3, 2025"
 specificDate: "2025-10-03T10:00"
