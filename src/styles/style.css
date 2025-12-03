@@ -294,11 +294,25 @@ li {
 }
 
 .card-holder .card .photo {
-    aspect-ratio:auto;
+    aspect-ratio:362/270;
     max-width: 95%;
     flex: 1;
     box-sizing: border-box;
     border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-holder .card .photo img {
+    max-height: 95%;
+    max-width: 95%;
+    box-sizing: border-box;
+    aspect-ratio: 360/270;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    border-radius: 0px;
 }
 
 .card-holder .card:hover {
