@@ -8,6 +8,6 @@ author: "Zoë Rzewnicki"
 image: "./src/assets/blog-images/fll-qualifier.png"
 imageAlt: ""
 ---
-Congratulations to our FLL team, Bitflip 70971, for winning 1st place Robot Design at the North Charleston Qualifier on Saturday and advancing to the East Regional competition! Thank you to all of the volunteers for making the event possible!
+Congratulations to our FLL team, Bitflip Jr 70971, for winning 1st place Robot Design at the North Charleston Qualifier on Saturday and advancing to the East Regional competition! Thank you to all of the volunteers for making the event possible!
 <br><br>
 On Friday's meeting, we started wiring the robot and making a plan for wire management, especially pertaining to the turret and staying within the size requirements. 
