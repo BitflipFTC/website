@@ -127,35 +127,43 @@ import ftc_z from "../assets/images/FTC_Z.jpg";
     </section>
     <Image src={decodeLogo} alt="a banner with Decode, the name of the upcoming FTC game" class="section-image" id="decode-logo"/>
     <section class="section-alt">
-        <div class="team-section-wrapper">
-            <h2>The Team</h2>
-            <div id="members">
-                <div class="card" onclick="window.location.href='/about/#Elijah'">
-                    <div class="photo"><Image src={ftc_e} alt='' /></div>
-                    <div class="card-text">
-                        <p class="name">Elijah</p>
-                        <p class="roles">Build<br>General Engineering</p>
+        <div style="display: flex; flex-direction: column;">
+            <div class="team-section-wrapper">
+                <h2>The Team</h2>
+                <div id="members">
+                    <div class="card" onclick="window.location.href='/about/#Griffin'">
+                        <div class="photo"><Image src={ftc_g} alt='' /></div>
+                        <div class="card-text">
+                            <p class="name">Griffin</p>
+                            <p class="roles">Programming<br>Design<br>Build<br>Outreach</p>
+                        </div>
                     </div>
                 </div>
-                <div class="card" onclick="window.location.href='/about/#Micah'">
-                    <div class="photo"><Image src={ftc_m} alt='' /></div>
-                    <div class="card-text">
-                        <p class="name">Micah</p>
-                        <p class="roles">Team Lead<br>Design Lead<br>Build</p>
+            </div>
+            <br><br>
+            <div class="team-section-wrapper">
+                <h2>Alumni</h2>
+                <div id="members">
+                    <div class="card" onclick="window.location.href='/about/#Elijah'">
+                        <div class="photo"><Image src={ftc_e} alt='' /></div>
+                        <div class="card-text">
+                            <p class="name">Elijah</p>
+                            <p class="roles">Build</p>
+                        </div>
                     </div>
-                </div>
-                <div class="card" onclick="window.location.href='/about/#Griffin'">
-                    <div class="photo"><Image src={ftc_g} alt='' /></div>
-                    <div class="card-text">
-                        <p class="name">Griffin</p>
-                        <p class="roles">Programming Lead<br>Driving<br>Website Design<br>Design</p>
+                    <div class="card" onclick="window.location.href='/about/#Micah'">
+                        <div class="photo"><Image src={ftc_m} alt='' /></div>
+                        <div class="card-text">
+                            <p class="name">Micah</p>
+                            <p class="roles">Design<br>Build</p>
+                        </div>
                     </div>
-                </div>
-                <div class="card" onclick="window.location.href='/about/#Zoe'">
-                    <div class="photo"><Image src={ftc_z} alt='' /></div>
-                    <div class="card-text">
-                        <p class="name">Zoë</p>
-                        <p class="roles">Documentation<br>Social Media<br>Outreach<br>Programming</p>
+                    <div class="card" onclick="window.location.href='/about/#Zoe'">
+                        <div class="photo"><Image src={ftc_z} alt='' /></div>
+                        <div class="card-text">
+                            <p class="name">Zoë</p>
+                            <p class="roles">Documentation<br>Social Media<br>Outreach</p>
+                        </div>
                     </div>
                 </div>
             </div>

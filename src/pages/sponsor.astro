@@ -7,23 +7,24 @@ import sponsor1 from "../assets/images/sponsor_1.png";
 import sponsor2 from "../assets/images/sponsor_2.png";
 
 const donors = [
-    {name: "Roland Rzewnicki"},
-    {name: "The Ancoras"},
+    {name: "Gene Haas Foundation", link: "https://www.ghaasfoundation.org/"},
     {name: "Boeing", link: "https://www.boeing.com"},
+    {name: "FIRST South Carolina", link: "https://www.firstsouthcarolina.org/"},
+    {name: "BAE", link: "https://www.baesystems.com/"},
+    {name: "3DConnexion", link: "https://www.3dconnexion.com"},
+    {name: "Anderson Insurance Associates", link: "https://www.aiasc.com/"},
+    {name: "The Ancoras"},
     {name: "The Pages"},
     {name: "The Booths"},
     {name: "The Kings"},
+    {name: "Cordell Krabbenhoft"},
+    {name: "Roland Rzewnicki"},
     {name: "Yvonne Howe"},
     {name: "Leslie Henneburg"},
-    {name: "Anderson Insurance Associates", link: "https://www.aiasc.com/"},
-    {name: "Cordell Krabbenhoft"},
-    {name: "FIRST South Carolina", link: "https://www.firstsouthcarolina.org/"},
+    {name: "Jeff Eagle"},
     {name: "Herchiel and Sherry Sims"},
     {name: "David and Lauren Kimm"},
-    {name: "Jeff Eagle"},
     {name: "Mark and Nicole Bracken"},
-    {name: "3DConnexion", link: "https://www.3dconnexion.com"},
-    {name: "BAE", link: "https://www.baesystems.com/"}
 ]
 ---
 
@@ -55,7 +56,7 @@ const donors = [
 
             a {
                 text-decoration: none;
-                color:blue;
+                color:rgb(76, 76, 255);
             }
             .section-content {
                 padding:0 20%;
@@ -81,11 +82,29 @@ const donors = [
                 max-height:90vh;
                 aspect-ratio: 1.545/2 !important;
             }
+
+            .sponsor-link {
+                position: relative;
+                display: inline-block;
+            }
+
+            .favicon {
+                position: absolute;
+                right: 100%; 
+                margin-right: 12px;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 48px;
+                height: 48px;
+                border-radius: 4px;
+            }
+
             @media only screen and (orientation: portrait) {
                 .section-content {
                     padding:0;
                 }
             }   
+
         </style>
     </Fragment>
     <header>
@@ -120,13 +139,23 @@ const donors = [
         <div class="section-content">
             <h2>And finally, we would like to give a huge thank you to all of our sponsors!</h2>
             <ul>
-                {
-                    donors.map(donor => (
-                        (donor.link && donor.link !== "") ? <li><a href={donor.link} target="_blank">{donor.name}</a></li> : <li>{donor.name}</li>
-                        )
-                    )
-                }
-            </ul>
+    {
+        donors.map(donor => (
+            (donor.link && donor.link !== "") ? (
+                <li>
+                    <a href={donor.link} target="_blank" class="sponsor-link">
+                        <img 
+                            src={donor.imgOverride || `https://www.google.com/s2/favicons?domain=${donor.link}&sz=64`} 
+                            alt="" 
+                            class="favicon" 
+                        />
+                        {donor.name}
+                    </a>
+                </li>
+            ) : <li>{donor.name}</li>
+        ))
+    }
+</ul>
         </div>
     </section>
 
