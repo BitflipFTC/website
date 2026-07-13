@@ -82,29 +82,11 @@ const donors = [
                 max-height:90vh;
                 aspect-ratio: 1.545/2 !important;
             }
-
-            .sponsor-link {
-                position: relative;
-                display: inline-block;
-            }
-
-            .favicon {
-                position: absolute;
-                right: 100%; 
-                margin-right: 12px;
-                top: 50%;
-                transform: translateY(-50%);
-                width: 48px;
-                height: 48px;
-                border-radius: 4px;
-            }
-
             @media only screen and (orientation: portrait) {
                 .section-content {
                     padding:0;
                 }
             }   
-
         </style>
     </Fragment>
     <header>
@@ -139,23 +121,13 @@ const donors = [
         <div class="section-content">
             <h2>And finally, we would like to give a huge thank you to all of our sponsors!</h2>
             <ul>
-    {
-        donors.map(donor => (
-            (donor.link && donor.link !== "") ? (
-                <li>
-                    <a href={donor.link} target="_blank" class="sponsor-link">
-                        <img 
-                            src={donor.imgOverride || `https://www.google.com/s2/favicons?domain=${donor.link}&sz=64`} 
-                            alt="" 
-                            class="favicon" 
-                        />
-                        {donor.name}
-                    </a>
-                </li>
-            ) : <li>{donor.name}</li>
-        ))
-    }
-</ul>
+                {
+                    donors.map(donor => (
+                        (donor.link && donor.link !== "") ? <li><a href={donor.link} target="_blank">{donor.name}</a></li> : <li>{donor.name}</li>
+                        )
+                    )
+                }
+            </ul>
         </div>
     </section>
 
