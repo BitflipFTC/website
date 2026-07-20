@@ -592,12 +592,27 @@ li {
         cursor: auto;
     }
 
-    #toolbar ul li button:not(#home-button) {
+    #toolbar ul li button:not(#home-button):not(#apply-button) {
+        display:none !important;
+    
+    }
+
+    #toolbar ul li:not(#toolbar ul li:first-child):not(#toolbar #apply-button) {
         display:none !important;
     }
 
-    #toolbar ul li:not(#toolbar ul li:first-child) {
-        display:none !important;
+    /* Force the Apply link wrapper to stop stretching on mobile */
+    #toolbar nav > a {
+        flex: 0 0 auto !important;
+        width: auto !important;
+    }
+
+    /* Keep the Apply button compact and text-sized */
+    #toolbar #apply-button {
+        font-size: 20px !important;
+        flex: 0 0 auto !important;
+        width: auto !important;
+        padding: 0 1.5em !important; /* Clean button padding */
     }
 
     #toolbar .dropdown {

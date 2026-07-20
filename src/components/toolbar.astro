@@ -7,6 +7,7 @@ import Dropdown from "./dropdown.astro";
 
 /* idk why it's angry now. dont bother it */
 const pages = [
+    // {link:'/apply',     name:'Apply',      active:true,  id:"apply-page"},
     {link:'/about/',    name:'About Us',   active:true,  id:"about-page"},
     {link:'/contact/',  name:'Contact Us', active:true,  id:"contact-page"},
     {link:'/outreach/', name:'Outreach',   active:false, id:"outreach-page"},
@@ -28,6 +29,7 @@ const pages = [
                 ))
             }
         </ul>
+        <a href="/apply"><button id="apply-button">Apply</button></a>
 
         <Dropdown class="dropdown"></Dropdown>
     </nav>

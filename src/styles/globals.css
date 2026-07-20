@@ -2,8 +2,10 @@
     --toolbar-height: 75px;
     --footer-height:2rem;
     --standard-color:#ff881e;
+    --orange-button-hover-color:hsl(28, 80%, 50%);
+
     /* --alt-color:#1c1c1c; */
-    --alt-color:#17171d;
+    --alt-color:hsl(240, 12%, 10%);
     --standard-section-color:#1c1c24;
     --button-hover:hsl(240, 10%, 6%);
 

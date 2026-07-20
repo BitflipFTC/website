@@ -105,10 +105,48 @@
     transition: background-color 0.2s ease-out;
 }
 
+
 #toolbar button:hover {
     /* color */
     background-color: var(--button-hover);
 }   
+
+#toolbar nav > a {
+    all: unset;
+    flex-direction: row;
+    flex:  0 0 100px;
+    display: flex;
+    align-items: center;
+    height: var(--toolbar-height);
+    margin-left: auto; /* Keeps it pushed cleanly against the hamburger menu */
+
+    cursor:pointer;
+    user-select: none;
+}
+
+#toolbar #apply-button {
+    all:unset;
+
+    color: var(--alt-color);
+    
+    /* styling */
+    border: none;
+    display:block;
+    background: var(--standard-color);
+
+    /* self-sizing */
+    height:var(--toolbar-height);
+    padding:0% 1em;
+    margin: 0;
+    flex: 1 0 100px;
+
+    transition: background-color 0.2s ease-out;
+    padding: 0% 1em; /* Gives it normal button padding */
+}
+
+#toolbar #apply-button:hover {
+    background-color: var(--orange-button-hover-color);
+}
 
 /* ------------------------------------------- dropdowns ------------------------------------------- */
 
