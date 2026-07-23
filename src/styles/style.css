@@ -545,6 +545,50 @@ li {
     align-self: baseline;
 }
 
+/* Container for the awards section */
+#awards {
+    text-align: left; /* Keep lists left-aligned for readability */
+    max-width: 800px; /* Adjust as needed for your page layout */
+    min-width:300px;
+    margin: 0 auto 2rem auto; /* Centers the whole block on the page */
+    font-size: 1.2rem;
+}
+
+/* Remove default list padding and bullets on top-level list */
+#awards > ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+/* Space out competition items */
+#awards > ul > li {
+    margin-bottom: 1.5rem;
+    
+}
+
+/* Header line (Title on left, Date on right) */
+.competition {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-weight: bold;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Optional subtle divider */
+    padding-bottom: 0.25rem;
+    margin-bottom: 0.5rem;
+    gap:1rem;
+}
+
+/* Inner list for actual awards */
+#awards ul ul {
+    list-style-type: disc;
+    padding-left: 1.25rem;
+}
+
+#awards ul ul li {
+    margin-bottom: 0.25rem;
+    color: rgba(255, 255, 255, 0.85); /* Slightly muted text for nested items */
+}
+
 /* mobile devices */
 @media only screen and (orientation: portrait){
     .bio-content {

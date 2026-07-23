@@ -1,28 +1,29 @@
 ---
-import Base from '../layouts/base.astro';
-import {Image} from 'astro:assets';
+import Base from "../layouts/base.astro";
+import { Image } from "astro:assets";
 
 // const folderPath = path.join(process.cwd(), 'src', 'pages', 'blogs');
 
 //@ts-nocheck
-const posts = Object.values(import.meta.glob('./blogs/*.md', { eager: true }));
+const posts = Object.values(import.meta.glob("./blogs/*.md", { eager: true }));
 
-const images = Object.values(import.meta.glob('../assets/blog-images/*.png', {eager:true}))
-    .map(module => module.default); 
-console.log(images)
+const images = Object.values(
+    import.meta.glob("../assets/blog-images/*.png", { eager: true }),
+).map((module) => module.default);
+console.log(images);
 
-const postimageKey = {}
+const postimageKey = {};
 
 for (let i = 0; i < posts.length; i++) {
     const post = posts[i];
     // console.log(`The current Post is: ${post.frontmatter.title}`);
-    let imagePath : string = post.frontmatter.image;
+    let imagePath: string = post.frontmatter.image;
     // if (!imagePath) {console.log("NO IMAGE FOUND. CONTINUING TO THE NEXT BLOG...\n\n"); continue;}
 
     // console.log(imagePath + " is the path in post frontmatter");
-    let imageFilename = imagePath.split("/").pop().replace(".png","");
+    let imageFilename = imagePath.split("/").pop().replace(".png", "");
     // console.log(imageFilename + " with full name");
- 
+
     // console.log("Beginning the search for the correct image. \n");
     for (let j = 0; j <= images.length; j++) {
         // console.log(imageFilename + " is filename");
@@ -41,13 +42,11 @@ for (let i = 0; i < posts.length; i++) {
     }
 
     // console.log("\n-----------------------\n")
-
 }
 
 posts.forEach((post) => {
     console.log(postimageKey[post.frontmatter.title]);
-
-})
+});
 
 const descLength = 97;
 
@@ -56,14 +55,12 @@ posts.sort((a, b) => {
     const dateA = new Date(a.frontmatter.specificDate);
     const dateB = new Date(b.frontmatter.specificDate);
     return dateB.getTime() - dateA.getTime();
-})
+});
 
 // posts.forEach((post) => {
 //     console.log(post);
 //     console.log(post.getHeadings());
 // })
-
-
 
 /* Object post {
     file (returns the exact path)
@@ -100,91 +97,94 @@ posts.sort((a, b) => {
 */
 ---
 
-<Base
-    index="true"
-    title="Blog"
-    desc="Our blog page—what we're doing!"
->
+<Base index="true" title="Blog" desc="Our blog page—what we're doing!">
     <Fragment slot="head">
-        <link rel="canonical" href="https://www.bitflip.club/blogs">
+        <link rel="canonical" href="https://www.bitflip.club/blogs" />
 
         <style>
             img {
                 object-fit: contain;
                 /* overflow: hidden; */
-                box-sizing:border-box;
+                box-sizing: border-box;
                 width: auto;
-                min-width:content;
+                min-width: content;
 
-                max-height:50vh;
+                max-height: 50vh;
                 max-width: 100%;
                 height: auto;
                 flex-basis: content;
                 border-radius: 10px;
-                border:2px solid white;
+                border: 2px solid white;
             }
             #blogs {
-                display:flex;
+                display: flex;
                 justify-content: center;
                 align-items: center;
                 flex-direction: column;
                 width: 100%;
-                padding:0 5%;
-                gap:50px;
-            }
-            .blog {
-                background-color: var(--card-color);
-                border-radius: 10px;
-                min-width: 100%;
-                border:2px solid white;
-                padding:20px;
-                cursor: pointer;
-                pointer-events: none;
-                box-sizing: border-box;
+                padding: 0 5%;
+                gap: 50px;
             }
             .blog-link {
-                all:unset;
-                cursor:pointer;
-                min-width: 60%;
-                max-width: 700px;
-        
-                flex:1;
+                all: unset;
+                cursor: pointer;
+
+                /* 1. Set a single, consistent width instead of a percentage range */
+                width: 100%;
+                max-width: 600px; /* Adjust this value to your preferred card width */
+
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 transition: transform 0.2s ease;
-
             }
+
             .blog-link:hover {
-                transform:scale(110%);
+                transform: scale(
+                    1.05
+                ); /* Lowered slightly to prevent edge clipping */
+            }
+
+            .blog {
+                background-color: var(--card-color);
+                border-radius: 10px;
+
+                /* 2. Force the inner box to fill 100% of the blog-link max-width */
+                width: 100%;
+
+                border: 2px solid white;
+                padding: 20px;
+                cursor: pointer;
+                pointer-events: none;
+                box-sizing: border-box;
             }
             .blog-text {
                 justify-content: space-between;
-                align-items:center;
+                align-items: center;
                 flex-grow: 1;
                 width: 100%;
             }
             .blog-title {
-                all:unset;
-                color:white;
+                all: unset;
+                color: white;
                 font-size: 1.5rem;
             }
             .blog-date {
-                color:lightgray;
+                color: lightgray;
                 text-align: center;
                 font-size: 1.1rem;
                 margin-bottom: 10px;
             }
             .blog-desc {
-                padding:0 25px;
-                font-size:1.1rem;
-                color:white;
+                padding: 0 25px;
+                font-size: 1.1rem;
+                color: white;
                 text-align: center;
             }
 
-            @media only screen and (orientation:portrait) {
+            @media only screen and (orientation: portrait) {
                 .blog-desc {
-                    padding:0;
+                    padding: 0;
                 }
             }
         </style>
@@ -199,21 +199,45 @@ posts.sort((a, b) => {
     <section class="section-alt">
         <div id="blogs">
             {
-            posts.map((post) => {
-                return (
-                <a href={post.url} class="blog-link">
-                    <div class="blog">
-                        {(post.frontmatter.image && postimageKey[post.frontmatter.title]) ? (<Image src={postimageKey[post.frontmatter.title]} alt={(post.frontmatter.imageAlt) ? post.frontmatter.imageAlt : ""} />) : null}
-                        <div class="blog-text">
-                            
-                            <h3 class="blog-title">{post.frontmatter.title}</h3>
-                            <p class="blog-date">{post.frontmatter.author}<span class="landscape-only"> • </span><br class="portrait-only"/>{post.frontmatter.date}</p>
-                            <p class="blog-desc">{post.frontmatter.desc/*(post.frontmatter.desc.length > descLength ? post.frontmatter.desc.substring(0, descLength) + "..." : post.frontmatter.desc)*/}</p>
-                        </div>
-                    </div>
-                </a>
-                )
-            })}
+                posts.map((post) => {
+                    return (
+                        <a href={post.url} class="blog-link">
+                            <div class="blog">
+                                {post.frontmatter.image &&
+                                postimageKey[post.frontmatter.title] ? (
+                                    <Image
+                                        src={
+                                            postimageKey[post.frontmatter.title]
+                                        }
+                                        alt={
+                                            post.frontmatter.imageAlt
+                                                ? post.frontmatter.imageAlt
+                                                : ""
+                                        }
+                                    />
+                                ) : null}
+                                <div class="blog-text">
+                                    <h3 class="blog-title">
+                                        {post.frontmatter.title}
+                                    </h3>
+                                    <p class="blog-date">
+                                        {post.frontmatter.author}
+                                        <span class="landscape-only"> • </span>
+                                        <br class="portrait-only" />
+                                        {post.frontmatter.date}
+                                    </p>
+                                    <p class="blog-desc">
+                                        {
+                                            post.frontmatter
+                                                .desc /*(post.frontmatter.desc.length > descLength ? post.frontmatter.desc.substring(0, descLength) + "..." : post.frontmatter.desc)*/
+                                        }
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    );
+                })
+            }
         </div>
     </section>
 </Base>
