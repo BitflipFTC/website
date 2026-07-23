@@ -175,8 +175,11 @@ section {
     /* self-sizing */
     flex: 1 0;
     margin: 0;
-    /* max-width: 80%; */
-    padding:5%;
+    max-width: 1800px;
+    padding-left:5%;
+    padding-right:5%;
+    padding-top:0;
+    padding-bottom: 0;
     
     /* child-sizing */
     display: flex;
@@ -345,7 +348,6 @@ li {
     border: 2px solid lightgray;
     border-radius: 20px;
     white-space: nowrap;
-    cursor:pointer;
     box-shadow: 0px 0px 20px 3px black;
 
     /* animations */
@@ -548,7 +550,7 @@ li {
 /* Container for the awards section */
 #awards {
     text-align: left; /* Keep lists left-aligned for readability */
-    max-width: 800px; /* Adjust as needed for your page layout */
+    max-width: 1000px; /* Adjust as needed for your page layout */
     min-width:300px;
     margin: 0 auto 2rem auto; /* Centers the whole block on the page */
     font-size: 1.2rem;

@@ -1,6 +1,6 @@
 ---
 import Base from "../layouts/base.astro";
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 import bigLogo from "../assets/images/orange.png";
 import ftcLogo from "../assets/images/FIRSTTech_iconHorz_CMYK.svg";
 import decodeLogo from "../assets/images/decode.svg";
@@ -11,20 +11,17 @@ import ftc_e from "../assets/images/FTC_E.jpg";
 import ftc_z from "../assets/images/FTC_Z.jpg";
 ---
 
-<Base 
-    index="true"
-    title=""
->
+<Base index="true" title="">
     <!-- styling for the main page -->
     <Fragment slot="head">
-        <link rel="canonical" href="https://www.bitflip.club/">
+        <link rel="canonical" href="https://www.bitflip.club/" />
 
         <style>
             .header-video-container {
                 /* self-sizing */
-                flex:1;
-                height:calc(100vh - var(--toolbar-height));
-                width:100%;
+                flex: 1;
+                height: calc(100vh - var(--toolbar-height));
+                width: 100%;
 
                 /* child-sizing */
                 display: flex;
@@ -34,27 +31,27 @@ import ftc_z from "../assets/images/FTC_Z.jpg";
 
             .header-video {
                 /* self-sizing */
-                height:calc(100vh - var(--toolbar-height));
+                height: calc(100vh - var(--toolbar-height));
                 width: 100%;
                 aspect-ratio: 16/9;
-                padding:0;
+                padding: 0;
                 margin: 0;
-                position:fixed;
+                position: fixed;
                 z-index: -100;
-            
-                /* styling */    
+
+                /* styling */
                 object-fit: cover;
             }
 
             .header-video-container::after {
                 content: "";
-            
+
                 /* self-sizing */
                 width: 100%;
                 height: 100%;
                 position: fixed;
                 z-index: -5;
-            
+
                 /* color */
                 /* Dark tint effect */
                 background-color: rgba(0, 0, 0, 0.2);
@@ -65,9 +62,9 @@ import ftc_z from "../assets/images/FTC_Z.jpg";
             #main-header #big-logo {
                 /* self-sizing */
                 flex: 0 1 0;
-                height:auto;
+                height: auto;
                 width: auto;
-                max-height: calc( 0.7 * (100% - (var(--toolbar-height))));
+                max-height: calc(0.7 * (100% - (var(--toolbar-height))));
                 max-width: 80vw;
                 aspect-ratio: 1250/1438; /* keep it consistently the right size */
                 margin-top: 5vh;
@@ -76,98 +73,140 @@ import ftc_z from "../assets/images/FTC_Z.jpg";
 
             #main-header h1 {
                 /* self-sizing */
-                bottom:0;
-                margin-top:5vh;
+                bottom: 0;
+                margin-top: 5vh;
                 position: static;
-            
+
                 /* font */
-                font-size:2.4rem;
+                font-size: 2.4rem;
                 color: var(--standard-color);
             }
         </style>
     </Fragment>
 
     <div class="header-video-container">
-        <video autoplay muted loop disablepictureinpicture playsinline
-        preload="metadata" style="pointer-events:none;" class="header-video">
+        <video
+            autoplay
+            muted
+            loop
+            disablepictureinpicture
+            playsinline
+            preload="metadata"
+            style="pointer-events:none;"
+            class="header-video"
+        >
             <source src="/videos/new.mp4" type="video/mp4" />
         </video>
     </div>
     <header id="main-header" class="full-height-header">
         <div class="header-content">
-            <Image src={bigLogo} alt="" id="big-logo"/>
-            <h1>Bitflip Robotics<span class="landscape-only"> | </span><br class="portrait-only" />FTC 30380</h1>
+            <Image src={bigLogo} alt="" id="big-logo" />
+            <h1>
+                Bitflip Robotics<span class="landscape-only"> | </span><br
+                    class="portrait-only"
+                />FTC 30380
+            </h1>
         </div>
     </header>
     <section class="section-alt">
         <div class="circle"></div>
         <div class="section-content">
-            <h2>
-                What is FIRST&reg;?
-            </h2>
-            <p>“Founded in 1989 by inventor Dean Kamen, FIRST (For Inspiration and Recognition of Science and Technology) is a global nonprofit organization that prepares young people for the future through a suite of welcoming, team-based robotics programs for ages 5-18 (K-12). Thrilling, sports-like challenges build self-confidence and collaborative problem-solving skills and have a proven and lasting impact on STEM learning and interest.” More Than Robots&reg; section, FIRST official website. 
+            <h2>What is FIRST&reg;?</h2>
+            <p>
+                “Founded in 1989 by inventor Dean Kamen, FIRST (For Inspiration
+                and Recognition of Science and Technology) is a global nonprofit
+                organization that prepares young people for the future through a
+                suite of welcoming, team-based robotics programs for ages 5-18
+                (K-12). Thrilling, sports-like challenges build self-confidence
+                and collaborative problem-solving skills and have a proven and
+                lasting impact on STEM learning and interest.” More Than
+                Robots&reg; section, FIRST official website.
             </p>
         </div>
     </section>
-    <Image src={ftcLogo} alt="a banner with the First logo" class="section-image" />
+    <Image
+        src={ftcLogo}
+        alt="a banner with the First logo"
+        class="section-image"
+    />
     <section class="section-alt">
         <div class="circle"></div>
         <div class="section-content">
             <h2>What is FTC?</h2>
             <p>
-                Through FIRST&reg; Tech Challenge, students learn valuable skills by participating in season-specific challenges using robots that they have created with their teammates. 
-                Teams fabricate robots from a mixture of custom-made and store-bought parts, then program the robots to complete a combination of automatic and driver-controlled tasks (partly paraphrased from the FIRST&reg; Tech Challenge official website). 
-                More information can be found <a href="https://www.firstinspires.org/programs/ftc" target="_blank">here</a>.
-                <br><br>
-                This year's season is called DECODE&trade;. 
-                For a concise explanation, please refer to FTC Team 25650 ONE SMALL STEP for an Axolotl's amazing one-pager 
-                <a href="https://drive.google.com/file/d/1MyWqiDEmYg-AcbI6tc2_MQOQbsejEnmK/view" target="_blank">here</a>.
+                Through FIRST&reg; Tech Challenge, students learn valuable
+                skills by participating in season-specific challenges using
+                robots that they have created with their teammates. Teams
+                fabricate robots from a mixture of custom-made and store-bought
+                parts, then program the robots to complete a combination of
+                automatic and driver-controlled tasks (partly paraphrased from
+                the FIRST&reg; Tech Challenge official website). More
+                information can be found <a
+                    href="https://www.firstinspires.org/programs/ftc"
+                    target="_blank">here</a
+                >.
+                <br /><br />
+                This year's season is called DECODE&trade;. For a concise explanation,
+                please refer to FTC Team 25650 ONE SMALL STEP for an Axolotl's amazing
+                one-pager
+                <a
+                    href="https://drive.google.com/file/d/1MyWqiDEmYg-AcbI6tc2_MQOQbsejEnmK/view"
+                    target="_blank">here</a
+                >.
             </p>
         </div>
     </section>
-    <Image src={decodeLogo} alt="a banner with Decode, the name of the upcoming FTC game" class="section-image" id="decode-logo"/>
+    <Image
+        src={decodeLogo}
+        alt="a banner with Decode, the name of the upcoming FTC game"
+        class="section-image"
+        id="decode-logo"
+    />
     <section class="section-alt">
         <div style="display: flex; flex-direction: column;">
             <div class="team-section-wrapper">
                 <h2>The Team</h2>
                 <div id="members">
-                    <div class="card" onclick="window.location.href='/about/#Griffin'">
-                        <div class="photo"><Image src={ftc_g} alt='' /></div>
+                    <div class="card">
+                        <div class="photo"><Image src={ftc_g} alt="" /></div>
                         <div class="card-text">
                             <p class="name">Griffin</p>
-                            <p class="roles">Programming<br>Design<br>Build<br>Outreach</p>
+                            <p class="roles">
+                                Programming<br />Design<br />Build<br />Outreach
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
-            <br><br>
+            <br /><br />
             <div class="team-section-wrapper">
                 <h2>Alumni</h2>
                 <div id="members">
-                    <div class="card" onclick="window.location.href='/about/#Elijah'">
-                        <div class="photo"><Image src={ftc_e} alt='' /></div>
+                    <div class="card">
+                        <div class="photo"><Image src={ftc_e} alt="" /></div>
                         <div class="card-text">
                             <p class="name">Elijah</p>
                             <p class="roles">Build</p>
                         </div>
                     </div>
-                    <div class="card" onclick="window.location.href='/about/#Micah'">
-                        <div class="photo"><Image src={ftc_m} alt='' /></div>
+                    <div class="card">
+                        <div class="photo"><Image src={ftc_m} alt="" /></div>
                         <div class="card-text">
                             <p class="name">Micah</p>
-                            <p class="roles">Design<br>Build</p>
+                            <p class="roles">Design<br />Build</p>
                         </div>
                     </div>
-                    <div class="card" onclick="window.location.href='/about/#Zoe'">
-                        <div class="photo"><Image src={ftc_z} alt='' /></div>
+                    <div class="card">
+                        <div class="photo"><Image src={ftc_z} alt="" /></div>
                         <div class="card-text">
                             <p class="name">Zoë</p>
-                            <p class="roles">Documentation<br>Social Media<br>Outreach</p>
+                            <p class="roles">
+                                Documentation<br />Social Media<br />Outreach
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
 </Base>
