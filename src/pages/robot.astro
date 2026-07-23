@@ -1,40 +1,122 @@
 ---
 import Base from "../layouts/base.astro";
-import { Image } from 'astro:assets';
-import headerImg from "../assets/images/event-experience.jpg";
+import { Image } from "astro:assets";
+
+import roobt from "../assets/images/robot_worlds.png";
 ---
 
-<Base 
-    index="false"
-    title="Robot"
-    desc="Learn more about our robot!"
->
+<Base index="false" title="Robot" desc="Learn more about our robot!">
     <Fragment slot="head">
-        <link rel="canonical" href="https://www.bitflip.club/robot/">
+        <link rel="canonical" href="https://www.bitflip.club/robot/" />
         <style>
-            .model {
-                min-height:100px;
-                min-width: 80%;
-                max-height:80vh;
-                aspect-ratio: 16/9;
-            }
+            /* ------------------------ Abilities ------------------------ */
 
-            model-viewer {
-                height:100%;
-                /* min-height: 500px; */
+            .abilities-list {
+                list-style: none;
+                padding: 0 15px;
+                margin: 0;
                 width: 100%;
-                border-radius: 10px;
-                border:2px solid white;
+                box-sizing: border-box;
             }
 
-            @media only screen and (orientation: portrait){
-                model-viewer {
-                    padding: 0;
-                    margin: 0;
+            .abilities-list li {
+                position: relative;
+                padding-left: 22px;
+                margin-bottom: 10px;
+                text-align: left;
+                color: lightgray;
+            }
+
+            .abilities-list li::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 0.55em;
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background-color: var(--standard-color);
+            }
+
+            /* --------------------------- Image --------------------------- */
+
+            .robot-image {
+                width: 85%;
+                min-width: 350px;
+                max-width: 660px;
+                padding: 20px;
+            }
+
+            .img-slot {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                overflow: hidden;
+                width: 100%;
+                aspect-ratio: 4 / 3;
+                box-sizing: border-box;
+                padding: 10px;
+            }
+
+            .img-slot img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                border-radius: 8px;
+            }
+
+            .img-slot small {
+                display: block;
+                margin-top: 6px;
+                color: #888;
+                font-size: 0.8rem;
+            }
+
+            .robot-info {
+                width: 100%;
+
+                max-width: 660px;
+            }
+
+            section {
+                flex: 0 1 auto;
+                padding-top: 10px;
+            }
+
+            header {
+                padding-bottom: 10px;
+            }
+
+            header h1 {
+                /* margin-bottom: 10px; */
+                font-size: 3rem;
+            }
+
+            .robot-info h3 {
+                font-size: 1.8rem;
+                margin: 10px;
+            }
+
+            .robot-date {
+                margin: -5px 0 20px 0;
+                color: lightgray;
+                font-size: 1.2rem;
+                font-weight: bold;
+            }
+
+            @media only screen and (orientation: portrait) {
+                .section-alt {
+                    display: flex;
+                    flex-direction: column;
                 }
 
-                .model {
-                    aspect-ratio: 9/16;
+                .robot-image {
+                    order: 1;
+                    max-width: 500px;
+                }
+
+                .robot-info {
+                    order: 2;
                 }
             }
         </style>
@@ -42,20 +124,38 @@ import headerImg from "../assets/images/event-experience.jpg";
 
     <header>
         <div class="header-content">
-            <h1 class="header-title">
-                Robot
-            </h1>
+            <h1>Vulcan</h1>
+            <p class="robot-date">2025&ndash;26 &middot; DECODE™ Season</p>
         </div>
     </header>
 
     <section class="section-alt">
-        <div class="model">
-            <model-viewer src="/models/robot_model-opt.glb" camera-controls="true" camera-orbit="205deg 70deg 25m" loading="auto" powerpreference="low-power" exposure="0.50" shadow-softness="0.1" disable-tap="false" disable-pan="false" tone-mapping="neutral" shadow-intensity="4" alt="Model Loading Failed" ar-status="not-presenting" interaction-prompt="none">
-            </model-viewer>
+        <div class="section-content robot-info">
+            <h3>Robot Abilities</h3>
+            <ul class="abilities-list">
+                <li>
+                    Spinning indexer (a.k.a. spindexer) that enables sorting of
+                    artifacts before we shoot.
+                </li>
+                <li>
+                    Active transfer that allows us to shoot all 3 artifacts in
+                    under half a second.
+                </li>
+                <li>
+                    Adjustable hooded launcher that allows us to shoot from
+                    anywhere on the field.
+                </li>
+                <li>
+                    360&deg; Turret that allows it to aim at the goal, no matter
+                    where it is driving.
+                </li>
+            </ul>
+        </div>
+
+        <div class="section-content robot-image">
+            <div class="img-slot img-slot-tall">
+                <Image src={roobt} alt="Vulcan at the FIRST Championship" />
+            </div>
         </div>
     </section>
-
-    <Fragment slot="scripts">
-        <script src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
-    </Fragment>
 </Base>
