@@ -1,11 +1,9 @@
 ---
 import Base from "../layouts/base.astro";
-import { Image } from 'astro:assets';
-import ftcLogo from "../assets/images/FIRSTTech_iconHorz_CMYK.svg";
 ---
 
 <Base 
-    index="false"
+    index="true"
     title="Outreach"
     desc="Outreach of Bitflip Robotics"
 >
@@ -13,16 +11,17 @@ import ftcLogo from "../assets/images/FIRSTTech_iconHorz_CMYK.svg";
         <link rel="canonical" href="https://www.bitflip.club/outreach/">
 
     </Fragment>
-    <header class="full-height-header">
-        <Image alt="" src={ftcLogo} class="header-image" style="box-sizing:border-box; padding: 0 25px;">
-        <p>hi</p>
-    </header>
+    <header>
+            <div class="header-content">
+                <h1>Outreach</h1>
+            </div>
+        </header>
 
-    <section class="section-alt">
-        <div class="section-content">
-            <p>
-                
-            </p>
-        </div>
+        <section class="section-alt">
+            <div class="section-content">
+                <p style="text-align:justify; font-size:1.5rem;">
+                    BioBuzz Kickoff Presentation: <a href="https://docs.google.com/presentation/d/1YlxpYBev2GK0whfx51EG7bt2hot7hAE131Cg-oEd2zY/edit?usp=sharing" target="_blank">Computer Vision in Robotics</a><br>
+                </p>
+            </div>
         </section>
 </Base>
