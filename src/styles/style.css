@@ -223,8 +223,8 @@ section p {
     flex:1;
 }
 
-#decode-logo {
-    background-color: #fdc744;
+#biobuzz-logo {
+    background-color: rgb(238,233,165);
 }
 
 p {
