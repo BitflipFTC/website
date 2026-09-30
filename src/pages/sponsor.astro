@@ -8,11 +8,16 @@ import sponsor2 from "../assets/images/sponsor_2.png";
 
 const donors = [
     {name: "Gene Haas Foundation", link: "https://www.ghaasfoundation.org/"},
-    {name: "Boeing", link: "https://www.boeing.com"},
+    {
+        name: "Boeing",
+        link: "https://www.boeing.com",
+        logo: "https://www.boeing.com/content/dam/boeing/v2/common/boeing-logo-blue.png",
+    },
     {name: "FIRST South Carolina", link: "https://www.firstsouthcarolina.org/"},
     {name: "BAE", link: "https://www.baesystems.com/"},
     {name: "3DConnexion", link: "https://www.3dconnexion.com"},
     {name: "Anderson Insurance Associates", link: "https://www.aiasc.com/"},
+    {name: "The Intuitive Foundation", link: "https://www.intuitive-foundation.org/"},
     {name: "The Ancoras"},
     {name: "The Pages"},
     {name: "The Booths"},
@@ -52,6 +57,24 @@ const donors = [
                 text-align: center;
                 font-size: 1.7rem;
                 line-height: 60px;
+            }
+
+            .donor-link {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.5rem;
+            }
+
+            .donor-favicon {
+                width: 24px;
+                height: 24px;
+                object-fit: contain;
+            }
+
+            .donor-logo {
+                width: auto;
+                /* max-width: 72px; */
+                height: 52px;
             }
 
             a {
@@ -123,9 +146,20 @@ const donors = [
             <ul>
                 {
                     donors.map(donor => (
-                        (donor.link && donor.link !== "") ? <li><a href={donor.link} target="_blank">{donor.name}</a></li> : <li>{donor.name}</li>
-                        )
-                    )
+                                                donor.link
+                            ? <li>
+                                <a class="donor-link" href={donor.link} target="_blank" rel="noopener noreferrer">
+                                    <img
+                                        class:list={["donor-favicon", { "donor-logo": Boolean(donor.logo) }]}
+                                        src={donor.logo ?? `https://www.google.com/s2/favicons?domain=${new URL(donor.link).hostname}&sz=64`}
+                                        alt=""
+                                        aria-hidden="true"
+                                    />
+                                    {donor.name}
+                                </a>
+                            </li>
+                            : <li>{donor.name}</li>
+                    ))
                 }
             </ul>
         </div>
