@@ -8,16 +8,13 @@ import sponsor2 from "../assets/images/sponsor_2.png";
 
 const donors = [
     {name: "Gene Haas Foundation", link: "https://www.ghaasfoundation.org/"},
-    {
-        name: "Boeing",
-        link: "https://www.boeing.com",
-        logo: "https://www.boeing.com/content/dam/boeing/v2/common/boeing-logo-blue.png",
-    },
+    {name: "Boeing", link: "https://www.boeing.com"},
     {name: "FIRST South Carolina", link: "https://www.firstsouthcarolina.org/"},
     {name: "BAE", link: "https://www.baesystems.com/"},
     {name: "3DConnexion", link: "https://www.3dconnexion.com"},
-    {name: "Anderson Insurance Associates", link: "https://www.aiasc.com/"},
     {name: "The Intuitive Foundation", link: "https://www.intuitive-foundation.org/"},
+    {name: "FRCtees", link: "https://www.frctees.com"},
+    {name: "Anderson Insurance Associates", link: "https://www.aiasc.com/"},
     {name: "The Ancoras"},
     {name: "The Pages"},
     {name: "The Booths"},
@@ -57,24 +54,6 @@ const donors = [
                 text-align: center;
                 font-size: 1.7rem;
                 line-height: 60px;
-            }
-
-            .donor-link {
-                display: inline-flex;
-                align-items: center;
-                gap: 0.5rem;
-            }
-
-            .donor-favicon {
-                width: 24px;
-                height: 24px;
-                object-fit: contain;
-            }
-
-            .donor-logo {
-                width: auto;
-                /* max-width: 72px; */
-                height: 52px;
             }
 
             a {
@@ -118,52 +97,32 @@ const donors = [
             </div>
     </header>
 
-    <section>
-        <div class="section-content">
-            <h2>Become a sponsor today!</h2>
-            <p>Below is our team's sponsorship packet, which contains all of the information about us that we send out to potential sponsors.</p>
-        </div>
-    </section>
-        
-    <div class="packet-container">
-        <Image src={sponsor1} alt="Sponsorship packet" class="packet-image"/>
-        <Image src={sponsor2} alt="Sponsorship packet" class="packet-image"/>
-    </div>
-
-    <section>
-        <div class="section-content">
-            <p>Below is the sponsorship form. In addition, there is a link to our hackclub account in the footer, which has this same donation form on it. We thank you for your support!
-            </p>
-        </div>
-    </section>
-
-    <iframe src="https://hcb.hackclub.com/donations/start/bitflip-ftc-fundraiser" style="border:none;" name="donateFrame" scrolling="no" frameborder="0" marginheight="0px" marginwidth="0px" width="1000" height="1000" allow="payment" allowfullscreen id="hcbframe"></iframe>
-
-
     <section class="section-alt"> 
         <div class="section-content">
-            <h2>And finally, we would like to give a huge thank you to all of our sponsors!</h2>
+            <h2>Our sponsors</h2>
+            <p>We would like to give a huge thank you to all of our sponsors!<br><br></p>
             <ul>
                 {
                     donors.map(donor => (
-                                                donor.link
-                            ? <li>
-                                <a class="donor-link" href={donor.link} target="_blank" rel="noopener noreferrer">
-                                    <img
-                                        class:list={["donor-favicon", { "donor-logo": Boolean(donor.logo) }]}
-                                        src={donor.logo ?? `https://www.google.com/s2/favicons?domain=${new URL(donor.link).hostname}&sz=64`}
-                                        alt=""
-                                        aria-hidden="true"
-                                    />
-                                    {donor.name}
-                                </a>
-                            </li>
-                            : <li>{donor.name}</li>
-                    ))
+                        (donor.link && donor.link !== "") ? <li><a href={donor.link} target="_blank">{donor.name}</a></li> : <li>{donor.name}</li>
+                        )
+                    )
                 }
             </ul>
         </div>
     </section>
+
+    <section>
+        <div class="section-content">
+            <h2>Become a sponsor today!</h2>
+            <p>Below is the sponsorship form. In addition, there is a link to our hackclub account in the footer, which has this same donation form on it. We thank you for your support!</p>
+        </div>
+    </section>
+
+
+    <iframe src="https://hcb.hackclub.com/donations/start/bitflip-ftc-fundraiser" style="border:none;" name="donateFrame" scrolling="no" frameborder="0" marginheight="0px" marginwidth="0px" width="1000" height="1000" allow="payment" allowfullscreen id="hcbframe"></iframe>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
     <script>
         //@ts-nocheck
